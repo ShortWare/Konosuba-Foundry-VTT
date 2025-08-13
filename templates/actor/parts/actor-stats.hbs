@@ -1,0 +1,26 @@
+<table>
+    <tr>
+        <th></th>
+        <th>Base Score</th>
+        <th>Ability Bonus</th>
+        <th>Class Mod</th>
+        <th>Skills, etc.</th>
+        <th>Ability Score</th>
+        <th>Skills, etc.</th>
+        <th>Dice</th>
+        <th style="padding-left: 50px;"></th>
+    </tr>
+    {{#each system.abilities as |ability key|}}
+    <tr>
+        <th>{{key}}</th>
+        <th><input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/></th>
+        <th>{{ability.bonus}}</th>
+        <th>{{ability.class}}</th>
+        <th>{{ability.skillsBefore}}</th>
+        <th>{{ability.score}}</th>
+        <th>{{ability.skillsAfter}}</th>
+        <th>2d6+{{ability.dice}}</th>
+        <th><span class="ability-mod rollable" data-roll="2d6+@abilities.{{key}}.dice" data-label="{{localize (lookup @root.config.abilities key)}}">Roll</span></th>
+    </tr>
+    {{/each}}
+</table>

@@ -142,6 +142,8 @@ export class KonosubaActorSheet extends ActorSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
+
+    // LVL Calculation
     html.find('input[name="system.attributes.xp.value"]').on('change', (event) => {
       const value = event.target.value;
 
@@ -156,6 +158,32 @@ export class KonosubaActorSheet extends ActorSheet {
       this.actor.update({ "system.attributes.xp.value": value });
       this.actor.update({ "system.attributes.xp.remaining": (value-xp)+lvl*10 });
     });
+
+
+
+    // Skill Calculation
+    html.find('input[name^="system.abilities"][name$=".value"]').on('change', (event) => {
+      const input = event.currentTarget;
+      const name = input.name;
+      const ability = name.split('.')[2];
+      const value = Number(input.value);
+      const bonus = Math.floor(value / 3);
+      const abilityData = this.actor.system.abilities[ability];
+      const classMod = Number(abilityData.class || 0);
+      const skillsBefore = Number(abilityData.skillsBefore || 0);
+      const score = Number(bonus+classMod+skillsBefore);
+      const skillsAfter = Number(abilityData.skillsAfter || 0);
+      const dice = Number(score+skillsAfter)
+
+      this.actor.update({
+        [`system.abilities.${ability}.bonus`]: bonus,
+        [`system.abilities.${ability}.score`]: score,
+        [`system.abilities.${ability}.dice`]: dice
+      });
+    });
+
+
+
 
     // Render the item sheet for viewing/editing prior to the editable check.
     html.on("click", ".item-edit", (ev) => {
