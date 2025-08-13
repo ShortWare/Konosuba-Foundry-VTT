@@ -49,7 +49,7 @@ Hooks.once("init", function () {
   CONFIG.Item.dataModels = {
     item: models.KonosubaItem,
     feature: models.KonosubaFeature,
-    spell: models.KonosubaSpell,
+    skill: models.KonosubaSkill,
   };
 
   // Active Effects are never copied to the Actor,

@@ -8,7 +8,7 @@ export const preloadHandlebarsTemplates = async function () {
     // Actor partials.
     "systems/konosuba/templates/actor/parts/actor-features.hbs",
     "systems/konosuba/templates/actor/parts/actor-items.hbs",
-    "systems/konosuba/templates/actor/parts/actor-spells.hbs",
+    "systems/konosuba/templates/actor/parts/actor-skills.hbs",
     "systems/konosuba/templates/actor/parts/actor-effects.hbs",
     // Item partials
     "systems/konosuba/templates/item/parts/item-effects.hbs",

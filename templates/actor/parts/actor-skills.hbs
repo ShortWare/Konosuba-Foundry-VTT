@@ -1,0 +1,45 @@
+<ol class='items-list'>
+    <li class='item flexrow items-header'>
+      <div class='item-name'>
+        Character Skills
+      </div>
+    </li>
+    {{#each skills as |item id|}}
+      <li class='item flexrow' data-item-id='{{item._id}}'>
+        <div class='item-name flexrow'>
+          <h4>{{item.name}}</h4>
+        </div>
+        <div class='item-controls'>
+          <a
+            class='item-control item-edit'
+            title='{{localize "DOCUMENT.Edit" type='spell'}}'
+          >
+            <i class='fas fa-edit'></i>
+          </a>
+          <a
+            class='item-control item-delete'
+            title='{{localize "DOCUMENT.Delete" type='spell'}}'
+          >
+            <i class='fas fa-trash'></i>
+          </a>
+        </div>
+      </li>
+      <p>Level: {{item.system.skillLevel}} / {{item.system.skillMaxLevel}}</p>
+      <p>Timing: {{item.system.skillTiming}}</p>
+      <p>Target: {{item.system.skillTarget}}</p>
+      <p>Range: {{item.system.skillRange}}</p>
+      <p>Cost: {{item.system.skillCost}}</p>
+      <p>Effects:</p>
+      <p>
+        {{item.system.skillEffects}}
+      </p>
+      <button>{{item.system.skillCheck}}</button>
+      <p>Custom Rolls:</p>
+      <p>
+        {{#each item.system.skillCustomRolls as |roll|}}
+          <button class="rollable" data-roll="{{roll.check}}" >{{roll.name}}</button>
+        {{/each}}
+      </p>
+      <hr />
+    {{/each}}
+</ol>

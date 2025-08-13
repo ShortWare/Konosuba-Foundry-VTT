@@ -27,11 +27,6 @@ export class KonosubaItemSheet extends ItemSheet {
   /** @override */
   get template() {
     const path = "systems/konosuba/templates/item";
-    // Return a single sheet for all item types.
-    // return `${path}/item-sheet.hbs`;
-
-    // Alternatively, you could use the following return statement to do a
-    // unique item sheet by type, like `weapon-sheet.hbs`.
     return `${path}/item-${this.item.type}-sheet.hbs`;
   }
 

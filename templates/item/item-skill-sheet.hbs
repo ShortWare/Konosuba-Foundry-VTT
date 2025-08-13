@@ -1,0 +1,87 @@
+<form class='{{cssClass}}' autocomplete='off'>
+  <header class='sheet-header'>
+    <div class='header-fields'>
+      <h1 class='charname'><input
+          name='name'
+          type='text'
+          value='{{item.name}}'
+          placeholder='Skill Name'
+        /></h1>
+    </div>
+  </header>
+
+  <section class='sheet-body'>
+    <div class='body-field'>
+      <label class='body-label'>Max Level</label>
+      <input
+        type='text'
+        name='system.skillMaxLevel'
+        value='{{system.skillMaxLevel}}'
+        data-dtype='Number'
+      />
+    </div>
+    <div class='body-field'>
+      <label class='body-label'>Timing</label>
+      <input
+        type='text'
+        name='system.skillTiming'
+        value='{{system.skillTiming}}'
+        data-dtype='String'
+      />
+    </div>
+    <div class='body-field'>
+      <label class='body-label'>Check</label>
+      <input
+        type='text'
+        name='system.skillCheck'
+        value='{{system.skillCheck}}'
+        data-dtype='String'
+      />
+    </div>
+    <div class='body-field'>
+      <label class='body-label'>Target</label>
+      <input
+        type='text'
+        name='system.skillTarget'
+        value='{{system.skillTarget}}'
+        data-dtype='String'
+      />
+    </div>
+    <div class='body-field'>
+      <label class='body-label'>Range</label>
+      <input
+        type='text'
+        name='system.skillRange'
+        value='{{system.skillRange}}'
+        data-dtype='String'
+      />
+    </div>
+    <div class='body-field'>
+      <label class='body-label'>Cost</label>
+      <input
+        type='text'
+        name='system.skillCost'
+        value='{{system.skillCost}}'
+        data-dtype='Number'
+      />
+    </div>
+    <div class='body-field'>
+      <label class='body-label'>Effects</label>
+      <input
+        type='text'
+        name='system.skillEffects'
+        value='{{system.skillEffects}}'
+        data-dtype='String'
+      ></input>
+    </div>
+    <div class='body-field'>
+      <label class='body-label'>Custom Rolls</label>
+      <input
+        type='text'
+        name='system.skillCustomRolls'
+        value='{{system.skillCustomRolls}}'
+        data-dtype='String'
+      ></input>
+    </div>
+  </section>
+</form>

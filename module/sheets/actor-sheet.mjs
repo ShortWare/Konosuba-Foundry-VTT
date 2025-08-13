@@ -105,42 +105,35 @@ export class KonosubaActorSheet extends ActorSheet {
     // Initialize containers.
     const gear = [];
     const features = [];
-    const spells = {
-      0: [],
-      1: [],
-      2: [],
-      3: [],
-      4: [],
-      5: [],
-      6: [],
-      7: [],
-      8: [],
-      9: [],
-    };
+    const skills = [];
 
-    // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || Item.DEFAULT_ICON;
-      // Append to gear.
       if (i.type === "item") {
         gear.push(i);
-      }
-      // Append to features.
-      else if (i.type === "feature") {
+      } else if (i.type === "feature") {
         features.push(i);
-      }
-      // Append to spells.
-      else if (i.type === "spell") {
-        if (i.system.spellLevel != undefined) {
-          spells[i.system.spellLevel].push(i);
+      } else if (i.type === "skill") {
+        if (i.system.skillCustomRolls) {
+          const customRollsData = i.system.skillCustomRolls
+            .split(";")
+            .map((pair) => {
+              const [name, check] = pair.split(":");
+              return {
+                name: name.trim(),
+                check: check.trim().replaceAll("SL", i.system.skillLevel),
+              };
+            });
+          i.system.skillCustomRolls = customRollsData;
         }
+        skills.push(i);
       }
     }
 
     // Assign and return
     context.gear = gear;
     context.features = features;
-    context.spells = spells;
+    context.skills = skills;
   }
 
   /* -------------------------------------------- */

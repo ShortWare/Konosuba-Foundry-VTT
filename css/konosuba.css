@@ -238,6 +238,12 @@
 .konosuba .sheet-tabs {
   flex: 0;
 }
+.konosuba .sheet-body .body-field {
+  margin-bottom: 5px;
+}
+.konosuba .sheet-body .body-label {
+  font-weight: bold;
+}
 .konosuba .sheet-body,
 .konosuba .sheet-body .tab,
 .konosuba .sheet-body .tab .editor {
@@ -248,9 +254,6 @@
 }
 .konosuba .tox .tox-edit-area {
   padding: 0 8px;
-}
-.konosuba .resource-label {
-  font-weight: bold;
 }
 .konosuba .items-header {
   height: 28px;
@@ -353,6 +356,16 @@
   flex: 0 0 200px;
   padding: 0 8px;
 }
+.konosuba .resource-label {
+  font-weight: bold;
+}
+.konosuba .resource {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
 .konosuba .effects .item .effect-source,
 .konosuba .effects .item .effect-duration,
 .konosuba .effects .item .effect-controls {
@@ -364,3 +377,5 @@
 .konosuba .effects .item .effect-controls {
   border: none;
 }
+
+/*# sourceMappingURL=konosuba.css.map */

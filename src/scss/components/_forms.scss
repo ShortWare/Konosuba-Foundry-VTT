@@ -38,6 +38,15 @@
   flex: 0;
 }
 
+.sheet-body {
+  .body-field {
+    margin-bottom: 5px;
+  }
+  .body-label {
+    font-weight: bold;
+  }
+}
+
 .sheet-body,
 .sheet-body .tab,
 .sheet-body .tab .editor {

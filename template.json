@@ -50,7 +50,7 @@
     }
   },
   "Item": {
-    "types": ["item", "feature", "spell"],
+    "types": ["item", "feature", "skill"],
     "templates": {
       "base": {
         "description": ""
@@ -65,9 +65,17 @@
     "feature": {
       "templates": ["base"]
     },
-    "spell": {
+    "skill": {
       "templates": ["base"],
-      "spellLevel": 1
+      "skillLevel": 1,
+      "skillMaxLevel": 1,
+      "skillTiming": "",
+      "skillCheck": "",
+      "skillTarget": "",
+      "skillRange": "",
+      "skillCost": 0,
+      "skillEffects": "",
+      "skillCustomRolls": ""
     }
   }
 }
