@@ -4,7 +4,8 @@
   <header class="sheet-header">
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
     <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Character Name"/></h1>
+      <h1 class="charname"><input name="system.playerName" type="text" value="{{system.playerName}}" placeholder="Player Name"/></h1>
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
       from 1 to 12 and will create that number of columns.  --}}
@@ -32,9 +33,10 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.attributes.level.value" class="resource-label">Level</label>
+          <label for="system.attributes.blessings.value" class="resource-label">Blessings</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.attributes.level.value" value="{{system.attributes.level.value}}" data-dtype="Number"/>
+          <input type="text" name="system.attributes.blessings.value" value="{{system.attributes.blessings.value}}" data-dtype="Number"/> / 
+          <input type="text" name="system.attributes.blessings.max" value="{{system.attributes.blessings.max}}" data-dtype="Number"/>
           </div>
         </div>
 
@@ -48,7 +50,7 @@
     <a class="item" data-tab="features">Features</a>
     <a class="item" data-tab="description">Description</a>
     <a class="item" data-tab="items">Items</a>
-    <a class="item" data-tab="skills">Skills</a>
+    <a class="item" data-tab="spells">Spells</a>
     <a class="item" data-tab="effects">Effects</a>
   </nav>
 
@@ -66,11 +68,19 @@
           <div class="abilities flexcol">
             {{#each system.abilities as |ability key|}}
             <div class="ability flexrow flex-group-center">
-              <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="d20+@abilities.{{key}}.mod" data-label="{{localize (lookup @root.config.abilities key)}}">{{localize (lookup @root.config.abilities key)}}</label>
+              <label>{{key}}</label>
               <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
-              <span class="ability-mod rollable" data-roll="d20+@abilities.{{key}}.mod" data-label="{{localize (lookup @root.config.abilities key)}}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
+              <span class="ability-mod rollable" data-roll="2d6+@abilities.{{key}}.value" data-label="{{localize (lookup @root.config.abilities key)}}">Roll</span>
             </div>
             {{/each}}
+          </div>
+          <div>
+            <label for="system.attributes.level.value" class="resource-label">Level</label>
+            <p>{{system.attributes.level.value}}</p>
+            <label for="system.attributes.xp.value" class="resource-label">XP</label>
+            <div>
+              <input style="width: 40%; float: left" type="text" name="system.attributes.xp.value" value="{{system.attributes.xp.value}}" data-dtype="Number"/><p style="width: 40%; float: left; margin-left: 5%"> / {{system.attributes.xp.remaining}}</p>
+            </div>
           </div>
         </aside>
 
@@ -86,7 +96,12 @@
     {{!-- Biography Tab --}}
     <div class="tab biography" data-group="primary" data-tab="description">
       {{!-- Editors must receive enriched text data from getData to properly handle rolls --}}
-      {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
+      Age: <input type="text" name="system.attributes.appearance.age" value="{{system.attributes.appearance.age}}" data-dtype="Number"/>
+      Gender: <input type="text" name="system.attributes.appearance.gender" value="{{system.attributes.appearance.gender}}" data-dtype="Text"/>
+      Height: <input type="text" name="system.attributes.appearance.height" value="{{system.attributes.appearance.height}}" data-dtype="Number"/>
+      Eye Color: <input type="text" name="system.attributes.appearance.eyeColor" value="{{system.attributes.appearance.eyeColor}}" data-dtype="Text"/>
+      Hair Color: <input type="text" name="system.attributes.appearance.hairColor" value="{{system.attributes.appearance.hairColor}}" data-dtype="Text"/>
+      Skin Color: <input type="text" name="system.attributes.appearance.skinColor" value="{{system.attributes.appearance.skinColor}}" data-dtype="Text"/>
     </div>
 
     {{!-- Owned Items Tab --}}
@@ -94,9 +109,9 @@
        {{> "systems/konosuba/templates/actor/parts/actor-items.hbs"}}
     </div>
 
-    {{!-- Owned Skills Tab --}}
-    <div class="tab skills" data-group="primary" data-tab="skills">
-      {{> "systems/konosuba/templates/actor/parts/actor-skills.hbs"}}
+    {{!-- Owned Spells Tab --}}
+    <div class="tab spells" data-group="primary" data-tab="spells">
+      {{> "systems/konosuba/templates/actor/parts/actor-spells.hbs"}}
     </div>
 
     {{!-- Active Effects Tab --}}

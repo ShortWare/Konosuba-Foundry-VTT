@@ -142,6 +142,21 @@ export class KonosubaActorSheet extends ActorSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
+    html.find('input[name="system.attributes.xp.value"]').on('change', (event) => {
+      const value = event.target.value;
+
+      var lvl = 1
+      var xp = value
+      while (xp >= lvl*10) {
+        xp -= lvl*10
+        lvl++
+      }
+
+      this.actor.update({ "system.attributes.level.value": lvl });
+      this.actor.update({ "system.attributes.xp.value": value });
+      this.actor.update({ "system.attributes.xp.remaining": (value-xp)+lvl*10 });
+    });
+
     // Render the item sheet for viewing/editing prior to the editable check.
     html.on("click", ".item-edit", (ev) => {
       const li = $(ev.currentTarget).parents(".item");

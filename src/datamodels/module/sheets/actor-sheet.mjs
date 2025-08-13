@@ -55,6 +55,11 @@ export class KonosubaActorSheet extends ActorSheet {
       this._prepareCharacterData(context);
     }
 
+    if (actorData.type === "player") {
+      this._prepareItems(context)
+      this._prepareCharacterData(context)
+    }
+
     // Prepare NPC data and items.
     if (actorData.type == "npc") {
       this._prepareItems(context);

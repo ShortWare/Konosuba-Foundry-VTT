@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["character", "npc"],
+    "types": ["player", "npc"],
     "templates": {
       "base": {
         "health": {
@@ -8,45 +8,87 @@
           "min": 0,
           "max": 10
         },
-        "power": {
+        "mana": {
           "value": 5,
           "min": 0,
           "max": 5
         },
         "biography": ""
+      },
+      "character": {
+        "attributes": {
+          "level": {
+            "value": 1
+          },
+          "race": "",
+          "class": ""
+        },
+        "abilities": {
+          "strength": {
+            "value": 1,
+            "max": 99999
+          },
+          "dexterity": {
+            "value": 1,
+            "max": 99999
+          },
+          "agility": {
+            "value": 1,
+            "max": 99999
+          },
+          "intelligence": {
+            "value": 1,
+            "max": 99999
+          },
+          "perception": {
+            "value": 1,
+            "max": 99999
+          },
+          "mind": {
+            "value": 1,
+            "max": 99999
+          },
+          "luck": {
+            "value": 1,
+            "max": 99999
+          }
+        }
       }
     },
-    "character": {
-      "templates": ["base"],
+    "player": {
+      "templates": ["base", "character"],
+      "playerName": "",
       "attributes": {
-        "level": {
-          "value": 1
-        }
-      },
-      "abilities": {
-        "str": {
-          "value": 10
+        "blessings": {
+          "value": 1,
+          "max": 5
         },
-        "dex": {
-          "value": 10
+        "life": {
+          "origin": "",
+          "circumstance": "",
+          "goal": ""
         },
-        "con": {
-          "value": 10
+        "cheat": {
+          "name": "",
+          "effects": ""
         },
-        "int": {
-          "value": 10
+        "appearance": {
+          "age": "",
+          "gender": "",
+          "height": "",
+          "eyeColor": "",
+          "hairColor": "",
+          "skinColor": ""
         },
-        "wis": {
-          "value": 10
-        },
-        "cha": {
-          "value": 10
+        "xp": {
+          "value": 0,
+          "max": 9999999999999999999999999999999999999999999999999999999999999,
+          "remaining": 10
         }
       }
     },
     "npc": {
-      "templates": ["base"],
-      "cr": 0
+      "templates": ["base", "character"]
     }
   },
   "Item": {
