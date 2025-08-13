@@ -1,3 +1,3 @@
-import BoilerplateItemBase from "./base-item.mjs";
+import KonosubaItemBase from "./base-item.mjs";
 
-export default class BoilerplateFeature extends BoilerplateItemBase {}
+export default class KonosubaFeature extends KonosubaItemBase {}

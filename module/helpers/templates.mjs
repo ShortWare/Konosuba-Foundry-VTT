@@ -6,11 +6,11 @@
 export const preloadHandlebarsTemplates = async function () {
   return loadTemplates([
     // Actor partials.
-    'systems/boilerplate/templates/actor/parts/actor-features.hbs',
-    'systems/boilerplate/templates/actor/parts/actor-items.hbs',
-    'systems/boilerplate/templates/actor/parts/actor-spells.hbs',
-    'systems/boilerplate/templates/actor/parts/actor-effects.hbs',
+    "systems/konosuba/templates/actor/parts/actor-features.hbs",
+    "systems/konosuba/templates/actor/parts/actor-items.hbs",
+    "systems/konosuba/templates/actor/parts/actor-spells.hbs",
+    "systems/konosuba/templates/actor/parts/actor-effects.hbs",
     // Item partials
-    'systems/boilerplate/templates/item/parts/item-effects.hbs',
+    "systems/konosuba/templates/item/parts/item-effects.hbs",
   ]);
 };

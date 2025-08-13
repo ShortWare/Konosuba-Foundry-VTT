@@ -2,7 +2,7 @@
  * Extend the basic Item with some very simple modifications.
  * @extends {Item}
  */
-export class BoilerplateItem extends Item {
+export class KonosubaItem extends Item {
   /**
    * Augment the basic Item data model with additional dynamic data.
    */
@@ -60,7 +60,7 @@ export class BoilerplateItem extends Item {
 
     // Initialize chat data.
     const speaker = ChatMessage.getSpeaker({ actor: this.actor });
-    const rollMode = game.settings.get('core', 'rollMode');
+    const rollMode = game.settings.get("core", "rollMode");
     const label = `[${item.type}] ${item.name}`;
 
     // If there's no roll data, send a chat message.
@@ -69,7 +69,7 @@ export class BoilerplateItem extends Item {
         speaker: speaker,
         rollMode: rollMode,
         flavor: label,
-        content: item.system.description ?? '',
+        content: item.system.description ?? "",
       });
     }
     // Otherwise, create a roll and send a chat message from it.
