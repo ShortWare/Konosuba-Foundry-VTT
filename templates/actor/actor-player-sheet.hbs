@@ -47,7 +47,8 @@
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="features">Features</a>
+    <a class="item" data-tab="core">Core</a>
+    <a class="item" data-tab="stats">Stats</a>
     <a class="item" data-tab="description">Description</a>
     <a class="item" data-tab="items">Items</a>
     <a class="item" data-tab="skills">Skills</a>
@@ -58,22 +59,13 @@
   <section class="sheet-body">
 
     {{!-- Owned Features Tab --}}
-    <div class="tab features" data-group="primary" data-tab="features">
+    <div class="tab core" data-group="primary" data-tab="core">
       <section class="grid grid-3col">
         <aside class="sidebar">
 
           {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
           use both the "grid" and "grid-Ncol" class where "N" can be any number
           from 1 to 12 and will create that number of columns.  --}}
-          <div class="abilities flexcol">
-            {{#each system.abilities as |ability key|}}
-            <div class="ability flexrow flex-group-center">
-              <label>{{key}}</label>
-              <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
-              <span class="ability-mod rollable" data-roll="2d6+@abilities.{{key}}.value" data-label="{{localize (lookup @root.config.abilities key)}}">Roll</span>
-            </div>
-            {{/each}}
-          </div>
           <div>
             <label for="system.attributes.level.value" class="resource-label">Level</label>
             <p>{{system.attributes.level.value}}</p>
@@ -91,6 +83,10 @@
         </section>
 
       </section>
+    </div>
+
+    <div class="tab stats" data-group="primary" data-tab="stats">
+      {{> "systems/konosuba/templates/actor/parts/actor-stats.hbs"}}
     </div>
 
     {{!-- Biography Tab --}}
