@@ -80,19 +80,15 @@ export class DiceMenu extends Application {
     let formula = `${this.diceOptions.formula || "d6"}${
       activeModifiers.length > 0
         ? activeModifiers
-            .map(
-              (m) =>
-                `${
-                  m.value.startsWith("-")
-                    ? ""
-                    : m.value.startsWith("+")
-                    ? ""
-                    : "+"
-                }(${m.value})`
-            )
-            .join("+")
+            .map((m) => {
+              const sign = m.value.startsWith("-") ? "-" : "+";
+              const num = m.value.replace(/^[-+]/, "");
+              return `${sign}(${num})`;
+            })
+            .join("")
         : ""
     }`;
+    console.log(formula);
     let roll = new Roll(formula);
     await roll.roll({ async: true });
     roll.toMessage({
