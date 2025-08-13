@@ -2,6 +2,7 @@ import {
   onManageActiveEffect,
   prepareActiveEffectCategories,
 } from "../helpers/effects.mjs";
+import { DiceMenu } from "../ui/roll_dice.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -49,8 +50,8 @@ export class KonosubaActorSheet extends ActorSheet {
     // Adding a pointer to CONFIG.KONOSUBA
     context.config = CONFIG.KONOSUBA;
 
-    // Prepare character data and items.
-    if (actorData.type == "character") {
+    // Prepare player data and items.
+    if (actorData.type == "player") {
       this._prepareItems(context);
       this._prepareCharacterData(context);
     }
@@ -142,20 +143,31 @@ export class KonosubaActorSheet extends ActorSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
-    html.find('input[name="system.attributes.xp.value"]').on('change', (event) => {
-      const value = event.target.value;
-
-      var lvl = 1
-      var xp = value
-      while (xp >= lvl*10) {
-        xp -= lvl*10
-        lvl++
-      }
-
-      this.actor.update({ "system.attributes.level.value": lvl });
-      this.actor.update({ "system.attributes.xp.value": value });
-      this.actor.update({ "system.attributes.xp.remaining": (value-xp)+lvl*10 });
+    html.find(".roll-dice").click((event) => {
+      const button = event.currentTarget;
+      const title = button.dataset.rollTitle || "Dice Roller";
+      const formula = button.dataset.roll || "1d6";
+      new DiceMenu(this.actor, { title, formula }).render(true);
     });
+
+    html
+      .find('input[name="system.attributes.xp.value"]')
+      .on("change", (event) => {
+        const value = event.target.value;
+
+        var lvl = 1;
+        var xp = value;
+        while (xp >= lvl * 10) {
+          xp -= lvl * 10;
+          lvl++;
+        }
+
+        this.actor.update({ "system.attributes.level.value": lvl });
+        this.actor.update({ "system.attributes.xp.value": value });
+        this.actor.update({
+          "system.attributes.xp.remaining": value - xp + lvl * 10,
+        });
+      });
 
     // Render the item sheet for viewing/editing prior to the editable check.
     html.on("click", ".item-edit", (ev) => {

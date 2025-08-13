@@ -1,0 +1,27 @@
+<div class="dice-roll-menu">
+  <form>
+    <h1>Roll Dice</h1>
+    <p>Roll: {{options.formula}}</p>
+    <hr />
+    <p>Modifiers:</p>
+    <div class="modifiers-list">
+      {{#each options.modifiers as |modifier|}}
+        <div class="modifier-entry flexrow space-between">
+          <p>{{modifier.name}} : {{modifier.value}}</p>
+          <input type="checkbox" name="{{modifier.id}}-active" {{#if modifier.active}}checked{{/if}} />
+          {{#if modifier.editable}}
+            <button class="remove-modifier" data-modifier-index="{{modifier.id}}">Remove</button>
+          {{/if}}
+        </div>
+      {{/each}}
+    </div>
+    <input type="text" name="modifier-name" placeholder="Modifier Name" />
+    <input type="text" name="modifier" placeholder="Modifier" />
+    <button class="add-modifier">Add Modifier</button>
+    <hr />
+    <p>Use Blessing:</p>
+    <input type="checkbox" name="blessing" />
+    <hr />
+    <button type="submit" class="roll-dice">Roll</button>
+  </form>
+</div>
