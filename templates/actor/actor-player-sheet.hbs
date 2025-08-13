@@ -75,10 +75,12 @@
             {{/each}}
           </div>
           <div>
-          <label for="system.attributes.level.value" class="resource-label">Level</label>
-          <p>{{system.attributes.level.value}}</p>
-          <label for="system.attributes.xp.value" class="resource-label">XP</label>
-          <input type="text" name="system.attributes.xp.value" value="{{system.attributes.xp.value}}" data-dtype="Number"/>
+            <label for="system.attributes.level.value" class="resource-label">Level</label>
+            <p>{{system.attributes.level.value}}</p>
+            <label for="system.attributes.xp.value" class="resource-label">XP</label>
+            <div>
+              <input style="width: 40%; float: left" type="text" name="system.attributes.xp.value" value="{{system.attributes.xp.value}}" data-dtype="Number"/><p style="width: 40%; float: left; margin-left: 5%"> / {{system.attributes.xp.remaining}}</p>
+            </div>
           </div>
         </aside>
 

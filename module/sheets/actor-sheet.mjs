@@ -161,6 +161,7 @@ export class KonosubaActorSheet extends ActorSheet {
 
       this.actor.update({ "system.attributes.level.value": lvl });
       this.actor.update({ "system.attributes.xp.value": value });
+      this.actor.update({ "system.attributes.xp.remaining": (value-xp)+lvl*10 });
     });
 
     // Render the item sheet for viewing/editing prior to the editable check.
