@@ -33,7 +33,7 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.attributes.level.value" class="resource-label">Blessings</label>
+          <label for="system.attributes.blessings.value" class="resource-label">Blessings</label>
           <div class="resource-content flexrow flex-center flex-between">
           <input type="text" name="system.attributes.blessings.value" value="{{system.attributes.blessings.value}}" data-dtype="Number"/> / 
           <input type="text" name="system.attributes.blessings.max" value="{{system.attributes.blessings.max}}" data-dtype="Number"/>
@@ -73,6 +73,12 @@
               <span class="ability-mod rollable" data-roll="2d6+@abilities.{{key}}.value" data-label="{{localize (lookup @root.config.abilities key)}}">Roll</span>
             </div>
             {{/each}}
+          </div>
+          <div>
+          <label for="system.attributes.level.value" class="resource-label">Level</label>
+          <p>{{system.attributes.level.value}}</p>
+          <label for="system.attributes.xp.value" class="resource-label">XP</label>
+          <input type="text" name="system.attributes.xp.value" value="{{system.attributes.xp.value}}" data-dtype="Number"/>
           </div>
         </aside>
 
