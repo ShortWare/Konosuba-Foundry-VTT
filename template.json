@@ -19,7 +19,9 @@
         "attributes": {
           "level": {
             "value": 1
-          }
+          },
+          "race": "",
+          "class": ""
         },
         "abilities": {
           "strength": {
@@ -55,7 +57,34 @@
     },
     "player": {
       "templates": ["base", "character"],
-      "playerName": ""
+      "playerName": "",
+      "attributes": {
+        "blessings": {
+          "value": 1,
+          "max": 5
+        },
+        "life": {
+          "origin": "",
+          "circumstance": "",
+          "goal": ""
+        },
+        "cheat": {
+          "name": "",
+          "effects": ""
+        },
+        "appearance": {
+          "age": "",
+          "gender": "",
+          "height": "",
+          "eyeColor": "",
+          "hairColor": "",
+          "skinColor": ""
+        },
+        "xp": {
+          "value": 0,
+          "max": 9999999999999999999999999999999999999999999999999999999999999
+        }
+      }
     },
     "npc": {
       "templates": ["base", "character"]

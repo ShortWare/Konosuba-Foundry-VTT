@@ -33,9 +33,10 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.attributes.level.value" class="resource-label">Level</label>
+          <label for="system.attributes.level.value" class="resource-label">Blessings</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.attributes.level.value" value="{{system.attributes.level.value}}" data-dtype="Number"/>
+          <input type="text" name="system.attributes.blessings.value" value="{{system.attributes.blessings.value}}" data-dtype="Number"/> / 
+          <input type="text" name="system.attributes.blessings.max" value="{{system.attributes.blessings.max}}" data-dtype="Number"/>
           </div>
         </div>
 
@@ -87,7 +88,12 @@
     {{!-- Biography Tab --}}
     <div class="tab biography" data-group="primary" data-tab="description">
       {{!-- Editors must receive enriched text data from getData to properly handle rolls --}}
-      {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
+      Age: <input type="text" name="system.attributes.appearance.age" value="{{system.attributes.appearance.age}}" data-dtype="Number"/>
+      Gender: <input type="text" name="system.attributes.appearance.gender" value="{{system.attributes.appearance.gender}}" data-dtype="Text"/>
+      Height: <input type="text" name="system.attributes.appearance.height" value="{{system.attributes.appearance.height}}" data-dtype="Number"/>
+      Eye Color: <input type="text" name="system.attributes.appearance.eyeColor" value="{{system.attributes.appearance.eyeColor}}" data-dtype="Text"/>
+      Hair Color: <input type="text" name="system.attributes.appearance.hairColor" value="{{system.attributes.appearance.hairColor}}" data-dtype="Text"/>
+      Skin Color: <input type="text" name="system.attributes.appearance.skinColor" value="{{system.attributes.appearance.skinColor}}" data-dtype="Text"/>
     </div>
 
     {{!-- Owned Items Tab --}}
