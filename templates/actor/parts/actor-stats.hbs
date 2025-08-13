@@ -20,7 +20,7 @@
         <th>{{ability.score}}</th>
         <th>{{ability.skillsAfter}}</th>
         <th>2d6+{{ability.dice}}</th>
-        <th><span class="ability-mod rollable" data-roll="2d6+@abilities.{{key}}.dice" data-label="{{localize (lookup @root.config.abilities key)}}">Roll</span></th>
+        <th class="roll-dice" data-roll-title="Nazwa" data-roll="2d6+{{ability.dice}}">Roll</th>
     </tr>
     {{/each}}
 </table>
