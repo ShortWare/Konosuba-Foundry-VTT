@@ -10,22 +10,22 @@
       "name": "Pdrewicz"
     }
   ],
-  "url": "Replace this with a link to your public repository",
+  "url": "https://github.com/ShortWare/Konosuba-Foundry-VTT",
   "license": "LICENSE.txt",
   "readme": "README.md",
-  "bugs": "Replace this with a link to file issues or tickets",
+  "bugs": "",
   "changelog": "CHANGELOG.md",
   "media": [
     {
       "type": "setup",
-      "url": "systems/konosuba/assets/anvil-impact.png",
-      "thumbnail": "systems/konosuba/assets/anvil-impact.png"
+      "url": "systems/konosuba/assets/logo.png",
+      "thumbnail": "systems/konosuba/assets/logo.png"
     }
   ],
-  "version": "2.0.0",
+  "version": "0.0.1",
   "compatibility": {
     "minimum": 11,
-    "verified": "11.315"
+    "verified": "12.331"
   },
   "esmodules": ["module/konosuba.mjs"],
   "styles": ["css/konosuba.css"],
@@ -41,9 +41,9 @@
   "socket": false,
   "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
   "download": "This must link to a .zip file of the current version",
-  "background": "systems/konosuba/assets/anvil-impact.png",
-  "gridDistance": 5,
-  "gridUnits": "ft",
+  "background": "systems/konosuba/assets/background.png",
+  "gridDistance": 1,
+  "gridUnits": "m",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "mana"
 }
