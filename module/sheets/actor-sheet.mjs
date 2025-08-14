@@ -231,7 +231,17 @@ export class KonosubaActorSheet extends ActorSheet {
 
     Hooks.on("renderActorSheet", (app, html, data) => {
       if (!(app.actor.type == "player" || app.actor.type !== "npc")) return
+      if (app._sheetOpened) return;
+
+      app._sheetOpened = true;
+
       this.updateStats(app.actor)
+
+      Hooks.once("closeActorSheet", (sheetApp) => {
+        if (sheetApp === app) {
+            app._sheetOpened = false;
+        }
+      });
     })
   }
 
