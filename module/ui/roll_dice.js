@@ -69,8 +69,6 @@ export class DiceMenu extends Application {
     ev.preventDefault();
     const form = new FormData(ev.target);
 
-    console.log(form);
-
     this.diceOptions.modifiers.forEach((modifier) => {
       console.log((modifier.active = form.get(modifier.id + "-active")));
       modifier.active = form.get(modifier.id + "-active") === "on";
@@ -88,12 +86,23 @@ export class DiceMenu extends Application {
             .join("")
         : ""
     }`;
-    console.log(formula);
+
     let roll = new Roll(formula);
     await roll.roll({ async: true });
     roll.toMessage({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       flavor: `Custom Roll (${formula})`,
+      flags: {
+        konosuba: {
+          reroll: {
+            actorId: this.actor.id,
+            rollData: {
+              reroll: true,
+              ...this.diceOptions,
+            },
+          },
+        },
+      },
     });
 
     this.close();

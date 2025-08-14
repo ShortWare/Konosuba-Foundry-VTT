@@ -7,21 +7,18 @@ import { KonosubaItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { KONOSUBA } from "./helpers/config.mjs";
+import { DiceMenu } from "./ui/roll_dice.js";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
 /* -------------------------------------------- */
 
 Hooks.once("init", function () {
-  // Add utility classes to the global game object so that they're more easily
-  // accessible in global contexts.
   game.konosuba = {
     KonosubaActor,
     KonosubaItem,
     rollItemMacro,
   };
-
-  // Add custom constants for configuration.
   CONFIG.KONOSUBA = KONOSUBA;
 
   /**
@@ -33,7 +30,6 @@ Hooks.once("init", function () {
     decimals: 2,
   };
 
-  // Define custom Document classes
   CONFIG.Actor.documentClass = KonosubaActor;
   CONFIG.Item.documentClass = KonosubaItem;
 
@@ -74,6 +70,37 @@ Handlebars.registerHelper("toLowerCase", function (str) {
 Hooks.once("ready", function () {
   // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
   Hooks.on("hotbarDrop", (bar, data, slot) => createItemMacro(data, slot));
+});
+
+/* -------------------------------------------- */
+/*  Re-Roll Logic                               */
+/* -------------------------------------------- */
+
+Hooks.on("getChatLogEntryContext", (html, options) => {
+  options.push({
+    name: "Re-Roll",
+    icon: '<i class="fas fa-dice"></i>',
+    condition: (li) => {
+      const message = game.messages.get(li.data("messageId"));
+      const rerollData = message.getFlag("konosuba", "reroll");
+      if (!rerollData) return false;
+
+      const actor = game.actors.get(rerollData.actorId);
+      if (!actor) return false;
+
+      return game.user.isGM || actor.isOwner;
+    },
+    callback: (li) => {
+      const message = game.messages.get(li.data("messageId"));
+      const rerollData = message.getFlag("konosuba", "reroll");
+      if (!rerollData) return;
+
+      const actor = game.actors.get(rerollData.actorId);
+      if (!actor) return;
+
+      new DiceMenu(actor, rerollData.rollData).render(true);
+    },
+  });
 });
 
 /* -------------------------------------------- */
@@ -142,22 +169,28 @@ function rollItemMacro(itemUuid) {
   });
 }
 
-
-
-
-
 Hooks.on("preCreateItem", async (item, data, options, userId) => {
-  if (!item.actor) return
+  if (!item.actor) return;
 
   if (item.type == "race") {
-    const existingRaces = item.actor.items.filter(i => i.type === "race" && i.id !== item.id)
+    const existingRaces = item.actor.items.filter(
+      (i) => i.type === "race" && i.id !== item.id
+    );
     if (existingRaces.length > 0) {
-      await item.actor.deleteEmbeddedDocuments("Item", existingRaces.map(i => i.id))
+      await item.actor.deleteEmbeddedDocuments(
+        "Item",
+        existingRaces.map((i) => i.id)
+      );
     }
   } else if (item.type == "class") {
-    const existingRaces = item.actor.items.filter(i => i.type === "class" && i.id !== item.id)
+    const existingRaces = item.actor.items.filter(
+      (i) => i.type === "class" && i.id !== item.id
+    );
     if (existingRaces.length > 0) {
-      await item.actor.deleteEmbeddedDocuments("Item", existingRaces.map(i => i.id))
+      await item.actor.deleteEmbeddedDocuments(
+        "Item",
+        existingRaces.map((i) => i.id)
+      );
     }
   }
-})
+});
