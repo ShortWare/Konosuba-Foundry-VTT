@@ -1,20 +1,20 @@
 {
   "id": "konosuba",
   "title": "Konosuba",
-  "description": "Krzyś jest niski",
+  "description": "Foundry VTT system for Konosuba TRPG",
   "authors": [
     {
-      "name": "Bartoszeq"
+      "name": "Bartoszeq",
+      "github": "https://github.com/Bartoszeq-tech"
     },
     {
-      "name": "Pdrewicz"
+      "name": "Pdrewicz",
+      "github": "https://github.com/Pdrewicz"
     }
   ],
   "url": "https://github.com/ShortWare/Konosuba-Foundry-VTT",
-  "license": "LICENSE.txt",
+  "license": "LICENSE.md",
   "readme": "README.md",
-  "bugs": "",
-  "changelog": "CHANGELOG.md",
   "media": [
     {
       "type": "setup",
@@ -39,8 +39,8 @@
   "packs": [],
   "packFolders": [],
   "socket": false,
-  "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
-  "download": "This must link to a .zip file of the current version",
+  "manifest": "https://raw.githubusercontent.com/ShortWare/Konosuba-Foundry-VTT/refs/heads/main/system.json",
+  "download": "https://github.com/ShortWare/Konosuba-Foundry-VTT/releases/latest",
   "background": "systems/konosuba/assets/background.png",
   "gridDistance": 1,
   "gridUnits": "m",
