@@ -19,9 +19,7 @@
         "attributes": {
           "level": {
             "value": 1
-          },
-          "race": "",
-          "class": ""
+          }
         },
         "abilities": {
           "strength": {
@@ -127,7 +125,7 @@
     }
   },
   "Item": {
-    "types": ["item", "feature", "skill"],
+    "types": ["item", "feature", "skill", "race", "class"],
     "templates": {
       "base": {
         "description": ""
@@ -153,6 +151,32 @@
       "skillCost": 0,
       "skillEffects": "",
       "skillCustomRolls": ""
+    },
+    "race": {
+      "templates": ["base"],
+      "name": ""
+    },
+    "class": {
+      "templates": ["base"],
+      "name": "",
+      "modifiers": {
+        "strength": 0,
+        "dexterity": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "perception": 0,
+        "mind": 0,
+        "luck": 0
+      },
+      "health": {
+        "start": 10,
+        "gain": 10
+      },
+      "mana": {
+        "start": 10,
+        "gain": 10
+      },
+      "eqipment": ""
     }
   }
 }

@@ -1,0 +1,91 @@
+<form class='{{cssClass}}' autocomplete='off'>
+  <header class='sheet-header'>
+    <img
+      class='profile-img'
+      src='{{item.img}}'
+      data-edit='img'
+      title='{{item.name}}'
+    />
+    <div class='header-fields'>
+      <h1 class='charname'><input
+          name='name'
+          type='text'
+          value='{{item.name}}'
+          placeholder='Name'
+        /></h1>
+    </div>
+  </header>
+
+  {{! Sheet Tab Navigation }}
+  <nav class='sheet-tabs tabs' data-group='primary'>
+    <a class='item' data-tab='description'>Description</a>
+    <a class='item' data-tab='attributes'>Modifiers</a>
+  </nav>
+
+  {{! Sheet Body }}
+  <section class='sheet-body'>
+
+    {{! Description Tab }}
+    <div class='tab' data-group='primary' data-tab='description'>
+      {{! Editors must receive enriched text data from getData to properly handle rolls }}
+      {{editor
+        enrichedDescription
+        target='system.description'
+        engine='prosemirror'
+        button=true
+        editable=editable
+      }}
+    </div>
+
+    {{! Attributes Tab }}
+    <div class='tab attributes' data-group='primary' data-tab='attributes'>
+      {{! As you add new fields, add them in here! }}
+      <div class='resource'>
+        <table>
+          <tr><th>Strength</th><th><input
+            type='text'
+            name='system.modifiers.strength'
+            value='{{system.modifiers.strength}}'
+            data-dtype='Number'
+          /></th></tr>
+          <tr><th>Dexterity</th><th><input
+            type='text'
+            name='system.modifiers.dexterity'
+            value='{{system.modifiers.dexterity}}'
+            data-dtype='Number'
+          /></th></tr>
+          <tr><th>Agility</th><th><input
+            type='text'
+            name='system.modifiers.agility'
+            value='{{system.modifiers.agility}}'
+            data-dtype='Number'
+          /></th></tr>
+          <tr><th>Intelligence</th><th><input
+            type='text'
+            name='system.modifiers.intelligence'
+            value='{{system.modifiers.intelligence}}'
+            data-dtype='Number'
+          /></th></tr>
+          <tr><th>Perception</th><th><input
+            type='text'
+            name='system.modifiers.perception'
+            value='{{system.modifiers.perception}}'
+            data-dtype='Number'
+          /></th></tr>
+          <tr><th>Mind</th><th><input
+            type='text'
+            name='system.modifiers.mind'
+            value='{{system.modifiers.mind}}'
+            data-dtype='Number'
+          /></th></tr>
+          <tr><th>Luck</th><th><input
+            type='text'
+            name='system.modifiers.luck'
+            value='{{system.modifiers.luck}}'
+            data-dtype='Number'
+          /></th></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+</form>

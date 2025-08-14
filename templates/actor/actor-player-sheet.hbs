@@ -74,6 +74,10 @@
               <input style="width: 40%; float: left" type="text" name="system.attributes.xp.value" value="{{system.attributes.xp.value}}" data-dtype="Number"/><p style="width: 40%; float: left; margin-left: 5%"> / {{system.attributes.xp.remaining}}</p>
             </div>
           </div>
+          <div>
+            <label>Race: {{#if raceItem}} {{raceItem.name}} {{/if}} </label><br>
+            <label>Class: {{#if classItem}} {{classItem.name}} {{/if}} </label>
+          </div>
         </aside>
 
         {{!-- For the main features list, span the right two columns --}}

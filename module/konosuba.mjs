@@ -141,3 +141,23 @@ function rollItemMacro(itemUuid) {
     item.roll();
   });
 }
+
+
+
+
+
+Hooks.on("preCreateItem", async (item, data, options, userId) => {
+  if (!item.actor) return
+
+  if (item.type == "race") {
+    const existingRaces = item.actor.items.filter(i => i.type === "race" && i.id !== item.id)
+    if (existingRaces.length > 0) {
+      await item.actor.deleteEmbeddedDocuments("Item", existingRaces.map(i => i.id))
+    }
+  } else if (item.type == "class") {
+    const existingRaces = item.actor.items.filter(i => i.type === "class" && i.id !== item.id)
+    if (existingRaces.length > 0) {
+      await item.actor.deleteEmbeddedDocuments("Item", existingRaces.map(i => i.id))
+    }
+  }
+})
