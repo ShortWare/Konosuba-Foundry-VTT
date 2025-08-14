@@ -334,6 +334,7 @@ export class KonosubaActorSheet extends ActorSheet {
 
     skills.forEach(skill => { if (skill.system.active) {
       let modifier = skill.system.modifiers[ability] || "0";
+      modifier = modifier.replaceAll("SL",skill.system.skillLevel)
       if (modifier.includes("d6")) {
         let parts = modifier.split("d6");
         this.skillsDice += eval(parts[0]) || 0;
