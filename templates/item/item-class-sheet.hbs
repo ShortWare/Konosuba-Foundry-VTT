@@ -18,12 +18,62 @@
 
   {{! Sheet Tab Navigation }}
   <nav class='sheet-tabs tabs' data-group='primary'>
+    <a class='item' data-tab='core'>Core</a>
     <a class='item' data-tab='description'>Description</a>
     <a class='item' data-tab='attributes'>Modifiers</a>
   </nav>
 
   {{! Sheet Body }}
   <section class='sheet-body'>
+
+    <div class='tab' data-group='primary' data-tab='core'>
+      Equipment restriction:
+      <select name="system.equipment" data-dtype="String">
+        <option value="">-</option>
+        <option value="warrior" {{#if (eq system.equipment "warrior")}}selected{{/if}}>Warrior</option>
+        <option value="priest" {{#if (eq system.equipment "priest")}}selected{{/if}}>Priest</option>
+        <option value="thief" {{#if (eq system.equipment "thief")}}selected{{/if}}>Thief</option>
+        <option value="wizard" {{#if (eq system.equipment "wizard")}}selected{{/if}}>Wizard</option>
+    </select>
+      <table>
+        <tr>
+          <th></th>
+          <th style="padding-left: 50px;">Starting</th>
+          <th style="padding-left: 50px;">Gain</th>
+        </tr>
+        <tr>
+          <th>Health</th>
+          <th><input
+            type='text'
+            name='system.health.start'
+            value='{{system.health.start}}'
+            data-dtype='Number'
+          /></th>
+          <th><input
+            type='text'
+            name='system.health.gain'
+            value='{{system.health.gain}}'
+            data-dtype='Number'
+          /></th>
+        </tr>
+        <tr>
+          <th>Mana</th>
+          <th><input
+            type='text'
+            name='system.mana.start'
+            value='{{system.mana.start}}'
+            data-dtype='Number'
+          /></th>
+          <th><input
+            type='text'
+            name='system.mana.gain'
+            value='{{system.mana.gain}}'
+            data-dtype='Number'
+          /></th>
+        </tr>
+      </table>
+    </div>
+
 
     {{! Description Tab }}
     <div class='tab' data-group='primary' data-tab='description'>
