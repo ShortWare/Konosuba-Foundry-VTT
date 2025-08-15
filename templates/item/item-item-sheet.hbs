@@ -111,6 +111,7 @@
         <label class="text-bold">Equip Slot</label>
         <div class="flexrow flex-center flex-between">
           <select name="system.equipSlot" data-dtype="String">
+            <option value="none" {{#if (eq system.equipSlot "none")}}selected{{/if}}>None</option>
             <option value="head" {{#if (eq system.equipSlot "head")}}selected{{/if}}>Head</option>
             <option value="body" {{#if (eq system.equipSlot "body")}}selected{{/if}}>Body</option>
             <option value="support-armor" {{#if (eq system.equipSlot "support-armor")}}selected{{/if}}>Support Armor</option>
