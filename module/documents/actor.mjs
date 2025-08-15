@@ -108,8 +108,8 @@ export class KonosubaActor extends Actor {
       },
     };
     const attributeModifiers = {
-      physicalDefence: 0,
-      magicDefence: 0,
+      physicalDefense: 0,
+      magicDefense: 0,
       actionPoints:
         data.system.abilities.agility.score +
         data.system.abilities.perception.score,
@@ -134,9 +134,14 @@ export class KonosubaActor extends Actor {
 
         Object.entries(attributeModifiers).forEach(([key, modifier]) => {
           let tmp = skill.system.modifiers[key] || "0";
+          console.log("KEY:", key);
+          console.log("MODIFIER:", modifier);
+          console.log("SKILL:", skill);
+          console.log("TMP:", tmp);
           tmp = tmp.replaceAll("SL", skill.system.level.value);
           tmp = tmp.replaceAll("CL", data.system.attributes.level.value);
-          modifier += eval(tmp) || 0;
+          attributeModifiers[key] =
+            (attributeModifiers[key] || 0) + eval(tmp) || 0;
         });
       }
     });
@@ -146,8 +151,8 @@ export class KonosubaActor extends Actor {
     data.combat.attackPower = rollModifiers.attackPower;
     data.combat.dodgeCheck = rollModifiers.dodgeCheck;
     data.combat.combatAttributes = {
-      physicalDefence: attributeModifiers.physicalDefence,
-      magicDefence: attributeModifiers.magicDefence,
+      physicalDefense: attributeModifiers.physicalDefense,
+      magicDefense: attributeModifiers.magicDefense,
       actionPoints: attributeModifiers.actionPoints,
       movement: attributeModifiers.movement,
     };

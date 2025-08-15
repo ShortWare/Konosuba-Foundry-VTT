@@ -121,7 +121,11 @@
         "intelligence": "",
         "perception": "",
         "mind": "",
-        "luck": ""
+        "luck": "",
+        "physicalDefense": "",
+        "magicDefense": "",
+        "actionPoints": "",
+        "movement": ""
       }
     },
     "race": {

@@ -158,7 +158,7 @@
       <div class="grid grid-3col">
         {{#each system.modifiers as |modifier key|}}
           <div>
-            <label class="text-bold text-capitalize">{{key}}</label>
+            <label class="text-bold">{{camelToTitle key}}</label>
             <div class="flexrow flex-center flex-between">
               <input
                 type='text'
