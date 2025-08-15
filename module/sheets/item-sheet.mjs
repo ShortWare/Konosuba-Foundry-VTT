@@ -13,7 +13,6 @@ export class KonosubaItemSheet extends ItemSheet {
         {
           navSelector: ".sheet-tabs",
           contentSelector: ".sheet-body",
-          initial: "description",
         },
       ],
     });
@@ -22,11 +21,6 @@ export class KonosubaItemSheet extends ItemSheet {
   /** @override */
   get template() {
     const path = "systems/konosuba/templates/item";
-    // Return a single sheet for all item types.
-    // return `${path}/item-sheet.hbs`;
-
-    // Alternatively, you could use the following return statement to do a
-    // unique item sheet by type, like `weapon-sheet.hbs`.
     return `${path}/item-${this.item.type}-sheet.hbs`;
   }
 
@@ -34,34 +28,33 @@ export class KonosubaItemSheet extends ItemSheet {
 
   /** @override */
   async getData() {
-    // Retrieve base data structure.
     const context = super.getData();
-
-    // Use a safe clone of the item data for further operations.
     const itemData = this.document.toObject(false);
 
-    // Enrich description info for display
-    // Enrichment turns text like `[[/r 1d20]]` into buttons
     context.enrichedDescription = await TextEditor.enrichHTML(
       this.item.system.description,
       {
-        // Whether to show secret blocks in the finished html
         secrets: this.document.isOwner,
-        // Necessary in v11, can be removed in v12
         async: true,
-        // Data to fill in for inline rolls
         rollData: this.item.getRollData(),
-        // Relative UUID resolution
         relativeTo: this.item,
       }
     );
 
-    // Add the item's data to context.data for easier access, as well as flags.
     context.system = itemData.system;
     context.flags = itemData.flags;
-
-    // Adding a pointer to CONFIG.KONOSUBA
     context.config = CONFIG.KONOSUBA;
+
+    if (this.item.type === "skill") {
+      if (
+        this.item.system.customRolls &&
+        !Array.isArray(this.item.system.customRolls)
+      ) {
+        this.item.system.customRolls = Object.values(
+          this.item.system.customRolls
+        );
+      }
+    }
 
     return context;
   }
@@ -71,18 +64,41 @@ export class KonosubaItemSheet extends ItemSheet {
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
-
-    // Everything below here is only needed if the sheet is editable
     if (!this.isEditable) return;
 
-    html.find('input[name="system.timing"]').on("change", async () => {
-      const formData = this._getSubmitData();
-      const timing = String(
-        foundry.utils.getProperty(formData, "system.timing") || ""
-      )
-        .trim()
-        .toLowerCase();
-      await this.item.update({ "system.active": timing === "passive" });
-    });
+    if (this.item.type === "skill") {
+      html.find(".add-roll").click((ev) => {
+        ev.preventDefault();
+        const rolls = this.item.system.customRolls || [];
+        if (rolls && !Array.isArray(rolls)) {
+          rolls = Object.values(rolls);
+        }
+        rolls.push({ name: "", formula: "" });
+        this.item.update({ "system.customRolls": rolls });
+        this.render(true);
+      });
+
+      html.find(".delete-roll").click((ev) => {
+        ev.preventDefault();
+        const index = Number(ev.currentTarget.dataset.index);
+        let rolls = duplicate(this.item.system.customRolls);
+        if (rolls && !Array.isArray(rolls)) {
+          rolls = Object.values(rolls);
+        }
+        rolls.splice(index, 1);
+        this.item.update({ "system.customRolls": rolls });
+        this.render(true);
+      });
+
+      html.find('input[name="system.timing"]').on("change", async () => {
+        const formData = this._getSubmitData();
+        const timing = String(
+          foundry.utils.getProperty(formData, "system.timing") || ""
+        )
+          .trim()
+          .toLowerCase();
+        await this.item.update({ "system.active": timing === "passive" });
+      });
+    }
   }
 }

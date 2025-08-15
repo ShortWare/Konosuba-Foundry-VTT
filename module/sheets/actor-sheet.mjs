@@ -86,18 +86,17 @@ export class KonosubaActorSheet extends ActorSheet {
       if (i.type === "item") {
         gear.push(i);
       } else if (i.type === "skill") {
-        if (i.system.customRolls) {
-          const customRollsData = i.system.customRolls
-            .split(";")
-            .map((pair) => {
-              const [name, check] = pair.split(":");
-              return {
-                name: name.trim(),
-                check: check.trim().replaceAll("SL", i.system.level.value),
-              };
-            });
-          i.system.customRolls = customRollsData;
+        let customRolls = i.system.customRolls;
+        let customRollsData = [];
+        if (customRolls && !Array.isArray(customRolls)) {
+          customRolls = Object.values(customRolls);
         }
+        customRolls.forEach((roll) => {
+          customRollsData.push({
+            name: roll.name,
+            check: roll.formula.replaceAll("SL", i.system.level.value),
+          });
+        });
         skills.push(i);
       }
     }

@@ -66,10 +66,10 @@ export default class KonosubaSkill extends KonosubaItemBase {
       initial: "",
     });
 
-    schema.customRolls = new fields.StringField({
+    schema.customRolls = new fields.ArrayField({
       required: true,
       nullable: false,
-      initial: "",
+      initial: [],
     });
 
     return schema;

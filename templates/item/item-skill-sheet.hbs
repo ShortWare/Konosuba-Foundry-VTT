@@ -172,16 +172,23 @@
       </div>
     </div>
     <div class="tab" data-group="primary" data-tab="rolls">
-      <button>Create Custom Roll</button>
-      <div class='body-field'>
-        <label class='body-label'>Custom Rolls</label>
-        <input
-          type='text'
-          name='system.customRolls'
-          value='{{system.customRolls}}'
-          data-dtype='String'
-        ></input>
-      </div>
+      {{#each system.customRolls as |roll index|}}
+        <div data-index="{{index}}">
+          <div class="grid grid-2col">
+            <div>
+              <label class="text-bold">Name</label>
+              <input type="text" name="system.customRolls.{{index}}.name" value="{{roll.name}}"data-dtype="String" />
+            </div>
+            <div>
+              <label class="text-bold">Formula</label>
+              <input type="text" name="system.customRolls.{{@index}}.formula" value="{{roll.formula}}" data-dtype="String" />
+            </div>
+          </div>
+          <button type="button" class="delete-roll" data-index="{{index}}">Remove roll</button>
+        </div>
+        <hr />
+      {{/each}}
+      <button class="add-roll">Create new roll</button>
     </div>
   </section>
 </form>
