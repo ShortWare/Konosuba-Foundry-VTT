@@ -7,120 +7,181 @@
           value='{{item.name}}'
           placeholder='Skill Name'
         /></h1>
+      <div class="grid grid-3col">
+        <div>
+          <label class="text-bold">Level</label>
+          <div class="flexrow flex-center flex-between">
+            <input
+              type='text'
+              name='system.level.value'
+              value='{{system.level.value}}'
+              data-dtype='Number'
+            />
+            <p class="text-center"> / </p>
+            <input
+              type='text'
+              name='system.level.max'
+              value='{{system.level.max}}'
+              data-dtype='Number'
+            />
+          </div>
+        </div>
+        <div>
+          <label class="text-bold">Cost</label>
+          <div class="flexrow flex-center flex-between">
+            <input
+              type='text'
+              name='system.cost'
+              value='{{system.cost}}'
+              data-dtype='Number'
+            />
+          </div>
+        </div>
+        <div>
+          <label class="text-bold">State</label>
+          <div class="flexrow flex-center flex-between">
+            {{#if (ne system.timing "passive")}}
+              <input
+                type='checkbox'
+                name='system.active'
+                data-dtype='Boolean'
+                {{#if system.active}}checked{{/if}}
+              />
+              <p class="text-bold">
+                {{#if system.active}}Active{{else}}Inactive{{/if}}
+              </p>
+            {{else}}
+              <p class="text-center">Passive</p>
+            {{/if}}
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="attributes">Attributes</a>
+    <a class="item" data-tab="modifiers">Modifiers</a>
+    <a class="item" data-tab="rolls">Rolls</a>
+  </nav>
+
   <section class='sheet-body'>
-    <div class='body-field'>
-      <label class='body-label'>Max Level</label>
-      <input
-        type='text'
-        name='system.skillMaxLevel'
-        value='{{system.skillMaxLevel}}'
-        data-dtype='Number'
-      />
+    <div class="tab" data-group="primary" data-tab="attributes">
+      <div class="grid grid-2col">
+        <div>
+          <label class="text-bold">Check</label>
+          <div class="flexrow flex-center flex-between">
+            <select name='system.check' data-dtype='String'>
+              <option value="none" {{#if (eq system.check "none")}}selected{{/if}}>-</option>
+              <option value="auto_success" {{#if (eq system.check "auto_success")}}selected{{/if}}>Auto Success</option>
+              <option value="magic_check" {{#if (eq system.check "magic_check")}}selected{{/if}}>Magic Check</option>
+              <option value="hit_check" {{#if (eq system.check "hit_check")}}selected{{/if}}>Hit Check</option>
+              <option value="perception" {{#if (eq system.check "perception")}}selected{{/if}}>Perception</option>
+              <option value="mind" {{#if (eq system.check "mind")}}selected{{/if}}>Mind</option>
+              <option value="strength" {{#if (eq system.check "strength")}}selected{{/if}}>Strength</option>
+              <option value="dexterity" {{#if (eq system.check "dexterity")}}selected{{/if}}>Dexterity</option>
+              <option value="custom" {{#if (eq system.check "custom")}}selected{{/if}}>Custom Check</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="text-bold">Target</label>
+          <div class="flexrow flex-center flex-between">
+            <select name='system.target' data-dtype='String'>
+              <option value="self" {{#if (eq system.target "self")}}selected{{/if}}>Self</option>
+              <option value="single" {{#if (eq system.target "single")}}selected{{/if}}>Single</option>
+              <option value="area_choose" {{#if (eq system.target "area_choose")}}selected{{/if}}>Area (Choose)</option>
+              <option value="area_sl" {{#if (eq system.target "area_sl")}}selected{{/if}}>Area (SLx2 Targets)</option>
+              <option value="scene" {{#if (eq system.target "scene")}}selected{{/if}}>Scene</option>
+              <option value="vision" {{#if (eq system.target "vision")}}selected{{/if}}>Vision</option>
+              <option value="see_effect" {{#if (eq system.target "see_effect")}}selected{{/if}}>See Effect</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      {{#if (eq system.check "custom")}}
+        <div class="grid grid-2col">
+          <div>
+            <label class="text-bold">Custom Check: Title</label>
+            <div class="flexrow flex-center flex-between">
+              <input
+                type='text'
+                name='system.customCheck.title'
+                value='{{system.customCheck.title}}'
+                data-dtype='String'
+              />
+            </div>
+          </div>
+          <div>
+            <label class="text-bold">Custom Check: Formula</label>
+            <div class="flexrow flex-center flex-between">
+              <input
+                type='text'
+                name='system.customCheck.formula'
+                value='{{system.customCheck.formula}}'
+                data-dtype='String'
+              />
+            </div>
+          </div>
+        </div>
+      {{/if}}
+      <div class="grid grid-2col">
+        <div>
+          <label class="text-bold">Timing</label>
+          <div class="flexrow flex-center flex-between">
+            <input
+              type='text'
+              name='system.timing'
+              value='{{system.timing}}'
+              data-dtype='String'
+            />
+          </div>
+        </div>
+        <div>
+          <label class="text-bold">Range</label>
+          <div class="flexrow flex-center flex-between">
+            <input
+              type='text'
+              name='system.range'
+              value='{{system.range}}'
+              data-dtype='String'
+            />
+          </div>
+        </div>
+      </div>
+      <label class="text-bold">Effects</label>
+      <textarea name="system.effects" placeholder="Description" data-dtype="String" style="margin-bottom: 10px;">{{system.effects}}</textarea>
+      <label class="text-bold">Critical</label>
+      <textarea name="system.critical" placeholder="Critical Effects" data-dtype="String">{{system.critical}}</textarea>
     </div>
-    <div class='body-field'>
-      <label class='body-label'>Level</label>
-      <input
-        type='text'
-        name='system.skillLevel'
-        value='{{system.skillLevel}}'
-        data-dtype='Number'
-      />
+    <div class="tab" data-group="primary" data-tab="modifiers">
+      <div class="grid grid-3col">
+        {{#each system.modifiers as |modifier key|}}
+          <div>
+            <label class="text-bold text-capitalize">{{key}}</label>
+            <div class="flexrow flex-center flex-between">
+              <input
+                type='text'
+                name='system.modifiers.{{key}}'
+                value='{{modifier}}'
+                data-dtype='String'
+              />
+            </div>
+          </div>
+        {{/each}}
+      </div>
     </div>
-    <div class='body-field'>
-      <label class='body-label'>Timing</label>
-      <input
-        type='text'
-        name='system.skillTiming'
-        value='{{system.skillTiming}}'
-        data-dtype='String'
-      />
-    </div>
-    {{#if (ne system.skillTiming "Passive")}}
-    <div class='body-field'>
-      <label class='body-label'>Active</label><br>
-      <input
-        type='checkbox'
-        name='system.active'
-        data-dtype='Boolean'
-        {{#if system.active}}checked{{/if}}
-      />
-    </div>
-    {{/if}}
-    <div class='body-field'>
-      <label class='body-label'>Check</label>
-      <select name='system.skillCheck' data-dtype='String'>
-        <option value="none" {{#if (eq system.skillCheck "none")}}selected{{/if}}>-</option>
-        <option value="auto_success" {{#if (eq system.skillCheck "auto_success")}}selected{{/if}}>Auto Success</option>
-        <option value="magic_check" {{#if (eq system.skillCheck "magic_check")}}selected{{/if}}>Magic Check</option>
-        <option value="hit_check" {{#if (eq system.skillCheck "hit_check")}}selected{{/if}}>Hit Check</option>
-        <option value="perception" {{#if (eq system.skillCheck "perception")}}selected{{/if}}>Perception</option>
-        <option value="mind" {{#if (eq system.skillCheck "mind")}}selected{{/if}}>Mind</option>
-        <option value="strength" {{#if (eq system.skillCheck "strength")}}selected{{/if}}>Strength</option>
-        <option value="dexterity" {{#if (eq system.skillCheck "dexterity")}}selected{{/if}}>Dexterity</option>
-      </select>
-    </div>
-    <div class='body-field'>
-      <label class='body-label'>Target</label>
-      <select name='system.skillTarget' data-dtype='String'>
-        <option value="self" {{#if (eq system.skillTarget "self")}}selected{{/if}}>Self</option>
-        <option value="single" {{#if (eq system.skillTarget "single")}}selected{{/if}}>Single</option>
-        <option value="area_choose" {{#if (eq system.skillTarget "area_choose")}}selected{{/if}}>Area (Choose)</option>
-        <option value="area_sl" {{#if (eq system.skillTarget "area_sl")}}selected{{/if}}>Area (SLx2 Targets)</option>
-        <option value="scene" {{#if (eq system.skillTarget "scene")}}selected{{/if}}>Scene</option>
-        <option value="vision" {{#if (eq system.skillTarget "vision")}}selected{{/if}}>Vision</option>
-        <option value="see_effect" {{#if (eq system.skillTarget "see_effect")}}selected{{/if}}>See Effect</option>
-      </select>
-    </div>
-    <div class='body-field'>
-      <label class='body-label'>Range</label>
-      <input
-        type='text'
-        name='system.skillRange'
-        value='{{system.skillRange}}'
-        data-dtype='String'
-      />
-    </div>
-    <div class='body-field'>
-      <label class='body-label'>Cost</label>
-      <input
-        type='text'
-        name='system.skillCost'
-        value='{{system.skillCost}}'
-        data-dtype='Number'
-      />
-    </div>
-    <div class='body-field'>
-      <label class='body-label'>Effects</label>
-      <input
-        type='text'
-        name='system.skillEffects'
-        value='{{system.skillEffects}}'
-        data-dtype='String'
-      ></input>
-    </div>
-    <div class='body-field'>
-      <label class='body-label'>Custom Rolls</label>
-      <input
-        type='text'
-        name='system.skillCustomRolls'
-        value='{{system.skillCustomRolls}}'
-        data-dtype='String'
-      ></input>
-    </div>
-    <div class='body-field'>
-      <h2>Modifiers</h2>
-      {{#each system.modifiers as |modifier key|}}
-      <label class='body-label'>{{key}}</label>
-      <input
-        type='text'
-        name='system.modifiers.{{key}}'
-        value='{{modifier}}'
-        data-dtype='String'
-      ></input>
-      {{/each}}
+    <div class="tab" data-group="primary" data-tab="rolls">
+      <button>Create Custom Roll</button>
+      <div class='body-field'>
+        <label class='body-label'>Custom Rolls</label>
+        <input
+          type='text'
+          name='system.customRolls'
+          value='{{system.customRolls}}'
+          data-dtype='String'
+        ></input>
+      </div>
     </div>
   </section>
 </form>

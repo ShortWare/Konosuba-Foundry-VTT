@@ -75,10 +75,10 @@ export class KonosubaItemSheet extends ItemSheet {
     // Everything below here is only needed if the sheet is editable
     if (!this.isEditable) return;
 
-    html.find('input[name="system.skillTiming"]').on("change", async () => {
+    html.find('input[name="system.timing"]').on("change", async () => {
       const formData = this._getSubmitData();
       const timing = String(
-        foundry.utils.getProperty(formData, "system.skillTiming") || ""
+        foundry.utils.getProperty(formData, "system.timing") || ""
       )
         .trim()
         .toLowerCase();

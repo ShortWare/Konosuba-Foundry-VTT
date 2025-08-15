@@ -86,17 +86,17 @@ export class KonosubaActorSheet extends ActorSheet {
       if (i.type === "item") {
         gear.push(i);
       } else if (i.type === "skill") {
-        if (i.system.skillCustomRolls) {
-          const customRollsData = i.system.skillCustomRolls
+        if (i.system.customRolls) {
+          const customRollsData = i.system.customRolls
             .split(";")
             .map((pair) => {
               const [name, check] = pair.split(":");
               return {
                 name: name.trim(),
-                check: check.trim().replaceAll("SL", i.system.skillLevel),
+                check: check.trim().replaceAll("SL", i.system.level.value),
               };
             });
-          i.system.skillCustomRolls = customRollsData;
+          i.system.customRolls = customRollsData;
         }
         skills.push(i);
       }
@@ -288,7 +288,7 @@ export class KonosubaActorSheet extends ActorSheet {
     skills.forEach((skill) => {
       if (skill.system.active) {
         let modifier = skill.system.modifiers[ability] || "0";
-        modifier = modifier.replaceAll("SL", skill.system.skillLevel);
+        modifier = modifier.replaceAll("SL", skill.system.level.value);
         if (modifier.includes("d6")) {
           let parts = modifier.split("d6");
           this.skillsDice += eval(parts[0]) || 0;

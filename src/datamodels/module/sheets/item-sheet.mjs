@@ -13,7 +13,6 @@ export class KonosubaItemSheet extends ItemSheet {
         {
           navSelector: ".sheet-tabs",
           contentSelector: ".sheet-body",
-          initial: "description",
         },
       ],
     });

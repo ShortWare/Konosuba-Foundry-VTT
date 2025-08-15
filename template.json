@@ -139,15 +139,22 @@
     },
     "skill": {
       "templates": ["base"],
-      "skillLevel": 1,
-      "skillMaxLevel": 1,
-      "skillTiming": "",
-      "skillCheck": "",
-      "skillTarget": "",
-      "skillRange": "",
-      "skillCost": 0,
-      "skillEffects": "",
-      "skillCustomRolls": "",
+      "level": {
+        "value": 1,
+        "max": 1
+      },
+      "timing": "",
+      "check": "",
+      "customCheck": {
+        "title": "",
+        "formula": ""
+      },
+      "target": "",
+      "range": "",
+      "cost": 0,
+      "effects": "",
+      "critical": "",
+      "customRolls": "",
       "active": false,
       "modifiers": {
         "strength": "",

@@ -25,19 +25,19 @@
           </a>
         </div>
       </li>
-      <p>Level: {{item.system.skillLevel}} / {{item.system.skillMaxLevel}}</p>
-      <p>Timing: {{item.system.skillTiming}}</p>
-      <p>Target: {{item.system.skillTarget}}</p>
-      <p>Range: {{item.system.skillRange}}</p>
-      <p>Cost: {{item.system.skillCost}}</p>
+      <p>Level: {{item.system.level.value}} / {{item.system.level.max}}</p>
+      <p>Timing: {{item.system.timing}}</p>
+      <p>Target: {{item.system.target}}</p>
+      <p>Range: {{item.system.range}}</p>
+      <p>Cost: {{item.system.cost}}</p>
       <p>Effects:</p>
       <p>
-        {{item.system.skillEffects}}
+        {{item.system.effects}}
       </p>
-      <button>{{item.system.skillCheck}}</button>
+      <button>{{item.system.check}}</button>
       <p>Custom Rolls:</p>
       <p>
-        {{#each item.system.skillCustomRolls as |roll|}}
+        {{#each item.system.customRolls as |roll|}}
           <button class="roll-dice" data-roll-title="{{roll.name}}" data-roll="{{roll.check}}" >{{roll.name}}</button>
         {{/each}}
       </p>

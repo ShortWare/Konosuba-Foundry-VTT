@@ -5,59 +5,68 @@ export default class KonosubaSkill extends KonosubaItemBase {
     const fields = foundry.data.fields;
     const schema = super.defineSchema();
 
-    schema.skillLevel = new fields.NumberField({
+    schema.level = new fields.ObjectField({
       required: true,
       nullable: false,
-      integer: true,
-      initial: 1,
-      min: 1,
+      initial: {
+        value: 1,
+        max: 1,
+      },
     });
 
-    schema.skillTiming = new fields.StringField({
-      required: true,
-      nullable: false,
-      initial: "",
-    });
-
-    schema.skillCheck = new fields.StringField({
+    schema.timing = new fields.StringField({
       required: true,
       nullable: false,
       initial: "",
     });
 
-    schema.skillTarget = new fields.StringField({
+    schema.check = new fields.StringField({
       required: true,
       nullable: false,
       initial: "",
     });
 
-    schema.skillRange = new fields.StringField({
+    schema.customCheck = new fields.ObjectField({
+      required: true,
+      nullable: false,
+      initial: {
+        title: "",
+        formula: "",
+      },
+    });
+
+    schema.target = new fields.StringField({
       required: true,
       nullable: false,
       initial: "",
     });
 
-    schema.skillCost = new fields.NumberField({
+    schema.range = new fields.StringField({
+      required: true,
+      nullable: false,
+      initial: "",
+    });
+
+    schema.cost = new fields.NumberField({
       required: true,
       nullable: true,
       integer: true,
       min: 0,
     });
 
-    schema.skillMaxLevel = new fields.NumberField({
-      required: true,
-      nullable: false,
-      integer: true,
-      min: 1,
-    });
-
-    schema.skillEffects = new fields.StringField({
+    schema.effects = new fields.StringField({
       required: true,
       nullable: false,
       initial: "",
     });
 
-    schema.skillCustomRolls = new fields.StringField({
+    schema.critical = new fields.StringField({
+      required: true,
+      nullable: false,
+      initial: "",
+    });
+
+    schema.customRolls = new fields.StringField({
       required: true,
       nullable: false,
       initial: "",
