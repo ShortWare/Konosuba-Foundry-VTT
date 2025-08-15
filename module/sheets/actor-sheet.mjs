@@ -30,6 +30,8 @@ export class KonosubaActorSheet extends ActorSheet {
 
   /** @override */
   async getData() {
+    this.updateStats(this.actor)
+
     const context = super.getData();
     const actorData = this.document.toObject(false);
 
@@ -58,6 +60,28 @@ export class KonosubaActorSheet extends ActorSheet {
     context.raceItem = this.actor.items.find((i) => i.type === "race") || null;
     context.classItem =
       this.actor.items.find((i) => i.type === "class") || null;
+    
+    context.hitCheck = this.hitCheck || {
+      flat: 0,
+      dice: 2
+    }
+
+    context.attackPower = this.attackPower || {
+      flat: 0,
+      dice: 2
+    }
+
+    context.dodgeCheck = this.dodgeCheck || {
+      flat: 0,
+      dice: 2
+    }
+
+    context.combatAttributes = this.combatAttributes || {
+      physicalDefence: 0,
+      magicDefence: 0,
+      actonPoints: 0,
+      movement: 5
+    }
 
     return context;
   }
@@ -288,6 +312,7 @@ export class KonosubaActorSheet extends ActorSheet {
       if (skill.system.active) {
         let modifier = skill.system.modifiers[ability] || "0";
         modifier = modifier.replaceAll("SL", skill.system.level.value);
+        modifier = modifier.replaceAll("CL", actor.system.attributes.level.value);
         if (modifier.includes("d6")) {
           let parts = modifier.split("d6");
           this.skillsDice += eval(parts[0]) || 0;
@@ -318,5 +343,65 @@ export class KonosubaActorSheet extends ActorSheet {
     Object.entries(actor.system.abilities).forEach(([key, ability]) => {
       this.changeStat(actor, key);
     });
+
+
+    
+    const skills = actor.items.filter((i) => i.type === "skill");
+    const rollModifiers = {
+      hitCheck: {
+        flat: actor.system.abilities.dexterity.score,
+        dice: 2
+      },
+      attackPower: {
+        flat: 0,
+        dice: 2
+      },
+      dodgeCheck: {
+        flat: actor.system.abilities.agility.score,
+        dice: 2
+      }
+    }
+    const attributeModifiers = {
+      physicalDefence: 0,
+      magicDefence: 0,
+      actonPoints: actor.system.abilities.agility.score + actor.system.abilities.perception.score,
+      movement: actor.system.abilities.strength.score+5
+    }
+
+    skills.forEach((skill) => {
+      if (skill.system.active) {
+        Object.entries(rollModifiers).forEach(([key, modifier]) => {
+          let tmp = skill.system.modifiers[key] || "0";
+          tmp = tmp.replaceAll("SL", skill.system.level.value);
+          tmp = tmp.replaceAll("CL", actor.system.attributes.level.value);
+
+          if (tmp.includes("d6")) {
+            let parts = tmp.split("d6");
+            modifier.dice += eval(parts[0]) || 0;
+            modifier.flat += eval(parts[1]) || 0;
+          } else {
+            modifier.flat += eval(tmp) || 0;
+          }
+        });
+
+
+        Object.entries(attributeModifiers).forEach(([key, modifier]) => {
+          let tmp = skill.system.modifiers[key] || "0";
+          tmp = tmp.replaceAll("SL", skill.system.level.value);
+          tmp = tmp.replaceAll("CL", actor.system.attributes.level.value);
+          modifier += eval(tmp) || 0;
+        });
+      }
+    });
+
+    this.hitCheck = rollModifiers.hitCheck
+    this.attackPower = rollModifiers.attackPower
+    this.dodgeCheck = rollModifiers.dodgeCheck
+    this.combatAttributes = {
+      physicalDefence: attributeModifiers.physicalDefence,
+      magicDefence: attributeModifiers.magicDefence,
+      actonPoints: attributeModifiers.actonPoints,
+      movement: attributeModifiers.movement
+    }
   }
 }

@@ -163,7 +163,14 @@
         "intelligence": "",
         "perception": "",
         "mind": "",
-        "luck": ""
+        "luck": "",
+        "hitCheck": "",
+        "attackPower": "",
+        "dodgeCheck": "",
+        "physicalDefence": "",
+        "magicDefence": "",
+        "actionPoints": "",
+        "movement": ""
       }
     },
     "race": {
