@@ -1,42 +1,37 @@
 <table>
     <tr>
-        <th></th>
-        <th></th>
-        <th style="padding-left: 50px;"></th>
-    </tr>
-    <tr>
         <th>Hit Check</th>
-        <th>{{hitCheck.dice}}d6+{{hitCheck.flat}}</th>
-        <th class="roll-dice" data-roll-title="Hit Check" data-roll="{{hitCheck.dice}}d6+{{hitCheck.flat}}">Roll</th>
+        <th>{{combat.hitCheck.dice}}d6+{{combat.hitCheck.flat}}</th>
+        <th class="roll-dice" data-roll-title="Hit Check" data-roll="{{combat.hitCheck.dice}}d6+{{combat.hitCheck.flat}}">Roll</th>
     </tr>
     <tr>
         <th>Attack Power</th>
-        <th>{{attackPower.dice}}d6+{{attackPower.flat}}</th>
-        <th class="roll-dice" data-roll-title="Attack Power" data-roll="{{attackPower.dice}}d6+{{attackPower.flat}}">Roll</th>
+        <th>{{combat.attackPower.dice}}d6+{{combat.attackPower.flat}}</th>
+        <th class="roll-dice" data-roll-title="Attack Power" data-roll="{{combat.attackPower.dice}}d6+{{combat.attackPower.flat}}">Roll</th>
     </tr>
     <tr>
         <th>Dodge Check</th>
-        <th>{{dodgeCheck.dice}}d6+{{dodgeCheck.flat}}</th>
-        <th class="roll-dice" data-roll-title="Dodge Check" data-roll="{{dodgeCheck.dice}}d6+{{dodgeCheck.flat}}">Roll</th>
+        <th>{{combat.dodgeCheck.dice}}d6+{{combat.dodgeCheck.flat}}</th>
+        <th class="roll-dice" data-roll-title="Dodge Check" data-roll="{{combat.dodgeCheck.dice}}d6+{{combat.dodgeCheck.flat}}">Roll</th>
     </tr>
     <tr>
         <th>Physical Defence</th>
-        <th>{{combatAttributes.physicalDefence}}</th>
+        <th>{{combat.combatAttributes.physicalDefence}}</th>
         <th></th>
     </tr>
     <tr>
         <th>Magic Defence</th>
-        <th>{{combatAttributes.magicDefence}}</th>
+        <th>{{combat.combatAttributes.magicDefence}}</th>
         <th></th>
     </tr>
     <tr>
         <th>Action Points</th>
-        <th>{{combatAttributes.actonPoints}}</th>
+        <th>{{combat.combatAttributes.actionPoints}}</th>
         <th></th>
     </tr>
     <tr>
         <th>Movement</th>
-        <th>{{combatAttributes.movement}}</th>
+        <th>{{combat.combatAttributes.movement}}</th>
         <th></th>
     </tr>
 </table>

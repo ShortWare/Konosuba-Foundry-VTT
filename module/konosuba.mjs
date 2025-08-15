@@ -21,12 +21,8 @@ Hooks.once("init", function () {
   };
   CONFIG.KONOSUBA = KONOSUBA;
 
-  /**
-   * Set an initiative formula for the system
-   * @type {String}
-   */
   CONFIG.Combat.initiative = {
-    formula: "1d20 + @abilities.dex.mod",
+    formula: "@combat.combatAttributes.actionPoints",
     decimals: 2,
   };
 
@@ -97,6 +93,37 @@ Hooks.on("getChatLogEntryContext", (html, options) => {
     },
   });
 });
+
+/* -------------------------------------------- */
+/*  Action Points                               */
+/* -------------------------------------------- */
+
+Hooks.on("createCombat", async (combat) => {
+  for (let combatant of combat.combatants) {
+    if (combatant.initiative == null) {
+      const actor = combatant.actor;
+      if (!actor) return;
+
+      await setInitiative(combatant);
+    }
+  }
+});
+Hooks.on("createCombatant", async (combatant) => {
+  if (combatant.initiative == null) {
+    const actor = combatant.actor;
+    if (!actor) return;
+
+    await setInitiative(combatant);
+  }
+});
+
+async function setInitiative(combatant) {
+  const actor = combatant.actor;
+  if (!actor) return;
+
+  const actionPoints = actor.combat.combatAttributes.actionPoints || 0;
+  await combatant.update({ initiative: actionPoints });
+}
 
 /* -------------------------------------------- */
 /*  Hotbar Macros                               */

@@ -23,67 +23,25 @@
         },
         "abilities": {
           "strength": {
-            "value": 1,
-            "bonus": 0,
-            "class": 0,
-            "skills": 0,
-            "score": 0,
-            "skillsDice": 0,
-            "dice": 0
+            "value": 1
           },
           "dexterity": {
-            "value": 1,
-            "bonus": 0,
-            "class": 0,
-            "skills": 0,
-            "score": 0,
-            "skillsDice": 0,
-            "dice": 0
+            "value": 1
           },
           "agility": {
-            "value": 1,
-            "bonus": 0,
-            "class": 0,
-            "skills": 0,
-            "score": 0,
-            "skillsDice": 0,
-            "dice": 0
+            "value": 1
           },
           "intelligence": {
-            "value": 1,
-            "bonus": 0,
-            "class": 0,
-            "skills": 0,
-            "score": 0,
-            "skillsDice": 0,
-            "dice": 0
+            "value": 1
           },
           "perception": {
-            "value": 1,
-            "bonus": 0,
-            "class": 0,
-            "skills": 0,
-            "score": 0,
-            "skillsDice": 0,
-            "dice": 0
+            "value": 1
           },
           "mind": {
-            "value": 1,
-            "bonus": 0,
-            "class": 0,
-            "skills": 0,
-            "score": 0,
-            "skillsDice": 0,
-            "dice": 0
+            "value": 1
           },
           "luck": {
-            "value": 1,
-            "bonus": 0,
-            "class": 0,
-            "skills": 0,
-            "score": 0,
-            "skillsDice": 0,
-            "dice": 0
+            "value": 1
           }
         }
       }
@@ -163,14 +121,7 @@
         "intelligence": "",
         "perception": "",
         "mind": "",
-        "luck": "",
-        "hitCheck": "",
-        "attackPower": "",
-        "dodgeCheck": "",
-        "physicalDefence": "",
-        "magicDefence": "",
-        "actionPoints": "",
-        "movement": ""
+        "luck": ""
       }
     },
     "race": {

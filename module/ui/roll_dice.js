@@ -27,9 +27,7 @@ export class DiceMenu extends Application {
   }
 
   getData() {
-    let roll = new Roll(this.diceOptions.formula, {
-      player: this.actor.system,
-    });
+    let roll = new Roll(this.diceOptions.formula);
     return {
       actor: this.actor,
       options: {
@@ -93,9 +91,7 @@ export class DiceMenu extends Application {
         : ""
     }`;
 
-    let roll = new Roll(formula, {
-      actor: this.actor,
-    });
+    let roll = new Roll(formula);
     await roll.roll();
     roll.toMessage({
       speaker: ChatMessage.getSpeaker({ player: this.actor.system }),

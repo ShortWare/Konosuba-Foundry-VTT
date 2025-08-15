@@ -5,106 +5,151 @@
 export class KonosubaActor extends Actor {
   /** @override */
   prepareData() {
-    // Prepare data for the actor. Calling the super version of this executes
-    // the following, in order: data reset (to clear active effects),
-    // prepareBaseData(), prepareEmbeddedDocuments() (including active effects),
-    // prepareDerivedData().
     super.prepareData();
   }
 
   /** @override */
-  prepareBaseData() {
-    // Data modifications in this step occur before processing embedded
-    // documents or derived data.
-  }
+  prepareBaseData() {}
 
-  /**
-   * @override
-   * Augment the actor source data with additional dynamic data. Typically,
-   * you'll want to handle most of your calculated/derived data in this step.
-   * Data calculated in this step should generally not exist in template.json
-   * (such as ability modifiers rather than ability scores) and should be
-   * available both inside and outside of character sheets (such as if an actor
-   * is queried and has a roll executed directly from it).
-   */
   prepareDerivedData() {
     const actorData = this;
     const systemData = actorData.system;
     const flags = actorData.flags.konosuba || {};
 
-    // Make separate methods for each Actor type (character, npc, etc.) to keep
-    // things organized.
-    this._prepareCharacterData(actorData);
+    this._preparePlayerData(actorData);
     this._prepareNpcData(actorData);
   }
 
-  /**
-   * Prepare Character type specific data
-   */
-  _prepareCharacterData(actorData) {
-    if (actorData.type !== "character") return;
-
-    // Make modifications to data here. For example:
-    const systemData = actorData.system;
-
-    // Loop through ability scores, and add their modifiers to our sheet output.
-    for (let [key, ability] of Object.entries(systemData.abilities)) {
-      // Calculate the modifier using d20 rules.
-      ability.mod = Math.floor((ability.value - 10) / 2);
-    }
+  _preparePlayerData(actorData) {
+    if (actorData.type !== "player") return;
+    this.calculateStats(actorData);
   }
-
-  /**
-   * Prepare NPC type specific data.
-   */
   _prepareNpcData(actorData) {
     if (actorData.type !== "npc") return;
-
-    // Make modifications to data here. For example:
-    const systemData = actorData.system;
-    systemData.xp = systemData.cr * systemData.cr * 100;
   }
 
-  /**
-   * Override getRollData() that's supplied to rolls.
-   */
   getRollData() {
-    // Starts off by populating the roll data with a shallow copy of `this.system`
-    const data = { ...this.system };
+    const data = { ...this.system, combat: this.combat };
 
-    // Prepare character roll data.
-    this._getCharacterRollData(data);
+    this._getPlayerRollData(data);
     this._getNpcRollData(data);
 
     return data;
   }
 
-  /**
-   * Prepare character roll data.
-   */
-  _getCharacterRollData(data) {
-    if (this.type !== "character") return;
-
-    // Copy the ability scores to the top level, so that rolls can use
-    // formulas like `@str.mod + 4`.
-    if (data.abilities) {
-      for (let [k, v] of Object.entries(data.abilities)) {
-        data[k] = foundry.utils.deepClone(v);
-      }
-    }
-
-    // Add level for easier access, or fall back to 0.
-    if (data.attributes.level) {
-      data.lvl = data.attributes.level.value ?? 0;
-    }
+  _getPlayerRollData(data) {
+    if (this.type !== "player") return;
   }
-
-  /**
-   * Prepare NPC roll data.
-   */
   _getNpcRollData(data) {
     if (this.type !== "npc") return;
+  }
 
-    // Process additional NPC data here.
+  calculateAbility(data, ability) {
+    const abilityData = this.system.abilities[ability];
+    const bonus = Math.floor(abilityData.value / 3);
+
+    const classItem = this.items.find((i) => i.type === "class") || null;
+    if (classItem && classItem.system.modifiers?.[ability] !== undefined) {
+      abilityData.class = classItem.system.modifiers[ability];
+    }
+    const classMod = Number(abilityData.class || 0);
+
+    const skills = this.items.filter((i) => i.type === "skill");
+    let skillsFlat = 0;
+    let skillsDice = 0;
+
+    skills.forEach((skill) => {
+      if (skill.system.active) {
+        let modifier = skill.system.modifiers[ability] || "0";
+        modifier = modifier.replaceAll("SL", skill.system.level.value);
+        modifier = modifier.replaceAll(
+          "CL",
+          data.system.attributes.level.value
+        );
+        if (modifier.includes("d6")) {
+          let parts = modifier.split("d6");
+          skillsDice += eval(parts[0]) || 0;
+          skillsFlat += eval(parts[1]) || 0;
+        } else {
+          skillsFlat += eval(modifier) || 0;
+        }
+      }
+    });
+
+    const score = Number(bonus + classMod + eval(skillsFlat));
+    const dice = Number(2 + eval(skillsDice));
+
+    data.system.abilities[ability].bonus = bonus;
+    data.system.abilities[ability].class = classMod;
+    data.system.abilities[ability].skills = eval(skillsFlat);
+    data.system.abilities[ability].score = score;
+    data.system.abilities[ability].skillsDice = eval(skillsDice);
+    data.system.abilities[ability].dice = dice;
+  }
+
+  calculateStats(data) {
+    Object.entries(data.system.abilities).forEach(([key, ability]) => {
+      this.calculateAbility(data, key);
+    });
+
+    const skills = data.items.filter((i) => i.type === "skill");
+    const rollModifiers = {
+      hitCheck: {
+        flat: data.system.abilities.dexterity.score,
+        dice: 2,
+      },
+      attackPower: {
+        flat: 0,
+        dice: 2,
+      },
+      dodgeCheck: {
+        flat: data.system.abilities.agility.score,
+        dice: 2,
+      },
+    };
+    const attributeModifiers = {
+      physicalDefence: 0,
+      magicDefence: 0,
+      actionPoints:
+        data.system.abilities.agility.score +
+        data.system.abilities.perception.score,
+      movement: data.system.abilities.strength.score + 5,
+    };
+
+    skills.forEach((skill) => {
+      if (skill.system.active) {
+        Object.entries(rollModifiers).forEach(([key, modifier]) => {
+          let tmp = skill.system.modifiers[key] || "0";
+          tmp = tmp.replaceAll("SL", skill.system.level.value);
+          tmp = tmp.replaceAll("CL", data.system.attributes.level.value);
+
+          if (tmp.includes("d6")) {
+            let parts = tmp.split("d6");
+            modifier.dice += eval(parts[0]) || 0;
+            modifier.flat += eval(parts[1]) || 0;
+          } else {
+            modifier.flat += eval(tmp) || 0;
+          }
+        });
+
+        Object.entries(attributeModifiers).forEach(([key, modifier]) => {
+          let tmp = skill.system.modifiers[key] || "0";
+          tmp = tmp.replaceAll("SL", skill.system.level.value);
+          tmp = tmp.replaceAll("CL", data.system.attributes.level.value);
+          modifier += eval(tmp) || 0;
+        });
+      }
+    });
+
+    data.combat = {};
+    data.combat.hitCheck = rollModifiers.hitCheck;
+    data.combat.attackPower = rollModifiers.attackPower;
+    data.combat.dodgeCheck = rollModifiers.dodgeCheck;
+    data.combat.combatAttributes = {
+      physicalDefence: attributeModifiers.physicalDefence,
+      magicDefence: attributeModifiers.magicDefence,
+      actionPoints: attributeModifiers.actionPoints,
+      movement: attributeModifiers.movement,
+    };
   }
 }
