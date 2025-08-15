@@ -52,13 +52,12 @@
     <a class="item" data-tab="description">Description</a>
     <a class="item" data-tab="items">Items</a>
     <a class="item" data-tab="skills">Skills</a>
-    <a class="item" data-tab="effects">Effects</a>
   </nav>
 
   {{!-- Sheet Body --}}
   <section class="sheet-body">
 
-    {{!-- Owned Features Tab --}}
+    {{!-- Core Tab --}}
     <div class="tab core" data-group="primary" data-tab="core">
       <section class="grid grid-3col">
         <aside class="sidebar">
@@ -80,9 +79,7 @@
           </div>
         </aside>
 
-        {{!-- For the main features list, span the right two columns --}}
         <section class="main grid-span-2">
-          {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
           {{> "systems/konosuba/templates/actor/parts/actor-features.hbs"}}
         </section>
 
@@ -112,11 +109,6 @@
     {{!-- Owned Skills Tab --}}
     <div class="tab skills" data-group="primary" data-tab="skills">
       {{> "systems/konosuba/templates/actor/parts/actor-skills.hbs"}}
-    </div>
-
-    {{!-- Active Effects Tab --}}
-    <div class="tab effects flexcol" data-group="primary" data-tab="effects">
-      {{> "systems/konosuba/templates/actor/parts/actor-effects.hbs"}}
     </div>
 
   </section>

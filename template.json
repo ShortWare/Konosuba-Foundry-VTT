@@ -125,7 +125,7 @@
     }
   },
   "Item": {
-    "types": ["item", "feature", "skill", "race", "class"],
+    "types": ["item", "skill", "race", "class"],
     "templates": {
       "base": {
         "description": ""
@@ -136,9 +136,6 @@
       "quantity": 1,
       "weight": 0,
       "formula": "d20 + @str.mod + ceil(@lvl / 2)"
-    },
-    "feature": {
-      "templates": ["base"]
     },
     "skill": {
       "templates": ["base"],

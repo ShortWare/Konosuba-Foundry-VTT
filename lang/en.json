@@ -17,13 +17,6 @@
         "SpellLVL": "Level {level} Spells",
         "AddLVL": "Add LVL {level}"
       }
-    },
-    "Effect": {
-      "Source": "Source",
-      "Toggle": "Toggle Effect",
-      "Temporary": "Temporary Effects",
-      "Passive": "Passive Effects",
-      "Inactive": "Inactive Effects"
     }
   },
 
@@ -34,8 +27,9 @@
     },
     "Item": {
       "item": "Item",
-      "feature": "Feature",
-      "skill": "Skill"
+      "skill": "Skill",
+      "race": "Race",
+      "class": "Class"
     }
   }
 }

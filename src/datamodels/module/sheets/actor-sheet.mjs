@@ -1,8 +1,3 @@
-import {
-  onManageActiveEffect,
-  prepareActiveEffectCategories,
-} from "../helpers/effects.mjs";
-
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
@@ -56,8 +51,8 @@ export class KonosubaActorSheet extends ActorSheet {
     }
 
     if (actorData.type === "player") {
-      this._prepareItems(context)
-      this._prepareCharacterData(context)
+      this._prepareItems(context);
+      this._prepareCharacterData(context);
     }
 
     // Prepare NPC data and items.
@@ -81,13 +76,6 @@ export class KonosubaActorSheet extends ActorSheet {
       }
     );
 
-    // Prepare active effects
-    context.effects = prepareActiveEffectCategories(
-      // A generator that returns all effects stored on the actor
-      // as well as any items
-      this.actor.allApplicableEffects()
-    );
-
     return context;
   }
 
@@ -109,43 +97,14 @@ export class KonosubaActorSheet extends ActorSheet {
   _prepareItems(context) {
     // Initialize containers.
     const gear = [];
-    const features = [];
-    const spells = {
-      0: [],
-      1: [],
-      2: [],
-      3: [],
-      4: [],
-      5: [],
-      6: [],
-      7: [],
-      8: [],
-      9: [],
-    };
 
-    // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || Item.DEFAULT_ICON;
-      // Append to gear.
       if (i.type === "item") {
         gear.push(i);
       }
-      // Append to features.
-      else if (i.type === "feature") {
-        features.push(i);
-      }
-      // Append to spells.
-      else if (i.type === "spell") {
-        if (i.system.spellLevel != undefined) {
-          spells[i.system.spellLevel].push(i);
-        }
-      }
     }
-
-    // Assign and return
     context.gear = gear;
-    context.features = features;
-    context.spells = spells;
   }
 
   /* -------------------------------------------- */
@@ -174,16 +133,6 @@ export class KonosubaActorSheet extends ActorSheet {
       const item = this.actor.items.get(li.data("itemId"));
       item.delete();
       li.slideUp(200, () => this.render(false));
-    });
-
-    // Active Effect management
-    html.on("click", ".effect-control", (ev) => {
-      const row = ev.currentTarget.closest("li");
-      const document =
-        row.dataset.parentId === this.actor.id
-          ? this.actor
-          : this.actor.items.get(row.dataset.parentId);
-      onManageActiveEffect(ev, document);
     });
 
     // Rollable abilities.

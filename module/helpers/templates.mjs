@@ -10,8 +10,6 @@ export const preloadHandlebarsTemplates = async function () {
     "systems/konosuba/templates/actor/parts/actor-stats.hbs",
     "systems/konosuba/templates/actor/parts/actor-items.hbs",
     "systems/konosuba/templates/actor/parts/actor-skills.hbs",
-    "systems/konosuba/templates/actor/parts/actor-effects.hbs",
     // Item partials
-    "systems/konosuba/templates/item/parts/item-effects.hbs",
   ]);
 };

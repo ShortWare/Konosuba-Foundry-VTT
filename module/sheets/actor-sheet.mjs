@@ -1,7 +1,3 @@
-import {
-  onManageActiveEffect,
-  prepareActiveEffectCategories,
-} from "../helpers/effects.mjs";
 import { DiceMenu } from "../ui/roll_dice.js";
 
 /**
@@ -77,15 +73,9 @@ export class KonosubaActorSheet extends ActorSheet {
       }
     );
 
-    // Prepare active effects
-    context.effects = prepareActiveEffectCategories(
-      // A generator that returns all effects stored on the actor
-      // as well as any items
-      this.actor.allApplicableEffects()
-    );
-
-    context.raceItem = this.actor.items.find(i => i.type === "race") || null
-    context.classItem = this.actor.items.find(i => i.type === "class") || null
+    context.raceItem = this.actor.items.find((i) => i.type === "race") || null;
+    context.classItem =
+      this.actor.items.find((i) => i.type === "class") || null;
 
     return context;
   }
@@ -108,15 +98,12 @@ export class KonosubaActorSheet extends ActorSheet {
   _prepareItems(context) {
     // Initialize containers.
     const gear = [];
-    const features = [];
     const skills = [];
 
     for (let i of context.items) {
       i.img = i.img || Item.DEFAULT_ICON;
       if (i.type === "item") {
         gear.push(i);
-      } else if (i.type === "feature") {
-        features.push(i);
       } else if (i.type === "skill") {
         if (i.system.skillCustomRolls) {
           const customRollsData = i.system.skillCustomRolls
@@ -136,7 +123,6 @@ export class KonosubaActorSheet extends ActorSheet {
 
     // Assign and return
     context.gear = gear;
-    context.features = features;
     context.skills = skills;
   }
 
@@ -181,7 +167,7 @@ export class KonosubaActorSheet extends ActorSheet {
         const name = input.name;
         const ability = name.split(".")[2];
         const value = Number(input.value);
-        this.changeStat(this.actor, ability,value)
+        this.changeStat(this.actor, ability, value);
       });
 
     // Render the item sheet for viewing/editing prior to the editable check.
@@ -206,16 +192,6 @@ export class KonosubaActorSheet extends ActorSheet {
       li.slideUp(200, () => this.render(false));
     });
 
-    // Active Effect management
-    html.on("click", ".effect-control", (ev) => {
-      const row = ev.currentTarget.closest("li");
-      const document =
-        row.dataset.parentId === this.actor.id
-          ? this.actor
-          : this.actor.items.get(row.dataset.parentId);
-      onManageActiveEffect(ev, document);
-    });
-
     // Rollable abilities.
     html.on("click", ".rollable", this._onRoll.bind(this));
 
@@ -230,19 +206,19 @@ export class KonosubaActorSheet extends ActorSheet {
     }
 
     Hooks.on("renderActorSheet", (app, html, data) => {
-      if (!(app.actor.type == "player" || app.actor.type !== "npc")) return
+      if (!(app.actor.type == "player" || app.actor.type !== "npc")) return;
       if (app._sheetOpened) return;
 
       app._sheetOpened = true;
 
-      this.updateStats(app.actor)
+      this.updateStats(app.actor);
 
       Hooks.once("closeActorSheet", (sheetApp) => {
         if (sheetApp === app) {
-            app._sheetOpened = false;
+          app._sheetOpened = false;
         }
       });
-    })
+    });
   }
 
   /**
@@ -304,34 +280,34 @@ export class KonosubaActorSheet extends ActorSheet {
     }
   }
 
-
-
   changeStat(actor, ability, value = null) {
-    const bonus = Math.floor((value || actor.system.abilities[ability].value) / 3);
+    const bonus = Math.floor(
+      (value || actor.system.abilities[ability].value) / 3
+    );
     const abilityData = actor.system.abilities[ability];
-    const classItem = actor.items.find(i => i.type === "class") || null
+    const classItem = actor.items.find((i) => i.type === "class") || null;
     if (classItem && classItem.system.modifiers?.[ability] !== undefined) {
-      abilityData.class = classItem.system.modifiers[ability]
+      abilityData.class = classItem.system.modifiers[ability];
     }
     const classMod = Number(abilityData.class || 0);
     const skillsBefore = Number(abilityData.skillsBefore || 0);
     const score = Number(bonus + classMod + skillsBefore);
     const skillsAfter = Number(abilityData.skillsAfter || 0);
     const dice = Number(score + skillsAfter);
-    
+
     actor.update({
-        [`system.abilities.${ability}.bonus`]: bonus,
-        [`system.abilities.${ability}.class`]: classMod,
-        [`system.abilities.${ability}.skillsBefore`]: skillsBefore,
-        [`system.abilities.${ability}.score`]: score,
-        [`system.abilities.${ability}.skillsAfter`]: skillsAfter,
-        [`system.abilities.${ability}.dice`]: dice,
-      });
+      [`system.abilities.${ability}.bonus`]: bonus,
+      [`system.abilities.${ability}.class`]: classMod,
+      [`system.abilities.${ability}.skillsBefore`]: skillsBefore,
+      [`system.abilities.${ability}.score`]: score,
+      [`system.abilities.${ability}.skillsAfter`]: skillsAfter,
+      [`system.abilities.${ability}.dice`]: dice,
+    });
   }
 
   updateStats(actor) {
     Object.entries(actor.system.abilities).forEach(([key, ability]) => {
-      this.changeStat(actor, key)
+      this.changeStat(actor, key);
     });
   }
 }
