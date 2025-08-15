@@ -103,6 +103,26 @@ export class KonosubaActor extends Actor {
       maxMana += classItem.system.mana.start
       maxMana += classItem.system.mana.gain * (data.system.attributes.level.value-1)
     }
+    switch (data.system.lifestyle) {
+      case "stable":
+        maxHealth -= data.system.attributes.level.value*5
+        maxMana -= data.system.attributes.level.value*5
+        break
+      case "economy":
+        maxHealth += 5
+        maxMana += 5
+        break
+      case "suite":
+        maxHealth += 10
+        maxMana += 10
+        break
+      case "royal":
+        maxHealth += 30
+        maxMana += 30
+        break
+    }
+    if (maxHealth < 1) maxHealth = 1
+    if (maxMana < 1) maxMana = 1
 
 
     const skills = data.items.filter((i) => i.type === "skill");

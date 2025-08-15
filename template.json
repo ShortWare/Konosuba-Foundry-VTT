@@ -48,6 +48,7 @@
     "player": {
       "templates": ["base", "character"],
       "playerName": "",
+      "lifestyle": "stable",
       "attributes": {
         "blessings": {
           "value": 5,

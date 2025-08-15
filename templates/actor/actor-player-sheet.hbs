@@ -78,6 +78,16 @@
             <label>Race: {{#if raceItem}} {{raceItem.name}} {{/if}} </label><br>
             <label>Class: {{#if classItem}} {{classItem.name}} {{/if}} </label>
           </div>
+          <div>
+            <label>Lifestyle: </label>
+            <select name='system.lifestyle' data-dtype='String'>
+              <option value="stable" {{#if (eq system.lifestyle "stable")}}selected{{/if}}>Stable living</option>
+              <option value="simple" {{#if (eq system.lifestyle "simple")}}selected{{/if}}>Simple living</option>
+              <option value="economy" {{#if (eq system.lifestyle "economy")}}selected{{/if}}>Economy</option>
+              <option value="suite" {{#if (eq system.lifestyle "suite")}}selected{{/if}}>Suite</option>
+              <option value="royal" {{#if (eq system.lifestyle "royal")}}selected{{/if}}>Royal</option>
+            </select>
+          </div>
         </aside>
 
         <section class="main grid-span-2">
