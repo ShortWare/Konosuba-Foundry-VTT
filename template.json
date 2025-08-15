@@ -144,11 +144,11 @@
       "active": false
     },
     "race": {
-      "templates": ["base"],
+      "templates": [],
       "name": ""
     },
     "class": {
-      "templates": ["base"],
+      "templates": [],
       "name": "",
       "modifiers": {
         "strength": 0,

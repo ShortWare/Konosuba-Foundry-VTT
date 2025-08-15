@@ -1,11 +1,5 @@
 <form class='{{cssClass}}' autocomplete='off'>
   <header class='sheet-header'>
-    <img
-      class='profile-img'
-      src='{{item.img}}'
-      data-edit='img'
-      title='{{item.name}}'
-    />
     <div class='header-fields'>
       <h1 class='charname'><input
           name='name'
@@ -16,22 +10,18 @@
     </div>
   </header>
 
-  {{! Sheet Tab Navigation }}
   <nav class='sheet-tabs tabs' data-group='primary'>
     <a class='item' data-tab='core'>Core</a>
-    <a class='item' data-tab='description'>Description</a>
     <a class='item' data-tab='attributes'>Modifiers</a>
   </nav>
 
-  {{! Sheet Body }}
   <section class='sheet-body'>
-
     <div class='tab' data-group='primary' data-tab='core'>
       <table>
         <tr>
           <th></th>
-          <th style="padding-left: 50px;">Starting</th>
-          <th style="padding-left: 50px;">Gain</th>
+          <th>Starting</th>
+          <th>Gain</th>
         </tr>
         <tr>
           <th>Health</th>
@@ -65,23 +55,7 @@
         </tr>
       </table>
     </div>
-
-
-    {{! Description Tab }}
-    <div class='tab' data-group='primary' data-tab='description'>
-      {{! Editors must receive enriched text data from getData to properly handle rolls }}
-      {{editor
-        enrichedDescription
-        target='system.description'
-        engine='prosemirror'
-        button=true
-        editable=editable
-      }}
-    </div>
-
-    {{! Attributes Tab }}
-    <div class='tab attributes' data-group='primary' data-tab='attributes'>
-      {{! As you add new fields, add them in here! }}
+    <div class='tab' data-group='primary' data-tab='attributes'>
       <div class='resource'>
         <table>
           <tr><th>Strength</th><th><input
