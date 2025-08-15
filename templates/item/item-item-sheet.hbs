@@ -107,6 +107,20 @@
         <label class="text-bold">Effects</label>
         <textarea name="system.effects" placeholder="Item description..." data-dtype="String" style="margin-bottom: 10px;">{{system.effects}}</textarea>
       </div>
+      <div style="margin-bottom: 10px;">
+        <label class="text-bold">Equip Slot</label>
+        <div class="flexrow flex-center flex-between">
+          <select name="system.equipSlot" data-dtype="String">
+            <option value="head" {{#if (eq system.equipSlot "head")}}selected{{/if}}>Head</option>
+            <option value="body" {{#if (eq system.equipSlot "body")}}selected{{/if}}>Body</option>
+            <option value="support-armor" {{#if (eq system.equipSlot "support-armor")}}selected{{/if}}>Support Armor</option>
+            <option value="one" {{#if (eq system.equipSlot "one")}}selected{{/if}}>One</option>
+            <option value="both" {{#if (eq system.equipSlot "both")}}selected{{/if}}>Both</option>
+            <option value="dual" {{#if (eq system.equipSlot "dual")}}selected{{/if}}>Dual</option>
+            <option value="accessory" {{#if (eq system.equipSlot "accessory")}}selected{{/if}}>Accessory</option>
+          </select>
+        </div>
+      </div>
       <div>
         <label class="text-bold">Class Restrictions</label>
         <div class="grid grid-2col list-container" style="margin-top: 5px;">
