@@ -92,7 +92,10 @@
       "templates": ["base"],
       "quantity": 1,
       "weight": 0,
-      "formula": "d20 + @str.mod + ceil(@lvl / 2)"
+      "type": "",
+      "classRestrictions": [],
+      "value": 0,
+      "level": 1
     },
     "skill": {
       "templates": ["base"],

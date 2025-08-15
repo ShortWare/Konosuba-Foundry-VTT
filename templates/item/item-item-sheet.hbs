@@ -13,41 +13,93 @@
           value='{{item.name}}'
           placeholder='Name'
         /></h1>
-      <div class='grid grid-2col'>
-        <div class='resource'>
-          <label class='resource-label'>Quantity</label>
-          <input
-            type='text'
-            name='system.quantity'
-            value='{{system.quantity}}'
-            data-dtype='Number'
-          />
+      <div class='grid grid-4col'>
+        <div>
+          <label class="text-bold">Quantity</label>
+          <div class="flexrow flex-center flex-between">
+            <input
+              type='text'
+              name='system.quantity'
+              value='{{system.quantity}}'
+              data-dtype='Number'
+            />
+          </div>
         </div>
-        <div class='resource'>
-          <label class='resource-label'>Weight</label>
-          <input
-            type='text'
-            name='system.weight'
-            value='{{system.weight}}'
-            data-dtype='Number'
-          />
+        <div>
+          <label class="text-bold">Weight</label>
+          <div class="flexrow flex-center flex-between">
+            <input
+              type='text'
+              name='system.weight'
+              value='{{system.weight}}'
+              data-dtype='Number'
+            />
+          </div>
+        </div>
+        <div>
+          <label class="text-bold">Level</label>
+          <div class="flexrow flex-center flex-between">
+            <input
+              type='text'
+              name='system.level'
+              value='{{system.level}}'
+              data-dtype='Number'
+            />
+          </div>
+        </div>
+        <div>
+          <label class="text-bold">Value</label>
+          <div class="flexrow flex-center flex-between">
+            <input
+              type='text'
+              name='system.value'
+              value='{{system.value}}'
+              data-dtype='Number'
+            />
+          </div>
         </div>
       </div>
     </div>
   </header>
 
-  {{! Sheet Tab Navigation }}
   <nav class='sheet-tabs tabs' data-group='primary'>
-    <a class='item' data-tab='description'>Description</a>
+    <a class='item' data-tab='core'>Core</a>
     <a class='item' data-tab='attributes'>Attributes</a>
   </nav>
 
-  {{! Sheet Body }}
   <section class='sheet-body'>
-
-    {{! Description Tab }}
+    <div class='tab' data-group='primary' data-tab='core'>
+      <div style="margin-bottom: 10px;">
+        <label class="text-bold">Item Type</label>
+        <div class="flexrow flex-center flex-between">
+          <select name="system.type" data-dtype="String">
+            <option value="weapon" {{#if (eq system.type "weapon")}}selected{{/if}}>Weapon</option>
+            <option value="shield" {{#if (eq system.type "shield")}}selected{{/if}}>Shield</option>
+            <option value="armor" {{#if (eq system.type "armor")}}selected{{/if}}>Armor</option>
+            <option value="accessory" {{#if (eq system.type "accessory")}}selected{{/if}}>Accessory</option>
+            <option value="tool" {{#if (eq system.type "tool")}}selected{{/if}}>Tool</option>
+            <option value="gem" {{#if (eq system.type "gem")}}selected{{/if}}>Gem</option>
+            <option value="potion" {{#if (eq system.type "potion")}}selected{{/if}}>Potion</option>
+            <option value="food" {{#if (eq system.type "food")}}selected{{/if}}>Food</option>
+            <option value="storage" {{#if (eq system.type "storage")}}selected{{/if}}>Storage</option>
+            <option value="decoration" {{#if (eq system.type "decoration")}}selected{{/if}}>Decoration</option>
+            <option value="service" {{#if (eq system.type "service")}}selected{{/if}}>Service</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label class="text-bold">Class Restrictions</label>
+        <div class="grid grid-2col list-container" style="margin-top: 5px;">
+          {{#each availableClasses as |class|}}
+            <div class="flexrow flex-center flex-between" style="align-items: center;">
+              <input type="checkbox" style="margin-right: 10px;" class="class-restriction" data-class-id="{{class.id}}" {{#if (contains @root.system.classRestrictions class.id)}}checked{{/if}}>
+              <label class="text-bold">{{class.name}}</label>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
     <div class='tab' data-group='primary' data-tab='description'>
-      {{! Editors must receive enriched text data from getData to properly handle rolls }}
       {{editor
         enrichedDescription
         target='system.description'
@@ -55,45 +107,6 @@
         button=true
         editable=editable
       }}
-    </div>
-
-    {{! Attributes Tab }}
-    <div class='tab attributes' data-group='primary' data-tab='attributes'>
-      {{! As you add new fields, add them in here! }}
-      <div class='resource'>
-        <label class='resource-label'>Roll Formula:</label>
-        <span>{{system.formula}}</span>
-        <div class='grid grid-4col'>
-          <div class='grid-span-1'>
-            <label class='resource-label'>Number of Dice</label>
-            <input
-              type='text'
-              name='system.roll.diceNum'
-              value='{{system.roll.diceNum}}'
-              data-dtype='Number'
-            />
-          </div>
-          <div class='grid-span-1'>
-            <label class='resource-label'>Die Size</label>
-            <input
-              type='text'
-              name='system.roll.diceSize'
-              value='{{system.roll.diceSize}}'
-              data-dtype='String'
-            />
-          </div>
-          <div class='grid-span-2'>
-            <label class='resource-label'>Roll Modifier</label>
-            <input
-              type='text'
-              name='system.roll.diceBonus'
-              value='{{system.roll.diceBonus}}'
-              data-dtype='String'
-            />
-          </div>
-        </div>
-
-      </div>
     </div>
   </section>
 </form>

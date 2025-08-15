@@ -54,6 +54,14 @@ export class KonosubaItemSheet extends ItemSheet {
           this.item.system.customRolls
         );
       }
+    } else if (this.item.type === "item") {
+      const classes = await game.items.filter((item) => item.type === "class");
+      context.availableClasses = classes.map((item) => {
+        return {
+          id: item.id,
+          name: item.name,
+        };
+      });
     }
 
     return context;
@@ -98,6 +106,19 @@ export class KonosubaItemSheet extends ItemSheet {
           .trim()
           .toLowerCase();
         await this.item.update({ "system.active": timing === "passive" });
+      });
+    } else if (this.item.type === "item") {
+      html.find(".class-restriction").on("change", (ev) => {
+        const classId = ev.currentTarget.dataset.classId;
+        const isChecked = ev.currentTarget.checked;
+        let classRestrictions = this.item.system.classRestrictions || [];
+        if (isChecked) {
+          classRestrictions.push(classId);
+        } else {
+          classRestrictions = classRestrictions.filter((id) => id !== classId);
+        }
+        this.item.update({ "system.classRestrictions": classRestrictions });
+        this.render(true);
       });
     }
   }

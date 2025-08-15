@@ -295,6 +295,14 @@
 .konosuba .tox .tox-edit-area {
   padding: 0 8px;
 }
+.konosuba .list-container {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #000;
+}
 .konosuba .items-header {
   height: 28px;
   margin: 2px 0;

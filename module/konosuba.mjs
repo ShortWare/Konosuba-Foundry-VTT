@@ -60,6 +60,10 @@ Handlebars.registerHelper("camelToTitle", function (str) {
     .replace(/^./, (s) => s.toUpperCase());
 });
 
+Handlebars.registerHelper("contains", function (array, item) {
+  return Array.isArray(array) && array.includes(item);
+});
+
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */
@@ -225,16 +229,19 @@ Hooks.on("preCreateItem", async (item, data, options, userId) => {
 
 Hooks.on("chatMessage", (chatLog, messageText, chatData) => {
   if (messageText.startsWith("/doom")) {
-    new Dialog({
-      title: 'Doom',
-      content: `<iframe src="https://js-dos.com/games/doom.exe.html" width="800" height="600" style="border:none;"></iframe>`,
-      buttons: {
-        ok: { label: 'Close' }
+    new Dialog(
+      {
+        title: "Doom",
+        content: `<iframe src="https://js-dos.com/games/doom.exe.html" width="800" height="600" style="border:none;"></iframe>`,
+        buttons: {
+          ok: { label: "Close" },
+        },
+      },
+      {
+        width: 820,
+        height: 680,
       }
-    }, {
-      width: 820,
-      height: 680
-    }).render(true);
+    ).render(true);
     return false;
   }
 });

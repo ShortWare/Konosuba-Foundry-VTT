@@ -62,3 +62,12 @@
     padding: 0 8px;
   }
 }
+
+.list-container {
+  max-height: 300px; 
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid $c-black;
+}
