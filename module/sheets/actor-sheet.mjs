@@ -48,16 +48,6 @@ export class KonosubaActorSheet extends ActorSheet {
       this._prepareItems(context);
     }
 
-    context.enrichedBiography = await TextEditor.enrichHTML(
-      this.actor.system.biography,
-      {
-        secrets: this.document.isOwner,
-        async: true,
-        rollData: this.actor.getRollData(),
-        relativeTo: this.actor,
-      }
-    );
-
     context.raceItem = this.actor.items.find((i) => i.type === "race") || null;
     context.classItem =
       this.actor.items.find((i) => i.type === "class") || null;

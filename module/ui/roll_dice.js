@@ -74,7 +74,6 @@ export class DiceMenu extends Application {
     const form = new FormData(ev.target);
 
     this.diceOptions.modifiers.forEach((modifier) => {
-      console.log((modifier.active = form.get(modifier.id + "-active")));
       modifier.active = form.get(modifier.id + "-active") === "on";
     });
 

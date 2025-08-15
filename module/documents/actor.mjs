@@ -134,10 +134,6 @@ export class KonosubaActor extends Actor {
 
         Object.entries(attributeModifiers).forEach(([key, modifier]) => {
           let tmp = skill.system.modifiers[key] || "0";
-          console.log("KEY:", key);
-          console.log("MODIFIER:", modifier);
-          console.log("SKILL:", skill);
-          console.log("TMP:", tmp);
           tmp = tmp.replaceAll("SL", skill.system.level.value);
           tmp = tmp.replaceAll("CL", data.system.attributes.level.value);
           attributeModifiers[key] =
