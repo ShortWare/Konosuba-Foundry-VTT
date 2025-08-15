@@ -30,45 +30,27 @@ export class KonosubaActorSheet extends ActorSheet {
 
   /** @override */
   async getData() {
-    // Retrieve the data structure from the base sheet. You can inspect or log
-    // the context variable to see the structure, but some key properties for
-    // sheets are the actor object, the data object, whether or not it's
-    // editable, the items array, and the effects array.
     const context = super.getData();
-
-    // Use a safe clone of the actor data for further operations.
     const actorData = this.document.toObject(false);
 
-    // Add the actor's data to context.data for easier access, as well as flags.
     context.system = actorData.system;
     context.flags = actorData.flags;
-
-    // Adding a pointer to CONFIG.KONOSUBA
     context.config = CONFIG.KONOSUBA;
 
-    // Prepare player data and items.
     if (actorData.type == "player") {
       this._prepareItems(context);
       this._prepareCharacterData(context);
     }
-
-    // Prepare NPC data and items.
     if (actorData.type == "npc") {
       this._prepareItems(context);
     }
 
-    // Enrich biography info for display
-    // Enrichment turns text like `[[/r 1d20]]` into buttons
     context.enrichedBiography = await TextEditor.enrichHTML(
       this.actor.system.biography,
       {
-        // Whether to show secret blocks in the finished html
         secrets: this.document.isOwner,
-        // Necessary in v11, can be removed in v12
         async: true,
-        // Data to fill in for inline rolls
         rollData: this.actor.getRollData(),
-        // Relative UUID resolution
         relativeTo: this.actor,
       }
     );
@@ -96,7 +78,6 @@ export class KonosubaActorSheet extends ActorSheet {
    * @param {object} context The context object to mutate
    */
   _prepareItems(context) {
-    // Initialize containers.
     const gear = [];
     const skills = [];
 
@@ -121,7 +102,6 @@ export class KonosubaActorSheet extends ActorSheet {
       }
     }
 
-    // Assign and return
     context.gear = gear;
     context.skills = skills;
   }

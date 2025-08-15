@@ -27,9 +27,15 @@ export class DiceMenu extends Application {
   }
 
   getData() {
+    let roll = new Roll(this.diceOptions.formula, {
+      player: this.actor.system,
+    });
     return {
       actor: this.actor,
-      options: this.diceOptions,
+      options: {
+        ...this.diceOptions,
+        formattedFormula: roll._formula,
+      },
     };
   }
 
@@ -87,11 +93,13 @@ export class DiceMenu extends Application {
         : ""
     }`;
 
-    let roll = new Roll(formula);
-    await roll.roll({ async: true });
+    let roll = new Roll(formula, {
+      actor: this.actor,
+    });
+    await roll.roll();
     roll.toMessage({
-      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      flavor: `Custom Roll (${formula})`,
+      speaker: ChatMessage.getSpeaker({ player: this.actor.system }),
+      flavor: `Custom Roll (${roll._formula})`,
       flags: {
         konosuba: {
           reroll: {

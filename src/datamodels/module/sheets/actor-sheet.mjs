@@ -44,18 +44,11 @@ export class KonosubaActorSheet extends ActorSheet {
     // Adding a pointer to CONFIG.KONOSUBA
     context.config = CONFIG.KONOSUBA;
 
-    // Prepare character data and items.
-    if (actorData.type == "character") {
-      this._prepareItems(context);
-      this._prepareCharacterData(context);
-    }
-
     if (actorData.type === "player") {
       this._prepareItems(context);
       this._prepareCharacterData(context);
     }
 
-    // Prepare NPC data and items.
     if (actorData.type == "npc") {
       this._prepareItems(context);
     }
