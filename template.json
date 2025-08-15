@@ -127,7 +127,8 @@
         "actionPoints": "",
         "movement": "",
         "hitCheck": "",
-        "attackPower": ""
+        "attackPower": "",
+        "dodgeCheck": ""
       }
     },
     "race": {
