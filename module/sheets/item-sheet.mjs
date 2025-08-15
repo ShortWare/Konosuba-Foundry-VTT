@@ -75,13 +75,6 @@ export class KonosubaItemSheet extends ItemSheet {
     // Everything below here is only needed if the sheet is editable
     if (!this.isEditable) return;
 
-    // Roll handlers, click handlers, etc. would go here.
-
-    // Active Effect management
-    html.on("click", ".effect-control", (ev) =>
-      onManageActiveEffect(ev, this.item)
-    );
-
     html.find('input[name="system.skillTiming"]').on("change", async () => {
       const formData = this._getSubmitData();
       const timing = String(
