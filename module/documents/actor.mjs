@@ -92,6 +92,19 @@ export class KonosubaActor extends Actor {
       this.calculateAbility(data, key);
     });
 
+
+    let maxHealth = 0
+    let maxMana = 0
+    const classItems = data.items.filter((i) => i.type === "class");
+    if (classItems.length > 0) {
+      let classItem = classItems[0]
+      maxHealth += classItem.system.health.start
+      maxHealth += classItem.system.health.gain * (data.system.attributes.level.value-1)
+      maxMana += classItem.system.mana.start
+      maxMana += classItem.system.mana.gain * (data.system.attributes.level.value-1)
+    }
+
+
     const skills = data.items.filter((i) => i.type === "skill");
     const rollModifiers = {
       hitCheck: {
@@ -139,6 +152,9 @@ export class KonosubaActor extends Actor {
           attributeModifiers[key] =
             (attributeModifiers[key] || 0) + eval(tmp) || 0;
         });
+
+        maxHealth += eval(skill.system.modifiers["health"] || "0");
+        maxMana += eval(skill.system.modifiers["mana"] || "0");
       }
     });
 
@@ -152,5 +168,8 @@ export class KonosubaActor extends Actor {
       actionPoints: attributeModifiers.actionPoints,
       movement: attributeModifiers.movement,
     };
+
+    data.system.health.max = maxHealth
+    data.system.mana.max = maxMana
   }
 }

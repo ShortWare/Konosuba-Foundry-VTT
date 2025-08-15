@@ -127,7 +127,9 @@
         "movement": "",
         "hitCheck": "",
         "attackPower": "",
-        "dodgeCheck": ""
+        "dodgeCheck": "",
+        "health": "",
+        "mana": ""
       }
     },
     "race": {
