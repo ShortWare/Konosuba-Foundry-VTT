@@ -26,63 +26,63 @@
             "value": 1,
             "bonus": 0,
             "class": 0,
-            "skillsBefore": 0,
+            "skills": 0,
             "score": 0,
-            "skillsAfter": 0,
+            "skillsDice": 0,
             "dice": 0
           },
           "dexterity": {
             "value": 1,
             "bonus": 0,
             "class": 0,
-            "skillsBefore": 0,
+            "skills": 0,
             "score": 0,
-            "skillsAfter": 0,
+            "skillsDice": 0,
             "dice": 0
           },
           "agility": {
             "value": 1,
             "bonus": 0,
             "class": 0,
-            "skillsBefore": 0,
+            "skills": 0,
             "score": 0,
-            "skillsAfter": 0,
+            "skillsDice": 0,
             "dice": 0
           },
           "intelligence": {
             "value": 1,
             "bonus": 0,
             "class": 0,
-            "skillsBefore": 0,
+            "skills": 0,
             "score": 0,
-            "skillsAfter": 0,
+            "skillsDice": 0,
             "dice": 0
           },
           "perception": {
             "value": 1,
             "bonus": 0,
             "class": 0,
-            "skillsBefore": 0,
+            "skills": 0,
             "score": 0,
-            "skillsAfter": 0,
+            "skillsDice": 0,
             "dice": 0
           },
           "mind": {
             "value": 1,
             "bonus": 0,
             "class": 0,
-            "skillsBefore": 0,
+            "skills": 0,
             "score": 0,
-            "skillsAfter": 0,
+            "skillsDice": 0,
             "dice": 0
           },
           "luck": {
             "value": 1,
             "bonus": 0,
             "class": 0,
-            "skillsBefore": 0,
+            "skills": 0,
             "score": 0,
-            "skillsAfter": 0,
+            "skillsDice": 0,
             "dice": 0
           }
         }
@@ -147,7 +147,17 @@
       "skillRange": "",
       "skillCost": 0,
       "skillEffects": "",
-      "skillCustomRolls": ""
+      "skillCustomRolls": "",
+      "active": false,
+      "modifiers": {
+        "strength": "",
+        "dexterity": "",
+        "agility": "",
+        "intelligence": "",
+        "perception": "",
+        "mind": "",
+        "luck": ""
+      }
     },
     "race": {
       "templates": ["base"],

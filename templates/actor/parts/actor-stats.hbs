@@ -16,11 +16,11 @@
         <th><input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/></th>
         <th>{{ability.bonus}}</th>
         <th>{{ability.class}}</th>
-        <th>{{ability.skillsBefore}}</th>
+        <th>{{ability.skills}}</th>
         <th>{{ability.score}}</th>
-        <th>{{ability.skillsAfter}}</th>
-        <th>2d6+{{ability.dice}}</th>
-        <th class="roll-dice" data-roll-title="Nazwa" data-roll="2d6+{{ability.dice}}">Roll</th>
+        <th>{{ability.skillsDice}}</th>
+        <th>{{ability.dice}}d6+{{ability.score}}</th>
+        <th class="roll-dice" data-roll-title="Nazwa" data-roll="{{ability.dice}}d6+{{ability.score}}">Roll</th>
     </tr>
     {{/each}}
 </table>

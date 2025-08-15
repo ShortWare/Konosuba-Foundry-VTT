@@ -21,6 +21,15 @@
       />
     </div>
     <div class='body-field'>
+      <label class='body-label'>Level</label>
+      <input
+        type='text'
+        name='system.skillLevel'
+        value='{{system.skillLevel}}'
+        data-dtype='Number'
+      />
+    </div>
+    <div class='body-field'>
       <label class='body-label'>Timing</label>
       <input
         type='text'
@@ -29,6 +38,19 @@
         data-dtype='String'
       />
     </div>
+    {{#if (ne system.skillTiming "Passive")}}
+    {{#if (ne system.skillTiming "passive")}}
+    <div class='body-field'>
+      <label class='body-label'>Active</label><br>
+      <input
+        type='checkbox'
+        name='system.active'
+        data-dtype='Boolean'
+        {{#if system.active}}checked{{/if}}
+      />
+    </div>
+    {{/if}}
+    {{/if}}
     <div class='body-field'>
       <label class='body-label'>Check</label>
       <input
@@ -82,6 +104,18 @@
         value='{{system.skillCustomRolls}}'
         data-dtype='String'
       ></input>
+    </div>
+    <div class='body-field'>
+      <h2>Modifiers</h2>
+      {{#each system.modifiers as |modifier key|}}
+      <label class='body-label'>{{key}}</label>
+      <input
+        type='text'
+        name='system.modifiers.{{key}}'
+        value='{{modifier}}'
+        data-dtype='String'
+      ></input>
+      {{/each}}
     </div>
   </section>
 </form>

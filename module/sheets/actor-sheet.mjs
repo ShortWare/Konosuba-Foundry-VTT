@@ -219,6 +219,14 @@ export class KonosubaActorSheet extends ActorSheet {
         }
       });
     });
+
+    Hooks.on("createItem", (item, options, userId) => {
+      this.updateStats(item.parent);
+    });
+
+    Hooks.on("deleteItem", (item, options, userId) => {
+      this.updateStats(item.parent);
+    });
   }
 
   /**
@@ -285,22 +293,44 @@ export class KonosubaActorSheet extends ActorSheet {
       (value || actor.system.abilities[ability].value) / 3
     );
     const abilityData = actor.system.abilities[ability];
+
     const classItem = actor.items.find((i) => i.type === "class") || null;
     if (classItem && classItem.system.modifiers?.[ability] !== undefined) {
       abilityData.class = classItem.system.modifiers[ability];
     }
     const classMod = Number(abilityData.class || 0);
-    const skillsBefore = Number(abilityData.skillsBefore || 0);
-    const score = Number(bonus + classMod + skillsBefore);
-    const skillsAfter = Number(abilityData.skillsAfter || 0);
-    const dice = Number(score + skillsAfter);
+
+    const skills = actor.items.filter((i) => i.type === "skill");
+
+    this.skillsFlat = 0;
+    this.skillsDice = 0;
+
+    skills.forEach((skill) => {
+      if (skill.system.active) {
+        let modifier = skill.system.modifiers[ability] || "0";
+        modifier = modifier.replaceAll("SL", skill.system.skillLevel);
+        if (modifier.includes("d6")) {
+          let parts = modifier.split("d6");
+          this.skillsDice += eval(parts[0]) || 0;
+          this.skillsFlat += eval(parts[1]) || 0;
+        } else {
+          this.skillsFlat += eval(modifier) || 0;
+        }
+      }
+    });
+
+    abilityData.skills = this.skillsFlat || 0;
+    abilityData.skillsDice = this.skillsDice || 0;
+
+    const score = Number(bonus + classMod + eval(this.skillsFlat));
+    const dice = Number(2 + eval(this.skillsDice));
 
     actor.update({
       [`system.abilities.${ability}.bonus`]: bonus,
       [`system.abilities.${ability}.class`]: classMod,
-      [`system.abilities.${ability}.skillsBefore`]: skillsBefore,
+      [`system.abilities.${ability}.skills`]: eval(this.skillsFlat),
       [`system.abilities.${ability}.score`]: score,
-      [`system.abilities.${ability}.skillsAfter`]: skillsAfter,
+      [`system.abilities.${ability}.skillsDice`]: eval(this.skillsDice),
       [`system.abilities.${ability}.dice`]: dice,
     });
   }
