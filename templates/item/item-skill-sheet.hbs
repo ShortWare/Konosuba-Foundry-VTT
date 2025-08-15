@@ -180,9 +180,13 @@
               <input type="text" name="system.customRolls.{{index}}.name" value="{{roll.name}}"data-dtype="String" />
             </div>
             <div>
-              <label class="text-bold">Formula</label>
-              <input type="text" name="system.customRolls.{{@index}}.formula" value="{{roll.formula}}" data-dtype="String" />
+              <label class="text-bold">Custom ID</label>
+              <input type="text" name="system.customRolls.{{@index}}.customId" value="{{roll.customId}}" data-dtype="String" />
             </div>
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label class="text-bold">Formula</label>
+            <input type="text" name="system.customRolls.{{index}}.formula" value="{{roll.formula}}" data-dtype="String" />
           </div>
           <button type="button" class="delete-roll" data-index="{{index}}">Remove roll</button>
         </div>

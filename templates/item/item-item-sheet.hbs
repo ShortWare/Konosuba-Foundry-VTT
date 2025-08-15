@@ -64,7 +64,8 @@
 
   <nav class='sheet-tabs tabs' data-group='primary'>
     <a class='item' data-tab='core'>Core</a>
-    <a class='item' data-tab='attributes'>Attributes</a>
+    <a class='item' data-tab='modifiers'>Modifiers</a>
+    <a class='item' data-tab='custom-modifiers'>Custom Modifiers</a>
   </nav>
 
   <section class='sheet-body'>
@@ -84,8 +85,27 @@
             <option value="storage" {{#if (eq system.type "storage")}}selected{{/if}}>Storage</option>
             <option value="decoration" {{#if (eq system.type "decoration")}}selected{{/if}}>Decoration</option>
             <option value="service" {{#if (eq system.type "service")}}selected{{/if}}>Service</option>
+            <option value="service" {{#if (eq system.type "other")}}selected{{/if}}>Other</option>
           </select>
         </div>
+      </div>
+      <div style="margin-bottom: 10px;" class="grid grid-2col">
+        <div>
+          <label class="text-bold">Range</label>
+          <div class="flexrow flex-center flex-between">
+            <input type="text" name="system.range" value="{{system.range}}" data-dtype="String" />
+          </div>
+        </div>
+        <div>
+          <label class="text-bold">Sub Type</label>
+          <div class="flexrow flex-center flex-between">
+            <input type="text" name="system.subType" value="{{system.subType}}" data-dtype="String" />
+          </div>
+        </div>
+      </div>
+      <div>
+        <label class="text-bold">Effects</label>
+        <textarea name="system.effects" placeholder="Item description..." data-dtype="String" style="margin-bottom: 10px;">{{system.effects}}</textarea>
       </div>
       <div>
         <label class="text-bold">Class Restrictions</label>
@@ -99,14 +119,54 @@
         </div>
       </div>
     </div>
-    <div class='tab' data-group='primary' data-tab='description'>
-      {{editor
-        enrichedDescription
-        target='system.description'
-        engine='prosemirror'
-        button=true
-        editable=editable
-      }}
+    <div class="tab" data-group="primary" data-tab="modifiers">
+      <div class="grid grid-3col">
+        {{#each system.modifiers as |modifier key|}}
+          <div>
+            <label class="text-bold">{{camelToTitle key}}</label>
+            <div class="flexrow flex-center flex-between">
+              <input
+                type='text'
+                name='system.modifiers.{{key}}'
+                value='{{modifier}}'
+                data-dtype='String'
+              />
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+    <div class="tab" data-group="primary" data-tab="custom-modifiers">
+      {{#each system.customModifiers as |modifier index|}}
+        <div data-index="{{index}}">
+          <div class="grid grid-2col">
+            <div>
+              <label class="text-bold">Name</label>
+              <input type="text" name="system.customModifiers.{{@index}}.name" value="{{modifier.name}}" data-dtype="String" />
+            </div>
+            <div>
+              <label class="text-bold">Roll IDs</label>
+              <input type="text" name="system.customModifiers.{{index}}.rollIds" value="{{modifier.rollIds}}"data-dtype="String" />
+            </div>
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label class="text-bold">Formula</label>
+            <input type="text" name="system.customModifiers.{{index}}.formula" value="{{modifier.formula}}" data-dtype="String" />
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label class="text-bold">Apply when</label>
+            <div class="flexrow flex-center flex-between">
+              <select name="system.customModifiers.{{index}}.applyWhen" data-dtype="String">
+                <option value="always" {{#if (eq modifier.applyWhen "always")}}selected{{/if}}>Always</option>
+                <option value="equipped" {{#if (eq modifier.applyWhen "equipped")}}selected{{/if}}>When Equipped</option>
+              </select>
+            </div>
+          </div>
+          <button type="button" class="delete-modifier" data-index="{{index}}">Remove modifier</button>
+        </div>
+        <hr />
+      {{/each}}
+      <button class="add-modifier">Create new modifier</button>
     </div>
   </section>
 </form>

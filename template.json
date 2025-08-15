@@ -93,9 +93,32 @@
       "quantity": 1,
       "weight": 0,
       "type": "",
+      "subtype": "",
       "classRestrictions": [],
       "value": 0,
-      "level": 1
+      "level": 1,
+      "effects": "",
+      "range": "",
+      "equipSlot": "",
+      "customModifiers": [],
+      "modifiers": {
+        "strength": "",
+        "dexterity": "",
+        "agility": "",
+        "intelligence": "",
+        "perception": "",
+        "mind": "",
+        "luck": "",
+        "physicalDefense": "",
+        "magicDefense": "",
+        "actionPoints": "",
+        "movement": "",
+        "hitCheck": "",
+        "attackPower": "",
+        "dodgeCheck": "",
+        "health": "",
+        "mana": ""
+      }
     },
     "skill": {
       "templates": ["base"],

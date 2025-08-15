@@ -81,7 +81,7 @@ export class KonosubaItemSheet extends ItemSheet {
         if (rolls && !Array.isArray(rolls)) {
           rolls = Object.values(rolls);
         }
-        rolls.push({ name: "", formula: "" });
+        rolls.push({ name: "", formula: "", customId: "" });
         this.item.update({ "system.customRolls": rolls });
         this.render(true);
       });
@@ -118,6 +118,34 @@ export class KonosubaItemSheet extends ItemSheet {
           classRestrictions = classRestrictions.filter((id) => id !== classId);
         }
         this.item.update({ "system.classRestrictions": classRestrictions });
+        this.render(true);
+      });
+
+      html.find(".add-modifier").click((ev) => {
+        ev.preventDefault();
+        const modifiers = this.item.system.customModifiers || [];
+        if (modifiers && !Array.isArray(modifiers)) {
+          modifiers = Object.values(modifiers);
+        }
+        modifiers.push({
+          name: "",
+          formula: "",
+          applyWhen: "always",
+          rollIds: "",
+        });
+        this.item.update({ "system.customModifiers": modifiers });
+        this.render(true);
+      });
+
+      html.find(".delete-modifier").click((ev) => {
+        ev.preventDefault();
+        const index = Number(ev.currentTarget.dataset.index);
+        let modifiers = duplicate(this.item.system.customModifiers);
+        if (modifiers && !Array.isArray(modifiers)) {
+          modifiers = Object.values(modifiers);
+        }
+        modifiers.splice(index, 1);
+        this.item.update({ "system.customModifiers": modifiers });
         this.render(true);
       });
     }
