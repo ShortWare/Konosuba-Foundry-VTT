@@ -8,9 +8,11 @@ export class KonosubaActorSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["konosuba", "sheet", "actor"],
-      width: 600,
-      height: 600,
+      //classes: ["konosuba", "sheet", "actor"],
+      classes: ["konosuba", "actor-sheet"],
+      width: 1076,
+      height: 794,
+      resizable: false,
       tabs: [
         {
           navSelector: ".sheet-tabs",

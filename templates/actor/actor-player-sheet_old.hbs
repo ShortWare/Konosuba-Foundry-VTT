@@ -1,0 +1,129 @@
+<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Character Name"/></h1>
+      <h1 class="charname"><input name="system.playerName" type="text" value="{{system.playerName}}" placeholder="Player Name"/></h1>
+      {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
+      use both the "grid" and "grid-Ncol" class where "N" can be any number
+      from 1 to 12 and will create that number of columns.  --}}
+      <div class="resources grid grid-3col">
+
+        {{!-- "flex-group-center" is also defined in the _grid.scss file
+        and it will add a small amount of padding, a border, and will
+        center all of its child elements content and text. --}}
+        <div class="resource flex-group-center">
+          <label for="system.health.value" class="resource-label">Health</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number"/>
+          <span> / </span>
+          <input type="text" name="system.health.max" value="{{system.health.max}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.power.value" class="resource-label">Mana</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.mana.value" value="{{system.mana.value}}" data-dtype="Number"/>
+          <span> / </span>
+          <input type="text" name="system.mana.max" value="{{system.mana.max}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.attributes.blessings.value" class="resource-label">Blessings</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.attributes.blessings.value" value="{{system.attributes.blessings.value}}" data-dtype="Number"/> / 
+          <input type="text" name="system.attributes.blessings.max" value="{{system.attributes.blessings.max}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    {{!-- Default tab is specified in actor-sheet.mjs --}}
+    <a class="item" data-tab="core">Core</a>
+    <a class="item" data-tab="stats">Stats</a>
+    <a class="item" data-tab="combat">Combat</a>
+    <a class="item" data-tab="description">Description</a>
+    <a class="item" data-tab="items">Items</a>
+    <a class="item" data-tab="skills">Skills</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Core Tab --}}
+    <div class="tab core" data-group="primary" data-tab="core">
+      <section class="grid grid-3col">
+        <aside class="sidebar">
+
+          {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
+          use both the "grid" and "grid-Ncol" class where "N" can be any number
+          from 1 to 12 and will create that number of columns.  --}}
+          <div>
+            <label for="system.attributes.level.value" class="resource-label">Level</label>
+            <p>{{system.attributes.level.value}}</p>
+            <label for="system.attributes.xp.value" class="resource-label">XP</label>
+            <div>
+              <input style="width: 40%; float: left" type="text" name="system.attributes.xp.value" value="{{system.attributes.xp.value}}" data-dtype="Number"/><p style="width: 40%; float: left; margin-left: 5%"> / {{system.attributes.xp.remaining}}</p>
+            </div>
+          </div>
+          <div>
+            <label>Race: {{#if raceItem}} {{raceItem.name}} {{/if}} </label><br>
+            <label>Class: {{#if classItem}} {{classItem.name}} {{/if}} </label>
+          </div>
+          <div>
+            <label>Lifestyle: </label>
+            <select name='system.lifestyle' data-dtype='String'>
+              <option value="stable" {{#if (eq system.lifestyle "stable")}}selected{{/if}}>Stable living</option>
+              <option value="simple" {{#if (eq system.lifestyle "simple")}}selected{{/if}}>Simple living</option>
+              <option value="economy" {{#if (eq system.lifestyle "economy")}}selected{{/if}}>Economy</option>
+              <option value="suite" {{#if (eq system.lifestyle "suite")}}selected{{/if}}>Suite</option>
+              <option value="royal" {{#if (eq system.lifestyle "royal")}}selected{{/if}}>Royal</option>
+            </select>
+          </div>
+        </aside>
+
+        <section class="main grid-span-2">
+          {{> "systems/konosuba/templates/actor/parts/actor-features.hbs"}}
+        </section>
+
+      </section>
+    </div>
+
+    <div class="tab stats" data-group="primary" data-tab="stats">
+      {{> "systems/konosuba/templates/actor/parts/actor-stats.hbs"}}
+    </div>
+
+    {{!-- Biography Tab --}}
+    <div class="tab biography" data-group="primary" data-tab="description">
+      {{!-- Editors must receive enriched text data from getData to properly handle rolls --}}
+      Age: <input type="text" name="system.attributes.appearance.age" value="{{system.attributes.appearance.age}}" data-dtype="Number"/>
+      Gender: <input type="text" name="system.attributes.appearance.gender" value="{{system.attributes.appearance.gender}}" data-dtype="String"/>
+      Height: <input type="text" name="system.attributes.appearance.height" value="{{system.attributes.appearance.height}}" data-dtype="Number"/>
+      Eye Color: <input type="text" name="system.attributes.appearance.eyeColor" value="{{system.attributes.appearance.eyeColor}}" data-dtype="String"/>
+      Hair Color: <input type="text" name="system.attributes.appearance.hairColor" value="{{system.attributes.appearance.hairColor}}" data-dtype="String"/>
+      Skin Color: <input type="text" name="system.attributes.appearance.skinColor" value="{{system.attributes.appearance.skinColor}}" data-dtype="String"/>
+    </div>
+
+    {{!-- Owned Items Tab --}}
+    <div class="tab items" data-group="primary" data-tab="items">
+       {{> "systems/konosuba/templates/actor/parts/actor-items.hbs"}}
+    </div>
+
+    {{!-- Owned Skills Tab --}}
+    <div class="tab skills" data-group="primary" data-tab="skills">
+      {{> "systems/konosuba/templates/actor/parts/actor-skills.hbs"}}
+    </div>
+
+    <div class="tab combat" data-group="primary" data-tab="combat">
+      {{> "systems/konosuba/templates/actor/parts/actor-combat.hbs"}}
+    </div>
+
+  </section>
+</form>

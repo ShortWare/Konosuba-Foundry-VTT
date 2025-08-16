@@ -292,9 +292,6 @@
 .konosuba .tox .tox-editor-container {
   background: #fff;
 }
-.konosuba .tox .tox-edit-area {
-  padding: 0 8px;
-}
 .konosuba .list-container {
   max-height: 300px;
   overflow-y: auto;
@@ -414,3 +411,166 @@
   justify-content: space-between;
   margin-bottom: 5px;
 }
+@font-face {
+  font-family: "DalekPinpoint";
+  src: url("/systems/konosuba/assets/fonts/DalekPinpointBold.ttf") format("truetype");
+}
+.konosuba .actor-sheet {
+  background-image: url("/systems/konosuba/assets/actor-sheet/home-bg.png");
+  width: 1076px;
+  height: 764px;
+  padding: 0;
+  padding-left: 1%;
+  padding-right: 1%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  font-family: "DalekPinpoint", sans-serif;
+}
+.konosuba .actor-sheet nav {
+  height: 9%;
+  width: 100%;
+}
+.konosuba .actor-sheet nav:nth-of-type(1) {
+  margin-top: 1%;
+}
+.konosuba .actor-sheet .actor-page {
+  height: 80%;
+  width: 100%;
+}
+.konosuba .actor-sheet .actor-page.home .top {
+  height: 54%;
+}
+.konosuba .actor-sheet .actor-page.home .top header {
+  height: 40%;
+  width: 65%;
+  margin-left: 6%;
+  float: left;
+  font-size: 2em;
+}
+.konosuba .actor-sheet .actor-page.home .top header * {
+  height: 65%;
+  margin-top: 6.8%;
+  float: left;
+}
+.konosuba .actor-sheet .actor-page.home .top header label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.konosuba .actor-sheet .actor-page.home .top header input:nth-of-type(1) {
+  width: 30%;
+}
+.konosuba .actor-sheet .actor-page.home .top header label:nth-of-type(1) {
+  width: 43%;
+  margin-left: 0.7%;
+}
+.konosuba .actor-sheet .actor-page.home .top header input:nth-of-type(2) {
+  width: 10%;
+  margin-left: 0.2%;
+}
+.konosuba .actor-sheet .actor-page.home .top header p {
+  width: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.konosuba .actor-sheet .actor-page.home .top header label:nth-of-type(2) {
+  width: 10%;
+  margin-left: 0.7%;
+}
+.konosuba .actor-sheet .actor-page.home .top footer {
+  height: 20%;
+  width: 65%;
+  margin-left: 6%;
+  float: left;
+}
+.konosuba .actor-sheet .actor-page.home .top footer input, .konosuba .actor-sheet .actor-page.home .top footer label {
+  height: 64%;
+  margin-top: 1.2%;
+  float: left;
+}
+.konosuba .actor-sheet .actor-page.home .top footer input:nth-of-type(1) {
+  width: 13%;
+  margin-left: 18%;
+}
+.konosuba .actor-sheet .actor-page.home .top footer input:nth-of-type(2) {
+  width: 15%;
+  margin-left: 14%;
+}
+.konosuba .actor-sheet .actor-page.home .top footer label {
+  width: 18%;
+  margin-left: 14%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.konosuba .actor-sheet .actor-page.home .top img {
+  height: 180px;
+  width: 180px;
+  margin-right: 62px;
+  margin-top: 38px;
+  float: right;
+}
+.konosuba .actor-sheet .actor-page.home .bottom {
+  height: 46%;
+}
+.konosuba .actor-sheet .actor-page.home .bottom .stats {
+  width: 61%;
+  margin-left: 7.2%;
+  height: 100%;
+  float: left;
+}
+.konosuba .actor-sheet .actor-page.home .bottom .stats .col {
+  height: 90%;
+  width: 47%;
+  float: left;
+}
+.konosuba .actor-sheet .actor-page.home .bottom .stats .col .stat {
+  height: 40.5px;
+  margin: 0;
+  margin-bottom: 1px;
+  font-size: 2em;
+}
+.konosuba .actor-sheet .actor-page.home .bottom .stats .col .stat label {
+  height: 100%;
+  width: 66%;
+  margin: 0;
+  float: left;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.konosuba .actor-sheet .actor-page.home .bottom .stats .col .stat input {
+  height: 100%;
+  width: 17%;
+  margin: 0;
+  margin-right: 9%;
+  float: right;
+}
+.konosuba .actor-sheet .actor-page.home .bottom .stats .col:nth-of-type(2) {
+  margin-left: 5.5%;
+}
+.konosuba .actor-sheet .actor-page.home .bottom .mana {
+  width: 13.5%;
+  height: 10%;
+  margin-right: 6.8%;
+  margin-top: 18%;
+  float: right;
+}
+.konosuba .actor-sheet .actor-page.home .bottom .mana * {
+  width: 26%;
+  height: 100%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.konosuba .actor-sheet .actor-page.home .bottom .mana p {
+  width: 30%;
+  margin: 0;
+  margin-left: 9%;
+  margin-right: 9%;
+}
+
+/*# sourceMappingURL=konosuba.css.map */
