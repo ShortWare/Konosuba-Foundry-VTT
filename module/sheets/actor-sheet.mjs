@@ -1,4 +1,5 @@
 import { DiceMenu } from "../ui/roll_dice.js";
+import { EquipmentMenu } from "../ui/equipment.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -61,8 +62,16 @@ export class KonosubaActorSheet extends ActorSheet {
    * @param {object} context The context object to mutate
    */
   _prepareCharacterData(context) {
-    // This is where you can enrich character-specific editor fields
-    // or setup anything else that's specific to this type
+    context.equipment = {};
+    for (let key in this.actor.system.equipment) {
+      if (this.actor.system.equipment[key] !== "") {
+        context.equipment[key] = this.actor.items.get(
+          this.actor.system.equipment[key]
+        );
+      } else {
+        context.equipment[key] = null;
+      }
+    }
   }
 
   /**
@@ -74,10 +83,13 @@ export class KonosubaActorSheet extends ActorSheet {
     const gear = [];
     const skills = [];
 
+    const allEquippedItems = Object.values(this.actor.system.equipment);
+
     for (let i of context.items) {
       i.img = i.img || Item.DEFAULT_ICON;
       if (i.type === "item") {
-        gear.push(i);
+        const isEquipped = allEquippedItems.some((e) => e.itemId === i._id);
+        if (!isEquipped) gear.push(i);
       } else if (i.type === "skill") {
         let customRolls = i.system.customRolls;
         let customRollsData = [];
@@ -110,7 +122,8 @@ export class KonosubaActorSheet extends ActorSheet {
       const button = event.currentTarget;
       const title = button.dataset.rollTitle || "Dice Roller";
       const formula = button.dataset.roll || "1d6";
-      new DiceMenu(this.actor, { title, formula }).render(true);
+      const customId = button.dataset.customId || "default-roll";
+      new DiceMenu(this.actor, { customId, title, formula }).render(true);
     });
 
     // XP and Level Calculation
@@ -133,21 +146,14 @@ export class KonosubaActorSheet extends ActorSheet {
         });
       });
 
-    // Render the item sheet for viewing/editing prior to the editable check.
     html.on("click", ".item-edit", (ev) => {
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
       item.sheet.render(true);
     });
 
-    // -------------------------------------------------------------
-    // Everything below here is only needed if the sheet is editable
     if (!this.isEditable) return;
 
-    // Add Inventory Item
-    html.on("click", ".item-create", this._onItemCreate.bind(this));
-
-    // Delete Inventory Item
     html.on("click", ".item-delete", (ev) => {
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
@@ -155,13 +161,10 @@ export class KonosubaActorSheet extends ActorSheet {
       li.slideUp(200, () => this.render(false));
     });
 
-    // Rollable abilities.
-    html.on("click", ".rollable", this._onRoll.bind(this));
-
     // Drag events for macros.
     if (this.actor.isOwner) {
       let handler = (ev) => this._onDragStart(ev);
-      html.find("li.item").each((i, li) => {
+      html.find(".item").each((i, li) => {
         if (li.classList.contains("inventory-header")) return;
         li.setAttribute("draggable", true);
         li.addEventListener("dragstart", handler, false);
@@ -180,64 +183,56 @@ export class KonosubaActorSheet extends ActorSheet {
         }
       });
     });
-  }
 
-  /**
-   * Handle creating a new Owned Item for the actor using initial data defined in the HTML dataset
-   * @param {Event} event   The originating click event
-   * @private
-   */
-  async _onItemCreate(event) {
-    event.preventDefault();
-    const header = event.currentTarget;
-    // Get the type of item to create.
-    const type = header.dataset.type;
-    // Grab any data associated with this control.
-    const data = duplicate(header.dataset);
-    // Initialize a default name.
-    const name = `New ${type.capitalize()}`;
-    // Prepare the item object.
-    const itemData = {
-      name: name,
-      type: type,
-      system: data,
-    };
-    // Remove the type from the dataset since it's in the itemData.type prop.
-    delete itemData.system["type"];
+    // Item Details
+    html.on("click", ".item", (ev) => {
+      const li = $(ev.currentTarget);
+      if (!li || !li.data("itemId")) return;
 
-    // Finally, create the item!
-    return await Item.create(itemData, { parent: this.actor });
-  }
+      const item = this.actor.items.get(li.data("itemId"));
+      if (!item || item.type != "item") return;
 
-  /**
-   * Handle clickable rolls.
-   * @param {Event} event   The originating click event
-   * @private
-   */
-  _onRoll(event) {
-    event.preventDefault();
-    const element = event.currentTarget;
-    const dataset = element.dataset;
+      const itemDetails = html.find("#item-details");
+      itemDetails.empty();
+      itemDetails.append(`
+        <h2>${item.name}</h2>
+        <p>${item.system.effects}</p>
+      `);
 
-    // Handle item rolls.
-    if (dataset.rollType) {
-      if (dataset.rollType == "item") {
-        const itemId = element.closest(".item").dataset.itemId;
-        const item = this.actor.items.get(itemId);
-        if (item) return item.roll();
+      const allEquippedItems = Object.values(this.actor.system.equipment);
+      const isEquipped = allEquippedItems.some((e) => e === item._id);
+
+      if (item.system.equipSlot !== "none" && !isEquipped) {
+        itemDetails.append(`
+          <button class="item-equip" data-item-id="${item._id}">Equip</button>
+        `);
+      } else if (isEquipped) {
+        itemDetails.append(`
+          <button class="item-unequip" data-item-id="${item._id}">Unequip</button>
+        `);
       }
-    }
+    });
 
-    // Handle rolls that supply the formula directly.
-    if (dataset.roll) {
-      let label = dataset.label ? `[ability] ${dataset.label}` : "";
-      let roll = new Roll(dataset.roll, this.actor.getRollData());
-      roll.toMessage({
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: label,
-        rollMode: game.settings.get("core", "rollMode"),
+    html.on("click", ".item-equip", (ev) => {
+      const itemId = ev.currentTarget.dataset.itemId;
+      new EquipmentMenu(this.actor, itemId).render(true);
+      this.render(true);
+    });
+
+    html.on("click", ".item-unequip", (ev) => {
+      const itemId = ev.currentTarget.dataset.itemId;
+      for (const [slot, equippedId] of Object.entries(
+        this.actor.system.equipment
+      )) {
+        if (equippedId === itemId) {
+          this.actor.system.equipment[slot] = "";
+          break;
+        }
+      }
+      this.actor.update({
+        "system.equipment": this.actor.system.equipment,
       });
-      return roll;
-    }
+      this.render(true);
+    });
   }
 }

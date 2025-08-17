@@ -92,38 +92,39 @@ export class KonosubaActor extends Actor {
       this.calculateAbility(data, key);
     });
 
-
-    let maxHealth = 0
-    let maxMana = 0
+    let maxHealth = 0;
+    let maxMana = 0;
     const classItems = data.items.filter((i) => i.type === "class");
     if (classItems.length > 0) {
-      let classItem = classItems[0]
-      maxHealth += classItem.system.health.start
-      maxHealth += classItem.system.health.gain * (data.system.attributes.level.value-1)
-      maxMana += classItem.system.mana.start
-      maxMana += classItem.system.mana.gain * (data.system.attributes.level.value-1)
+      let classItem = classItems[0];
+      maxHealth += classItem.system.health.start;
+      maxHealth +=
+        classItem.system.health.gain * (data.system.attributes.level.value - 1);
+      maxMana += classItem.system.mana.start;
+      maxMana +=
+        classItem.system.mana.gain * (data.system.attributes.level.value - 1);
     }
+
     switch (data.system.lifestyle) {
       case "stable":
-        maxHealth -= data.system.attributes.level.value*5
-        maxMana -= data.system.attributes.level.value*5
-        break
+        maxHealth -= data.system.attributes.level.value * 5;
+        maxMana -= data.system.attributes.level.value * 5;
+        break;
       case "economy":
-        maxHealth += 5
-        maxMana += 5
-        break
+        maxHealth += 5;
+        maxMana += 5;
+        break;
       case "suite":
-        maxHealth += 10
-        maxMana += 10
-        break
+        maxHealth += 10;
+        maxMana += 10;
+        break;
       case "royal":
-        maxHealth += 30
-        maxMana += 30
-        break
+        maxHealth += 30;
+        maxMana += 30;
+        break;
     }
-    if (maxHealth < 1) maxHealth = 1
-    if (maxMana < 1) maxMana = 1
-
+    if (maxHealth < 1) maxHealth = 1;
+    if (maxMana < 1) maxMana = 1;
 
     const skills = data.items.filter((i) => i.type === "skill");
     const rollModifiers = {
@@ -149,6 +150,7 @@ export class KonosubaActor extends Actor {
       movement: data.system.abilities.strength.score + 5,
     };
 
+    // --- Apply skill modifiers ---
     skills.forEach((skill) => {
       if (skill.system.active) {
         Object.entries(rollModifiers).forEach(([key, modifier]) => {
@@ -178,6 +180,37 @@ export class KonosubaActor extends Actor {
       }
     });
 
+    // --- Apply equipped item modifiers ---
+    const equippedIds = Object.values(data.system.equipment || {});
+    const items = data.items.filter(
+      (i) => i.type === "item" && equippedIds.includes(i._id)
+    );
+
+    items.forEach((item) => {
+      Object.entries(rollModifiers).forEach(([key, modifier]) => {
+        let tmp = item.system.modifiers?.[key] || "0";
+        tmp = tmp.replaceAll("CL", data.system.attributes.level.value);
+
+        if (tmp.includes("d6")) {
+          let parts = tmp.split("d6");
+          modifier.dice += eval(parts[0]) || 0;
+          modifier.flat += eval(parts[1]) || 0;
+        } else {
+          modifier.flat += eval(tmp) || 0;
+        }
+      });
+
+      Object.entries(attributeModifiers).forEach(([key, modifier]) => {
+        let tmp = item.system.modifiers?.[key] || "0";
+        tmp = tmp.replaceAll("CL", data.system.attributes.level.value);
+        attributeModifiers[key] =
+          (attributeModifiers[key] || 0) + eval(tmp) || 0;
+      });
+
+      maxHealth += eval(item.system.modifiers?.["health"] || "0");
+      maxMana += eval(item.system.modifiers?.["mana"] || "0");
+    });
+
     data.combat = {};
     data.combat.hitCheck = rollModifiers.hitCheck;
     data.combat.attackPower = rollModifiers.attackPower;
@@ -189,7 +222,7 @@ export class KonosubaActor extends Actor {
       movement: attributeModifiers.movement,
     };
 
-    data.system.health.max = maxHealth
-    data.system.mana.max = maxMana
+    data.system.health.max = maxHealth;
+    data.system.mana.max = maxMana;
   }
 }

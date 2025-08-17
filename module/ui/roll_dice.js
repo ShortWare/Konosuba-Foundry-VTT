@@ -15,6 +15,37 @@ export class DiceMenu extends Application {
     if (!this.diceOptions.modifiers) {
       this.diceOptions.modifiers = [];
     }
+
+    // Handle custom roll modifiers from items
+    if (this.diceOptions.customId) {
+      const items = this.actor.items.filter((i) => i.type === "item");
+      items.forEach((item) => {
+        Object.values(item.system.customModifiers).forEach((modifier) => {
+          if (modifier.rollIds.split(";").includes(this.diceOptions.customId)) {
+            if (modifier.applyWhen === "equipped") {
+              const equippedItems = Object.values(this.actor.system.equipment);
+              if (equippedItems.includes(item._id)) {
+                this.diceOptions.modifiers.push({
+                  id: foundry.utils.randomID(),
+                  name: modifier.name,
+                  value: modifier.formula,
+                  active: true,
+                  editable: false,
+                });
+              }
+            } else if (modifier.applyWhen === "always") {
+              this.diceOptions.modifiers.push({
+                id: foundry.utils.randomID(),
+                name: modifier.name,
+                value: modifier.formula,
+                active: true,
+                editable: false,
+              });
+            }
+          }
+        });
+      });
+    }
   }
 
   static get defaultOptions() {

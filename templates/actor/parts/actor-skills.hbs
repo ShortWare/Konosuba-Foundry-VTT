@@ -37,7 +37,7 @@
       <p>Custom Rolls:</p>
       <p>
         {{#each item.system.customRolls as |roll|}}
-          <button class="roll-dice" data-roll-title="{{roll.name}}" data-roll="{{roll.check}}" >{{roll.name}}</button>
+          <button class="roll-dice" data-roll-title="{{roll.name}}" data-roll="{{roll.check}}" data-custom-id="{{roll.customId}}">{{roll.name}}</button>
         {{/each}}
       </p>
       <hr />

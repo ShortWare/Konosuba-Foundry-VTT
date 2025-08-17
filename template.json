@@ -42,6 +42,14 @@
           "luck": {
             "value": 1
           }
+        },
+        "equipment": {
+          "rightHand": "",
+          "leftHand": "",
+          "head": "",
+          "body": "",
+          "otherArmor": "",
+          "accessory": ""
         }
       }
     },
