@@ -3,7 +3,20 @@
     src: url("/systems/konosuba/assets/fonts/DalekPinpointBold.ttf") format("truetype");
 }
 
+.actor-sheet[data-active-tab="home"] {
+  background-image: url("/systems/konosuba/assets/actor-sheet/home-bg.png");
+}
+
+.actor-sheet[data-active-tab="abilities"] {
+  background-image: url("/systems/konosuba/assets/actor-sheet/abilities-bg.png");
+}
+
+.actor-sheet[data-active-tab="combat"] {
+  background-image: url("/systems/konosuba/assets/actor-sheet/combat-bg.png");
+}
+
 .actor-sheet {
+    background-color: #baad90;
     background-image: url("/systems/konosuba/assets/actor-sheet/home-bg.png");
     width: 1076px;
     height: 764px;
@@ -151,12 +164,15 @@
                                 align-items: center;
                             }
 
-                            input {
+                            p {
                                 height: 100%;
                                 width: 17%;
                                 margin: 0;
                                 margin-right: 9%;
                                 float: right;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
                             }
                         }
                     }
@@ -187,6 +203,46 @@
                         margin: 0;
                         margin-left: 9%;
                         margin-right: 9%;
+                    }
+                }
+            }
+        }
+
+
+        &.abilities {
+            table {
+                width: 77.5%;
+                height: 53%;
+                margin-left: 12%;
+                margin-top: 17%;
+                table-layout: fixed;
+                background: none;
+
+                tr {
+                    height: 12.5%;
+                    background: none;
+
+                    th {
+                        width: 74.5;
+                        padding: 0;
+                        padding-right: 20px;
+                        background: none;
+                    }
+
+                    th:nth-of-type(1) {
+                        width: 27%;
+                    }
+
+                    p {
+                        font-size: 0.8em;
+                        margin: 0;
+                        margin-left: -13px;
+                        padding-bottom: 5px;
+                        height: 100%;
+                        width: calc(100% + 13px);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                     }
                 }
             }

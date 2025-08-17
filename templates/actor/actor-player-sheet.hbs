@@ -1,86 +1,25 @@
 <form class="actor-sheet" autocomplete="off">
-  <nav>
-
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="home">Home</a>
+    <a class="item" data-tab="abilities">Abilities</a>
+    <a class="item" data-tab="combat">Combat</a>
   </nav>
 
-  <div class="actor-page home">
-    <div class="top">
-      <header>
-        <input name="name" type="text" value="{{actor.name}}" placeholder="Character Name"/>
-        <label>{{#if classItem}} {{classItem.name}} {{/if}} </label>
-        <input type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number"/>
-        <p>/</p>
-        <label>{{system.health.max}}</label>
-      </header>
-      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
-      <footer>
-        <input type="text" name="system.attributes.appearance.gender" value="{{system.attributes.appearance.gender}}" data-dtype="String"/>
-        <input type="text" name="system.attributes.appearance.age" value="{{system.attributes.appearance.age}}" data-dtype="Number"/>
-        <label>{{#if raceItem}} {{raceItem.name}} {{/if}} </label>
-        </footer>
+  <section class="sheet-body">
+
+    <div class="tab actor-page home" data-group="primary" data-tab="home">
+        {{> "systems/konosuba/templates/actor/parts/actor-home.hbs"}}
     </div>
-    <div class="bottom">
-      <div class="stats">
-        <div class="col">
-          <div class="stat">
-            <label>Strength</label>
-            <input type="text" name="system.abilities.strength.value" value="{{system.abilities.strength.value}}" data-dtype="Number"/>
-          </div>
-          <div class="stat">
-            <label>Dexterity</label>
-            <input type="text" name="system.abilities.dexterity.value" value="{{system.abilities.dexterity.value}}" data-dtype="Number"/>
-          </div>
-          <div class="stat">
-            <label>Agility</label>
-            <input type="text" name="system.abilities.agility.value" value="{{system.abilities.agility.value}}" data-dtype="Number"/>
-          </div>
-          <div class="stat">
-            <label>Intelligence</label>
-            <input type="text" name="system.abilities.intelligence.value" value="{{system.abilities.intelligence.value}}" data-dtype="Number"/>
-          </div>
-          <div class="stat">
-            <label>Perception</label>
-            <input type="text" name="system.abilities.perception.value" value="{{system.abilities.perception.value}}" data-dtype="Number"/>
-          </div>
-          <div class="stat">
-            <label>Mind</label>
-            <input type="text" name="system.abilities.mind.value" value="{{system.abilities.mind.value}}" data-dtype="Number"/>
-          </div>
-        </div>
-        <div class="col">
-          <div class="stat">
-            <label>Luck</label>
-            <input type="text" name="system.abilities.luck.value" value="{{system.abilities.luck.value}}" data-dtype="Number"/>
-          </div>
-          <div class="stat">
-            <label></label>
-            <input type="text">
-          </div>
-          <div class="stat">
-            <label></label>
-            <input type="text">
-          </div>
-          <div class="stat">
-            <label></label>
-            <input type="text">
-          </div>
-          <div class="stat">
-            <label></label>
-            <input type="text">
-          </div>
-          <div class="stat">
-            <label></label>
-            <input type="text">
-          </div>
-        </div>
-      </div>
-      <div class="mana">
-        <input type="text" name="system.mana.value" value="{{system.mana.value}}" data-dtype="Number"/>
-        <p>/</p>
-        <label>{{system.mana.max}}</label>
-      </div>
+
+    <div class="tab actor-page abilities" data-group="primary" data-tab="abilities">
+        {{> "systems/konosuba/templates/actor/parts/actor-abilities.hbs"}}
     </div>
-  </div>
+
+    <div class="tab actor-page combat" data-group="primary" data-tab="combat">
+        {{> "systems/konosuba/templates/actor/parts/actor-combat.hbs"}}
+    </div>
+
+  </section>
 
   <nav>
 

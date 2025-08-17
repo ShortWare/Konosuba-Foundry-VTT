@@ -182,6 +182,13 @@ export class KonosubaActorSheet extends ActorSheet {
         }
       });
     });
+
+    this._tabs[0].callback = (event, tabs, active) => {
+      html[0].dataset.activeTab = active;
+    };
+
+    const active = this._tabs[0].active;
+    html[0].dataset.activeTab = active;
   }
 
   /**

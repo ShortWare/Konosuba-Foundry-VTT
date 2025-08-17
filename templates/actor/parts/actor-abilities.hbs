@@ -1,0 +1,26 @@
+<table>
+    <tr>
+        <th></th>
+        <th>Base<br>Score</th>
+        <th>Ability<br>Bonus</th>
+        <th>Class<br>Mod</th>
+        <th>Skills,<br>etc.</th>
+        <th>Ability<br>Score</th>
+        <th>Skills,<br>etc.</th>
+        <th>Dice</th>
+        <th></th>
+    </tr>
+    {{#each system.abilities as |ability key|}}
+    <tr>
+        <th>{{key}}</th>
+        <th><input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/></th>
+        <th>{{ability.bonus}}</th>
+        <th>{{ability.class}}</th>
+        <th>{{ability.skills}}</th>
+        <th>{{ability.score}}</th>
+        <th>{{ability.skillsDice}}</th>
+        <th><p>{{ability.dice}}d6+{{ability.score}}</p></th>
+        <th class="roll-dice" data-roll-title="Nazwa" data-roll="{{ability.dice}}d6+{{ability.score}}">Roll</th>
+    </tr>
+    {{/each}}
+</table>

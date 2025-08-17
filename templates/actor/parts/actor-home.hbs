@@ -1,0 +1,76 @@
+<div class="top">
+  <header>
+    <input name="name" type="text" value="{{actor.name}}" placeholder="Character Name"/>
+    <label>{{#if classItem}} {{classItem.name}} {{/if}} </label>
+    <input type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number"/>
+    <p>/</p>
+    <label>{{system.health.max}}</label>
+  </header>
+  <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+  <footer>
+    <input type="text" name="system.attributes.appearance.gender" value="{{system.attributes.appearance.gender}}" data-dtype="String"/>
+    <input type="text" name="system.attributes.appearance.age" value="{{system.attributes.appearance.age}}" data-dtype="Number"/>
+    <label>{{#if raceItem}} {{raceItem.name}} {{/if}} </label>
+    </footer>
+</div>
+<div class="bottom">
+  <div class="stats">
+    <div class="col">
+      <div class="stat">
+        <label>Strength</label>
+        <p>{{system.abilities.strength.value}}</p>
+      </div>
+      <div class="stat">
+        <label>Dexterity</label>
+        <p>{{system.abilities.dexterity.value}}</p>
+      </div>
+      <div class="stat">
+        <label>Agility</label>
+        <p>{{system.abilities.agility.value}}</p>
+      </div>
+      <div class="stat">
+        <label>Intelligence</label>
+        <p>{{system.abilities.intelligence.value}}</p>
+      </div>
+      <div class="stat">
+        <label>Perception</label>
+        <p>{{system.abilities.perception.value}}</p>
+      </div>
+      <div class="stat">
+        <label>Mind</label>
+        <p>{{system.abilities.mind.value}}</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="stat">
+        <label>Luck</label>
+        <p>{{system.abilities.luck.value}}</p>
+      </div>
+      <div class="stat">
+        <label></label>
+        <p>
+      </div>
+      <div class="stat">
+        <label></label>
+        <p>
+      </div>
+      <div class="stat">
+        <label></label>
+        <p>
+      </div>
+      <div class="stat">
+        <label></label>
+        <p>
+      </div>
+      <div class="stat">
+        <label></label>
+        <p>
+      </div>
+    </div>
+  </div>
+  <div class="mana">
+    <input type="text" name="system.mana.value" value="{{system.mana.value}}" data-dtype="Number"/>
+    <p>/</p>
+    <label>{{system.mana.max}}</label>
+  </div>
+</div>

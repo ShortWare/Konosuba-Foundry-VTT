@@ -415,7 +415,17 @@
   font-family: "DalekPinpoint";
   src: url("/systems/konosuba/assets/fonts/DalekPinpointBold.ttf") format("truetype");
 }
+.konosuba .actor-sheet[data-active-tab=home] {
+  background-image: url("/systems/konosuba/assets/actor-sheet/home-bg.png");
+}
+.konosuba .actor-sheet[data-active-tab=abilities] {
+  background-image: url("/systems/konosuba/assets/actor-sheet/abilities-bg.png");
+}
+.konosuba .actor-sheet[data-active-tab=combat] {
+  background-image: url("/systems/konosuba/assets/actor-sheet/combat-bg.png");
+}
 .konosuba .actor-sheet {
+  background-color: #baad90;
   background-image: url("/systems/konosuba/assets/actor-sheet/home-bg.png");
   width: 1076px;
   height: 764px;
@@ -541,12 +551,15 @@
   justify-content: left;
   align-items: center;
 }
-.konosuba .actor-sheet .actor-page.home .bottom .stats .col .stat input {
+.konosuba .actor-sheet .actor-page.home .bottom .stats .col .stat p {
   height: 100%;
   width: 17%;
   margin: 0;
   margin-right: 9%;
   float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .konosuba .actor-sheet .actor-page.home .bottom .stats .col:nth-of-type(2) {
   margin-left: 5.5%;
@@ -571,6 +584,38 @@
   margin: 0;
   margin-left: 9%;
   margin-right: 9%;
+}
+.konosuba .actor-sheet .actor-page.abilities table {
+  width: 77.5%;
+  height: 53%;
+  margin-left: 12%;
+  margin-top: 17%;
+  table-layout: fixed;
+  background: none;
+}
+.konosuba .actor-sheet .actor-page.abilities table tr {
+  height: 12.5%;
+  background: none;
+}
+.konosuba .actor-sheet .actor-page.abilities table tr th {
+  width: 74.5;
+  padding: 0;
+  padding-right: 20px;
+  background: none;
+}
+.konosuba .actor-sheet .actor-page.abilities table tr th:nth-of-type(1) {
+  width: 27%;
+}
+.konosuba .actor-sheet .actor-page.abilities table tr p {
+  font-size: 0.8em;
+  margin: 0;
+  margin-left: -13px;
+  padding-bottom: 5px;
+  height: 100%;
+  width: calc(100% + 13px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=konosuba.css.map */
