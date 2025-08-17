@@ -104,6 +104,7 @@ export class DiceMenu extends Application {
     ev.preventDefault();
     const form = new FormData(ev.target);
 
+    // Modifiers
     this.diceOptions.modifiers.forEach((modifier) => {
       modifier.active = form.get(modifier.id + "-active") === "on";
     });
@@ -120,6 +121,23 @@ export class DiceMenu extends Application {
             .join("")
         : ""
     }`;
+
+    // Blessing
+    const blessing = form.get("blessing") === "on";
+    const blessingValue = form.get("blessing-value");
+    if (blessing) {
+      const availableBlessings = this.actor.system.attributes.blessings.value;
+      if (availableBlessings >= blessingValue) {
+        this.actor.update({
+          "system.attributes.blessings.value":
+            availableBlessings - blessingValue,
+        });
+
+        formula = `${formula}+${blessingValue}d6`;
+      } else {
+        return;
+      }
+    }
 
     let roll = new Roll(formula);
     await roll.roll();
