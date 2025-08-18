@@ -1,0 +1,27 @@
+<form class="actor-sheet" autocomplete="off">
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="home">Home</a>
+    <a class="item" data-tab="abilities">Abilities</a>
+    <a class="item" data-tab="combat">Combat</a>
+  </nav>
+
+  <section class="sheet-body">
+
+    <div class="tab actor-page home" data-group="primary" data-tab="home">
+        {{> "systems/konosuba/templates/actor/parts/actor-home.hbs"}}
+    </div>
+
+    <div class="tab actor-page abilities" data-group="primary" data-tab="abilities">
+        {{> "systems/konosuba/templates/actor/parts/actor-abilities.hbs"}}
+    </div>
+
+    <div class="tab actor-page combat" data-group="primary" data-tab="combat">
+        {{> "systems/konosuba/templates/actor/parts/actor-combat.hbs"}}
+    </div>
+
+  </section>
+
+  <nav>
+
+  </nav>
+</form>
