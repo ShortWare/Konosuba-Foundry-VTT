@@ -1,21 +1,10 @@
-/**
- * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
- * @extends {Actor}
- */
 export class KonosubaActor extends Actor {
-  /** @override */
   prepareData() {
     super.prepareData();
   }
 
-  /** @override */
-  prepareBaseData() {}
-
   prepareDerivedData() {
     const actorData = this;
-    const systemData = actorData.system;
-    const flags = actorData.flags.konosuba || {};
-
     this._prepareCharacterData(actorData);
   }
 
@@ -26,7 +15,6 @@ export class KonosubaActor extends Actor {
 
   getRollData() {
     const data = { ...this.system, combat: this.combat };
-
     return data;
   }
 

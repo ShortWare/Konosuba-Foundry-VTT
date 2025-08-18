@@ -13,6 +13,5 @@ export const preloadHandlebarsTemplates = async function () {
     "systems/konosuba/templates/actor/parts/actor-skills.hbs",
     "systems/konosuba/templates/actor/parts/actor-abilities.hbs",
     "systems/konosuba/templates/actor/parts/actor-combat.hbs",
-    // Item partials
   ]);
 };

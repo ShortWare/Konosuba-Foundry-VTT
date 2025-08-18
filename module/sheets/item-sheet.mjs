@@ -1,9 +1,4 @@
-/**
- * Extend the basic ItemSheet with some very simple modifications
- * @extends {ItemSheet}
- */
 export class KonosubaItemSheet extends ItemSheet {
-  /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["konosuba", "sheet", "item"],
@@ -18,7 +13,6 @@ export class KonosubaItemSheet extends ItemSheet {
     });
   }
 
-  /** @override */
   get template() {
     const path = "systems/konosuba/templates/item";
     return `${path}/item-${this.item.type}-sheet.hbs`;
@@ -26,7 +20,6 @@ export class KonosubaItemSheet extends ItemSheet {
 
   /* -------------------------------------------- */
 
-  /** @override */
   async getData() {
     const context = super.getData();
     const itemData = this.document.toObject(false);
@@ -43,7 +36,6 @@ export class KonosubaItemSheet extends ItemSheet {
 
     context.system = itemData.system;
     context.flags = itemData.flags;
-    context.config = CONFIG.KONOSUBA;
 
     if (this.item.type === "skill") {
       if (
@@ -69,7 +61,6 @@ export class KonosubaItemSheet extends ItemSheet {
 
   /* -------------------------------------------- */
 
-  /** @override */
   activateListeners(html) {
     super.activateListeners(html);
     if (!this.isEditable) return;

@@ -1,15 +1,9 @@
 import { DiceMenu } from "../ui/roll_dice.js";
 import { EquipmentMenu } from "../ui/equipment.js";
 
-/**
- * Extend the basic ActorSheet with some very simple modifications
- * @extends {ActorSheet}
- */
 export class KonosubaActorSheet extends ActorSheet {
-  /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      //classes: ["konosuba", "sheet", "actor"],
       classes: ["konosuba", "actor-sheet"],
       width: 1076,
       height: 794,
@@ -18,20 +12,17 @@ export class KonosubaActorSheet extends ActorSheet {
         {
           navSelector: ".sheet-tabs",
           contentSelector: ".sheet-body",
-          initial: "features",
         },
       ],
     });
   }
 
-  /** @override */
   get template() {
     return `systems/konosuba/templates/actor/actor-${this.actor.type}-sheet.hbs`;
   }
 
   /* -------------------------------------------- */
 
-  /** @override */
   async getData() {
     this.actor.prepareDerivedData();
 
@@ -41,7 +32,6 @@ export class KonosubaActorSheet extends ActorSheet {
     context.system = actorData.system;
     context.combat = actorData.combat;
     context.flags = actorData.flags;
-    context.config = CONFIG.KONOSUBA;
 
     if (actorData.type == "character") {
       this._prepareItems(context);
@@ -55,11 +45,6 @@ export class KonosubaActorSheet extends ActorSheet {
     return context;
   }
 
-  /**
-   * Character-specific context modifications
-   *
-   * @param {object} context The context object to mutate
-   */
   _prepareCharacterData(context) {
     context.equipment = {};
     for (let key in this.actor.system.equipment) {
@@ -73,11 +58,6 @@ export class KonosubaActorSheet extends ActorSheet {
     }
   }
 
-  /**
-   * Organize and classify Items for Actor sheets.
-   *
-   * @param {object} context The context object to mutate
-   */
   _prepareItems(context) {
     const gear = [];
     const skills = [];
@@ -113,7 +93,6 @@ export class KonosubaActorSheet extends ActorSheet {
 
   /* -------------------------------------------- */
 
-  /** @override */
   activateListeners(html) {
     super.activateListeners(html);
 
