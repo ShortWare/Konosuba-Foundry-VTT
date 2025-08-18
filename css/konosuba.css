@@ -448,6 +448,11 @@
   height: 80%;
   width: 100%;
 }
+.konosuba .actor-sheet .actor-page .roll-dice:hover, .konosuba .actor-sheet .actor-page .roll-dice:focus {
+  color: #000;
+  text-shadow: 0 0 10px red;
+  cursor: pointer;
+}
 .konosuba .actor-sheet .actor-page.home .top {
   height: 54%;
 }
@@ -616,6 +621,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.konosuba .actor-sheet .actor-page.combat table {
+  height: 87%;
+  width: 57%;
+  margin-top: 6.5%;
+  margin-left: 20%;
+  table-layout: fixed;
+  background: none;
+}
+.konosuba .actor-sheet .actor-page.combat table tr {
+  height: 5%;
+  background: none;
+}
+.konosuba .actor-sheet .actor-page.combat table th:nth-of-type(1) {
+  width: 51%;
+}
+.konosuba .actor-sheet .actor-page.combat table th {
+  padding-right: 30px;
+  background: none;
 }
 
 /*# sourceMappingURL=konosuba.css.map */

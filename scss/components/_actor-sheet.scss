@@ -41,6 +41,15 @@
         height: 80%;
         width: 100%;
 
+        .roll-dice {
+            &:hover,
+            &:focus {
+                color: #000;
+                text-shadow: 0 0 10px red;
+                cursor: pointer;
+            }
+        }
+
         &.home {
             .top {
                 height: 54%;
@@ -244,6 +253,32 @@
                         justify-content: center;
                         align-items: center;
                     }
+                }
+            }
+        }
+
+        &.combat {
+
+            table {
+                height: 87%;
+                width: 57%;
+                margin-top: 6.5%;
+                margin-left: 20%;
+                table-layout: fixed;
+                background: none;
+
+                tr {
+                    height: 5%;
+                    background: none;
+                }
+
+                th:nth-of-type(1) {
+                    width: 51%;
+                }
+
+                th {
+                    padding-right: 30px;
+                    background: none;
                 }
             }
         }

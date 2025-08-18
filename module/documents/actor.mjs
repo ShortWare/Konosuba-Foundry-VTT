@@ -139,6 +139,26 @@ export class KonosubaActor extends Actor {
         flat: data.system.abilities.agility.score,
         dice: 2,
       },
+      detectTraps: {
+        flat: data.system.abilities.perception.score,
+        dice: 2,
+      },
+      disarmTraps: {
+        flat: data.system.abilities.dexterity.score,
+        dice: 2,
+      },
+      senseThreats: {
+        flat: data.system.abilities.perception.score,
+        dice: 2,
+      },
+      identifyEnemy: {
+        flat: data.system.abilities.intelligence.score,
+        dice: 2,
+      },
+      magicCheck: {
+        flat: data.system.abilities.intelligence.score,
+        dice: 2,
+      },
     };
     const attributeModifiers = {
       physicalDefense: 0,
@@ -182,6 +202,11 @@ export class KonosubaActor extends Actor {
     data.combat.hitCheck = rollModifiers.hitCheck;
     data.combat.attackPower = rollModifiers.attackPower;
     data.combat.dodgeCheck = rollModifiers.dodgeCheck;
+    data.combat.detectTraps = rollModifiers.detectTraps;
+    data.combat.disarmTraps = rollModifiers.disarmTraps;
+    data.combat.senseThreats = rollModifiers.senseThreats;
+    data.combat.identifyEnemy = rollModifiers.identifyEnemy;
+    data.combat.magicCheck = rollModifiers.magicCheck;
     data.combat.combatAttributes = {
       physicalDefense: attributeModifiers.physicalDefense,
       magicDefense: attributeModifiers.magicDefense,
