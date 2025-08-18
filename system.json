@@ -22,9 +22,9 @@
       "thumbnail": "systems/konosuba/assets/logo.png"
     }
   ],
-  "version": "0.0.1",
+  "version": "1.0.0",
   "compatibility": {
-    "minimum": 11,
+    "minimum": 12,
     "verified": "12.331"
   },
   "esmodules": ["module/konosuba.mjs"],

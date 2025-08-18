@@ -16,32 +16,18 @@ export class KonosubaActor extends Actor {
     const systemData = actorData.system;
     const flags = actorData.flags.konosuba || {};
 
-    this._preparePlayerData(actorData);
-    this._prepareNpcData(actorData);
+    this._prepareCharacterData(actorData);
   }
 
-  _preparePlayerData(actorData) {
-    if (actorData.type !== "player") return;
+  _prepareCharacterData(actorData) {
+    if (actorData.type !== "character") return;
     this.calculateStats(actorData);
-  }
-  _prepareNpcData(actorData) {
-    if (actorData.type !== "npc") return;
   }
 
   getRollData() {
     const data = { ...this.system, combat: this.combat };
 
-    this._getPlayerRollData(data);
-    this._getNpcRollData(data);
-
     return data;
-  }
-
-  _getPlayerRollData(data) {
-    if (this.type !== "player") return;
-  }
-  _getNpcRollData(data) {
-    if (this.type !== "npc") return;
   }
 
   calculateAbility(data, ability) {

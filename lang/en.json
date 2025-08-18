@@ -22,8 +22,7 @@
 
   "TYPES": {
     "Actor": {
-      "player": "Player",
-      "npc": "NPC"
+      "character": "Character"
     },
     "Item": {
       "item": "Item",

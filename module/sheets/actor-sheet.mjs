@@ -43,12 +43,9 @@ export class KonosubaActorSheet extends ActorSheet {
     context.flags = actorData.flags;
     context.config = CONFIG.KONOSUBA;
 
-    if (actorData.type == "player") {
+    if (actorData.type == "character") {
       this._prepareItems(context);
       this._prepareCharacterData(context);
-    }
-    if (actorData.type == "npc") {
-      this._prepareItems(context);
     }
 
     context.raceItem = this.actor.items.find((i) => i.type === "race") || null;
@@ -174,7 +171,7 @@ export class KonosubaActorSheet extends ActorSheet {
     }
 
     Hooks.on("renderActorSheet", (app, html, data) => {
-      if (!(app.actor.type == "player" || app.actor.type !== "npc")) return;
+      if (!(app.actor.type == "character")) return;
       if (app._sheetOpened) return;
 
       app._sheetOpened = true;
