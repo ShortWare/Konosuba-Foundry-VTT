@@ -113,7 +113,12 @@
           "attackPower": "",
           "dodgeCheck": "",
           "health": "",
-          "mana": ""
+          "mana": "",
+          "detectTraps": "",
+          "disarmTraps": "",
+          "senseThreats": "",
+          "indentifyEnemy": "",
+          "magicCheck": ""
         }
       }
     },
