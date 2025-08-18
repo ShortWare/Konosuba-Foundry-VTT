@@ -590,6 +590,17 @@
   margin-left: 9%;
   margin-right: 9%;
 }
+.konosuba .actor-sheet .actor-page.home .lvl {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 57px;
+  height: 48px;
+  top: 44.5%;
+  right: 24.5%;
+  font-size: 2em;
+}
 .konosuba .actor-sheet .actor-page.abilities table {
   width: 77.5%;
   height: 53%;

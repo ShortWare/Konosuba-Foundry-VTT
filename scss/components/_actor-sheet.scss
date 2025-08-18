@@ -215,6 +215,18 @@
                     }
                 }
             }
+
+            .lvl {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 57px;
+                height: 48px;
+                top: 44.5%;
+                right: 24.5%;
+                font-size: 2em;
+            }
         }
 
 
