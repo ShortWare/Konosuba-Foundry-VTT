@@ -1,0 +1,52 @@
+<table>
+  <tbody>
+    <tr>
+      <th>Slot</th>
+      <th>Item</th>
+    </tr>
+    {{#each equipment as |e key|}}
+    <tr>
+      <th>{{camelToTitle key}}</th>
+      <th>
+        {{#if e}}
+          <div class="flexrow">
+            <img src="{{e.img}}" width="32" height="32" alt="{{e.name}}" style="max-width: 32px; max-height: 32px; margin-right: 10px; padding: 5px;" />
+            <p class="item-interaction">{{e.name}}</p>
+            <button class="item-unequip" data-item-id="{{e._id}}">Unequip</button>
+          </div>
+        {{else}}
+          -
+        {{/if}}
+      </th>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+<section class="grid grid-4col">
+  <aside class="grid-span-2">
+    <div class="item-list" style="max-height: 300px; overflow-y: auto;">
+      {{#each gear as |item|}}
+        <div class="flexrow">
+          <img src="{{item.img}}" width="32" height="32" alt="{{item.name}}" style="max-width: 32px; max-height: 32px; margin-right: 10px; padding: 5px;" />
+          <p class="item-interaction">{{item.name}}</p>
+          <li style="display: flex; flex-direction: row; align-items: center; gap: 10px; justify-content: flex-end;" class="item" data-item-id="{{item._id}}">
+            <a
+              class='item-control item-edit'
+              title='{{localize "DOCUMENT.Edit" type='spell'}}'
+            >
+              <i class='fas fa-edit'></i>
+            </a>
+            <a
+              class='item-control item-delete'
+              title='{{localize "DOCUMENT.Delete" type='spell'}}'
+            >
+              <i class='fas fa-trash'></i>
+            </a>
+          </li>
+        </div>
+      {{/each}}
+    </div>
+  </aside>
+  <section class="grid-span-2" id="item-details">
+  </section>
+</section>
