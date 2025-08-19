@@ -424,6 +424,12 @@
 .konosuba .actor-sheet[data-active-tab=combat] {
   background-image: url("/systems/konosuba/assets/actor-sheet/combat-bg.png");
 }
+.konosuba .actor-sheet[data-active-tab=skills] {
+  background-image: url("/systems/konosuba/assets/actor-sheet/blank-bg.png");
+}
+.konosuba .actor-sheet[data-active-tab=inventory] {
+  background-image: url("/systems/konosuba/assets/actor-sheet/blank-bg.png");
+}
 .konosuba .actor-sheet {
   background-color: #baad90;
   background-image: url("/systems/konosuba/assets/actor-sheet/home-bg.png");
@@ -440,8 +446,6 @@
 .konosuba .actor-sheet nav {
   height: 9%;
   width: 100%;
-}
-.konosuba .actor-sheet nav:nth-of-type(1) {
   margin-top: 1%;
 }
 .konosuba .actor-sheet .actor-page {
@@ -674,6 +678,29 @@
 .konosuba .actor-sheet .actor-page.combat table th {
   padding-right: 30px;
   background: none;
+}
+.konosuba .actor-sheet .actor-page.skills ul {
+  width: 80%;
+  height: 85%;
+  overflow-y: scroll;
+  margin-left: 10%;
+  margin-top: 7%;
+  border: solid black 2px;
+  list-style: none;
+  padding: 5px;
+  background-color: #9d9179;
+}
+.konosuba .actor-sheet .actor-page.skills ul li {
+  margin-bottom: 25px;
+  border-top: dashed black 2px;
+  border-bottom: dashed black 2px;
+  min-height: 75px;
+  background-color: #baad90;
+}
+.konosuba .actor-sheet .actor-page.skills ul li label {
+  font-size: 2em;
+  float: left;
+  margin-right: 15px;
 }
 
 /*# sourceMappingURL=konosuba.css.map */

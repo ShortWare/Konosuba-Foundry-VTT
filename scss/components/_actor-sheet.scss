@@ -15,6 +15,14 @@
   background-image: url("/systems/konosuba/assets/actor-sheet/combat-bg.png");
 }
 
+.actor-sheet[data-active-tab="skills"] {
+  background-image: url("/systems/konosuba/assets/actor-sheet/blank-bg.png");
+}
+
+.actor-sheet[data-active-tab="inventory"] {
+  background-image: url("/systems/konosuba/assets/actor-sheet/blank-bg.png");
+}
+
 .actor-sheet {
     background-color: #baad90;
     background-image: url("/systems/konosuba/assets/actor-sheet/home-bg.png");
@@ -31,9 +39,6 @@
     nav {
         height: 9%;
         width: 100%;
-    }
-
-    nav:nth-of-type(1) {
         margin-top: 1%;
     }
 
@@ -319,6 +324,37 @@
                 th {
                     padding-right: 30px;
                     background: none;
+                }
+            }
+        }
+
+        &.skills {
+
+
+            ul {
+                width: 80%;
+                height: 85%;
+                overflow-y: scroll;
+                margin-left: 10%;
+                margin-top: 7%;
+                border: solid black 2px;
+                list-style: none;
+                padding: 5px;
+                background-color: #9d9179;
+
+                li {
+                    margin-bottom: 25px;
+                    border-top: dashed black 2px;
+                    border-bottom: dashed black 2px;
+                    min-height: 75px;
+                    background-color: #baad90;
+                    
+                    
+                    label {
+                        font-size: 2em;
+                        float: left;
+                        margin-right: 15px;
+                    }
                 }
             }
         }

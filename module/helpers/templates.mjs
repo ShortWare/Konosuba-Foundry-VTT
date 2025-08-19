@@ -8,10 +8,10 @@ export const preloadHandlebarsTemplates = async function () {
     // Actor partials.
     "systems/konosuba/templates/actor/parts/actor-home.hbs",
     "systems/konosuba/templates/actor/parts/actor-features.hbs",
-    "systems/konosuba/templates/actor/parts/actor-stats.hbs",
     "systems/konosuba/templates/actor/parts/actor-items.hbs",
     "systems/konosuba/templates/actor/parts/actor-skills.hbs",
     "systems/konosuba/templates/actor/parts/actor-abilities.hbs",
     "systems/konosuba/templates/actor/parts/actor-combat.hbs",
+    "systems/konosuba/templates/actor/parts/actor-equipment.hbs",
   ]);
 };

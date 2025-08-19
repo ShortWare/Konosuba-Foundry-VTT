@@ -3,6 +3,8 @@
     <a class="item" data-tab="home">Home</a>
     <a class="item" data-tab="abilities">Abilities</a>
     <a class="item" data-tab="combat">Combat</a>
+    <a class="item" data-tab="skills">Skills</a>
+    <a class="item" data-tab="inventory">Inventory</a>
   </nav>
 
   <section class="sheet-body">
@@ -19,9 +21,13 @@
         {{> "systems/konosuba/templates/actor/parts/actor-combat.hbs"}}
     </div>
 
+    <div class="tab actor-page skills" data-group="primary" data-tab="skills">
+        {{> "systems/konosuba/templates/actor/parts/actor-skills.hbs"}}
+    </div>
+
+    <div class="tab actor-page skills" data-group="inventory" data-tab="inventory">
+        {{> "systems/konosuba/templates/actor/parts/actor-equipment.hbs"}}
+    </div>
+
   </section>
-
-  <nav>
-
-  </nav>
 </form>
