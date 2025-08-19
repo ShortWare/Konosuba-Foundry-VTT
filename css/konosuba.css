@@ -527,6 +527,29 @@
   margin-top: 38px;
   float: right;
 }
+.konosuba .actor-sheet .actor-page.home .top .blessings {
+  position: absolute;
+  width: 50%;
+  height: 10%;
+  top: 35%;
+  left: 7%;
+}
+.konosuba .actor-sheet .actor-page.home .top .blessings * {
+  float: left;
+  font-size: 1.5em;
+}
+.konosuba .actor-sheet .actor-page.home .top .blessings input {
+  width: 80px;
+  margin-top: 8px;
+  text-align: center;
+}
+.konosuba .actor-sheet .actor-page.home .top .blessings p:nth-of-type(1) {
+  margin-right: 8px;
+}
+.konosuba .actor-sheet .actor-page.home .top .blessings p:nth-of-type(2) {
+  margin-right: 5px;
+  margin-left: 5px;
+}
 .konosuba .actor-sheet .actor-page.home .bottom {
   height: 46%;
 }
