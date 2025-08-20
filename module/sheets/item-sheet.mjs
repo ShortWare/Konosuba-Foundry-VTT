@@ -24,16 +24,6 @@ export class KonosubaItemSheet extends ItemSheet {
     const context = super.getData();
     const itemData = this.document.toObject(false);
 
-    context.enrichedDescription = await TextEditor.enrichHTML(
-      this.item.system.description,
-      {
-        secrets: this.document.isOwner,
-        async: true,
-        rollData: this.item.getRollData(),
-        relativeTo: this.item,
-      }
-    );
-
     context.system = itemData.system;
     context.flags = itemData.flags;
 

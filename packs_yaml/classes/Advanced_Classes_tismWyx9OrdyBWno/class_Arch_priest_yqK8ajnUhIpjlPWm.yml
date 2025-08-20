@@ -2,7 +2,6 @@ name: Arch-priest
 type: class
 img: icons/svg/item-bag.svg
 system:
-  name: ''
   modifiers:
     strength: 0
     dexterity: 2
@@ -26,7 +25,7 @@ flags: {}
 _stats:
   compendiumSource: null
   duplicateSource: null
-  coreVersion: '12.331'
+  coreVersion: "12.331"
   systemId: konosuba
   systemVersion: 1.0.0
   createdTime: 1755706330311
@@ -34,4 +33,4 @@ _stats:
   lastModifiedBy: IC84zRJ49nvlkUdQ
 _id: yqK8ajnUhIpjlPWm
 sort: 0
-_key: '!items!yqK8ajnUhIpjlPWm'
+_key: "!items!yqK8ajnUhIpjlPWm"
