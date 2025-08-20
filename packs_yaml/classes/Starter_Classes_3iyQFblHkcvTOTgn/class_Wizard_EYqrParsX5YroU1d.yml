@@ -1,0 +1,39 @@
+name: Wizard
+type: class
+img: icons/svg/item-bag.svg
+system:
+  name: ''
+  modifiers:
+    strength: 0
+    dexterity: 0
+    agility: 0
+    intelligence: 2
+    perception: 2
+    mind: 2
+    luck: 0
+  health:
+    start: 20
+    gain: 8
+  mana:
+    start: 26
+    gain: 14
+  description: ''
+  equipment: ''
+effects: []
+folder: 3iyQFblHkcvTOTgn
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1755539638676
+  modifiedTime: 1755706087399
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+_id: EYqrParsX5YroU1d
+sort: 100098
+_key: '!items!EYqrParsX5YroU1d'

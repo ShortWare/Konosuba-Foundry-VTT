@@ -4,10 +4,13 @@
   "description": "CSS compiler for the Konosuba system",
   "scripts": {
     "build": "sass scss/konosuba.scss css/konosuba.css --style=expanded --no-source-map",
-    "watch": "sass scss/konosuba.scss css/konosuba.css --style=expanded --source-map --watch"
+    "watch": "sass scss/konosuba.scss css/konosuba.css --style=expanded --source-map --watch",
+    "pushLDBtoYML": "node ./tools/pushLDBtoYML.mjs",
+    "pullYMLtoLDB": "node ./tools/pullYMLtoLDB.mjs"
   },
   "private": true,
   "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "^2.0.0",
     "sass": "^1.53.0"
   }
 }

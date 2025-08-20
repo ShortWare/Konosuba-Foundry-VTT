@@ -14,3 +14,11 @@ foundry
 # Konosuba
 build/
 /packs
+
+# Logs
+/log/*.log
+/tmp
+
+# Packs
+/packs/*
+!/packs/

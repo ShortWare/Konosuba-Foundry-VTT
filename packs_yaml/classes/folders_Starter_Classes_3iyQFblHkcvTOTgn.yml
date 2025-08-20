@@ -1,0 +1,19 @@
+name: Starter Classes
+sorting: a
+folder: null
+type: Item
+_id: 3iyQFblHkcvTOTgn
+description: ''
+sort: 0
+color: '#2b3340'
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1755706063791
+  modifiedTime: 1755706142482
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+_key: '!folders!3iyQFblHkcvTOTgn'

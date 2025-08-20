@@ -1,0 +1,39 @@
+name: Rune Knight
+type: class
+img: icons/svg/item-bag.svg
+system:
+  name: ''
+  modifiers:
+    strength: 1
+    dexterity: 2
+    agility: 1
+    intelligence: 1
+    perception: 0
+    mind: 1
+    luck: 0
+  health:
+    start: 24
+    gain: 12
+  mana:
+    start: 22
+    gain: 10
+  description: ''
+  equipment: ''
+effects: []
+folder: 3iyQFblHkcvTOTgn
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1755539634118
+  modifiedTime: 1755706084480
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+_id: 1HyEzyoXwbJKW6uT
+sort: 101563
+_key: '!items!1HyEzyoXwbJKW6uT'

@@ -1,0 +1,39 @@
+name: Knight
+type: class
+img: icons/svg/item-bag.svg
+system:
+  name: ''
+  modifiers:
+    strength: 2
+    dexterity: 1
+    agility: 1
+    intelligence: 0
+    perception: 0
+    mind: 2
+    luck: 0
+  health:
+    start: 26
+    gain: 14
+  mana:
+    start: 20
+    gain: 8
+  description: ''
+  equipment: ''
+effects: []
+folder: 3iyQFblHkcvTOTgn
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1755539631072
+  modifiedTime: 1755706082551
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+_id: MEtu57tyuWO4M2up
+sort: 112500
+_key: '!items!MEtu57tyuWO4M2up'

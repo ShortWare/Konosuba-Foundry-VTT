@@ -40,28 +40,28 @@
     {
       "name": "konosuba-classes",
       "label": "KonoSuba Classes",
-      "path": "packs/classes.db",
+      "path": "packs/classes",
       "banner": "systems/konosuba/assets/packs/classes.png",
       "type": "Item"
     },
     {
       "name": "konosuba-races",
       "label": "KonoSuba Races",
-      "path": "packs/races.db",
+      "path": "packs/races",
       "banner": "systems/konosuba/assets/packs/races.png",
       "type": "Item"
     },
     {
       "name": "konosuba-skills",
       "label": "KonoSuba Skills",
-      "path": "packs/skills.db",
+      "path": "packs/skills",
       "banner": "systems/konosuba/assets/packs/skills.png",
       "type": "Item"
     },
     {
       "name": "konosuba-items",
       "label": "KonoSuba Items",
-      "path": "packs/items.db",
+      "path": "packs/items",
       "banner": "systems/konosuba/assets/packs/items.png",
       "type": "Item"
     }

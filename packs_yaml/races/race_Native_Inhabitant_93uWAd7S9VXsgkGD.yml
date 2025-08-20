@@ -1,0 +1,31 @@
+name: Native Inhabitant
+type: race
+_id: 93uWAd7S9VXsgkGD
+img: icons/svg/item-bag.svg
+system:
+  name: ''
+  baseAbilityScore:
+    strength: 9
+    dexterity: 8
+    agility: 8
+    intelligence: 8
+    perception: 8
+    mind: 8
+    luck: 8
+effects: []
+folder: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1755705895376
+  modifiedTime: 1755705895376
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!93uWAd7S9VXsgkGD'

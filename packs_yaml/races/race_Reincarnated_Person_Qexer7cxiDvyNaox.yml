@@ -1,0 +1,31 @@
+name: Reincarnated Person
+type: race
+_id: Qexer7cxiDvyNaox
+img: icons/svg/item-bag.svg
+system:
+  name: ''
+  baseAbilityScore:
+    strength: 8
+    dexterity: 9
+    agility: 8
+    intelligence: 9
+    perception: 8
+    mind: 7
+    luck: 8
+effects: []
+folder: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1755705895376
+  modifiedTime: 1755705895376
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!Qexer7cxiDvyNaox'

@@ -1,0 +1,39 @@
+name: Adventurer
+type: class
+img: icons/svg/item-bag.svg
+system:
+  name: ''
+  modifiers:
+    strength: 1
+    dexterity: 1
+    agility: 1
+    intelligence: 1
+    perception: 1
+    mind: 1
+    luck: 1
+  health:
+    start: 23
+    gain: 10
+  mana:
+    start: 23
+    gain: 10
+  description: ''
+  equipment: ''
+effects: []
+folder: 3iyQFblHkcvTOTgn
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1755539625105
+  modifiedTime: 1755706079611
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+_id: 0gaEYezD7GHFk8aE
+sort: 100000
+_key: '!items!0gaEYezD7GHFk8aE'

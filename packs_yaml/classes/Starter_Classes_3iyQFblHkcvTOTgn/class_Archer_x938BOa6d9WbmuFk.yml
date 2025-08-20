@@ -1,0 +1,39 @@
+name: Archer
+type: class
+img: icons/svg/item-bag.svg
+system:
+  name: ''
+  modifiers:
+    strength: 0
+    dexterity: 2
+    agility: 1
+    intelligence: 0
+    perception: 2
+    mind: 0
+    luck: 1
+  health:
+    start: 24
+    gain: 12
+  mana:
+    start: 22
+    gain: 10
+  description: ''
+  equipment: ''
+effects: []
+folder: 3iyQFblHkcvTOTgn
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1755539626668
+  modifiedTime: 1755706080475
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+_id: x938BOa6d9WbmuFk
+sort: 200000
+_key: '!items!x938BOa6d9WbmuFk'

@@ -1,0 +1,19 @@
+name: Advanced Classes
+sorting: a
+folder: null
+type: Item
+_id: tismWyx9OrdyBWno
+description: ''
+sort: 100000
+color: '#2b4032'
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1755706121427
+  modifiedTime: 1755706146403
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+_key: '!folders!tismWyx9OrdyBWno'

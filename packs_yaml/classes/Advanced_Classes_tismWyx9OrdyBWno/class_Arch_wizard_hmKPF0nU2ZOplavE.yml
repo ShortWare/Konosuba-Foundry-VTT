@@ -1,0 +1,37 @@
+name: Arch-wizard
+type: class
+img: icons/svg/item-bag.svg
+system:
+  name: ''
+  modifiers:
+    strength: 0
+    dexterity: 0
+    agility: 0
+    intelligence: 3
+    perception: 3
+    mind: 2
+    luck: 0
+  health:
+    start: 0
+    gain: 12
+  mana:
+    start: 0
+    gain: 18
+effects: []
+folder: tismWyx9OrdyBWno
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1755706332728
+  modifiedTime: 1755706332728
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+_id: hmKPF0nU2ZOplavE
+sort: 0
+_key: '!items!hmKPF0nU2ZOplavE'
