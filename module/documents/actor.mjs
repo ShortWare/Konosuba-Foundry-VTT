@@ -73,8 +73,7 @@ export class KonosubaActor extends Actor {
       let classItem = classItems[0];
       maxHealth += classItem.system.health.start;
       maxHealth +=
-        classItem.system.health.gain * (data.system.attributes.level.value - 1);
-      console.log(classItem.system.health.gain * (data.system.attributes.level.value - 1))
+        classItem.system.health.gain * (data.system.attributes.level.value - 1);2
       maxMana += classItem.system.mana.start;
       maxMana +=
         classItem.system.mana.gain * (data.system.attributes.level.value - 1);
