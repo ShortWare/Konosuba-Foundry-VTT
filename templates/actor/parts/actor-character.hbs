@@ -1,0 +1,47 @@
+<section class="left">
+    <label>Character Name</label>
+    <input name="name" type="text" value="{{actor.name}}" placeholder="Character Name"/>
+    <label>Player Name</label>
+    <input name="system.playerName" type="text" value="{{system.playerName}}" placeholder="Player Name"/>
+    <label>Age</label>
+    <input type="text" name="system.attributes.appearance.age" value="{{system.attributes.appearance.age}}" data-dtype="Number"/>
+    <label>Gender</label>
+    <input type="text" name="system.attributes.appearance.gender" value="{{system.attributes.appearance.gender}}" data-dtype="String"/>
+    <label>Height</label>
+    <input type="text" name="system.attributes.appearance.height" value="{{system.attributes.appearance.height}}" data-dtype="Number"/>
+    <label>Eye Color</label>
+    <input type="text" name="system.attributes.appearance.eyeColor" value="{{system.attributes.appearance.eyeColor}}" data-dtype="String"/>
+    <label>Hair Color</label>
+    <input type="text" name="system.attributes.appearance.hairColor" value="{{system.attributes.appearance.hairColor}}" data-dtype="String"/>
+    <label>Skin Color</label>
+    <input type="text" name="system.attributes.appearance.skinColor" value="{{system.attributes.appearance.skinColor}}" data-dtype="String"/>
+</section>
+<section class="right">
+    <div>
+        <h2>Life Path</h2>
+        Origin: 
+        <input type="text" name="system.attributes.life.origin" value="{{system.attributes.life.origin}}" data-dtype="String"/>
+        Circumstance: 
+        <input type="text" name="system.attributes.life.circumstance" value="{{system.attributes.life.circumstance}}" data-dtype="String"/>
+        Goal: 
+        <input type="text" name="system.attributes.life.goal" value="{{system.attributes.life.goal}}" data-dtype="String"/>
+    </div>
+    <br>
+    <div>
+        <h2>Cheat</h2>
+        Name: 
+        <input type="text" name="system.attributes.life.name" value="{{system.attributes.life.name}}" data-dtype="String"/>
+        Effects: 
+        <input type="text" name="system.attributes.life.effects" value="{{system.attributes.life.effects}}" data-dtype="String"/>
+    </div>
+    <div>
+        <h2>Lifestyle</h2>
+        <select name="system.lifestyle" data-dtype="String">
+            <option value="stable" {{#if (eq system.lifestyle "stable")}}selected{{/if}}>Stable living</option>
+            <option value="simple" {{#if (eq system.lifestyle "simple")}}selected{{/if}}>Simple living</option>
+            <option value="economy" {{#if (eq system.lifestyle "economy")}}selected{{/if}}>Economy</option>
+            <option value="suite" {{#if (eq system.lifestyle "suite")}}selected{{/if}}>Suite</option>
+            <option value="royal" {{#if (eq system.lifestyle "royal")}}selected{{/if}}>Royal</option>
+        </select>
+    </div>
+</section>
