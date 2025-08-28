@@ -1,6 +1,6 @@
 <div class="top">
   <header>
-    <input name="name" type="text" value="{{actor.name}}" placeholder="Character Name"/>
+    <label> {{actor.name}} </label>
     <label>{{#if classItem}} {{classItem.name}} {{/if}} </label>
     <input type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number"/>
     <p>/</p>
@@ -8,8 +8,8 @@
   </header>
   <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
   <footer>
-    <input type="text" name="system.attributes.appearance.gender" value="{{system.attributes.appearance.gender}}" data-dtype="String"/>
-    <input type="text" name="system.attributes.appearance.age" value="{{system.attributes.appearance.age}}" data-dtype="Number"/>
+    <label>{{system.attributes.appearance.gender}}</label>
+    <label>{{system.attributes.appearance.age}}</label>
     <label>{{#if raceItem}} {{raceItem.name}} {{/if}} </label>
   </footer>
   <div class="blessings">

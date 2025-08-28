@@ -38,6 +38,13 @@ Hooks.once("init", function () {
     label: "KONOSUBA.SheetLabels.Item",
   });
 
+  game.settings.register("konosuba", "lockedTokens", {
+    scope: "world",
+    config: false,
+    type: Array,
+    default: []
+  })
+
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
 });
@@ -165,7 +172,7 @@ Hooks.on("preCreateItem", async (item, data, options, userId) => {
 });
 
 /* -------------------------------------------- */
-/*  Chat Messages                               */
+/*  Chat Commands                               */
 /* -------------------------------------------- */
 
 Hooks.on("chatMessage", (chatLog, messageText, chatData) => {
@@ -186,3 +193,56 @@ Hooks.on("chatMessage", (chatLog, messageText, chatData) => {
     return false;
   }
 });
+
+
+
+Hooks.on("chatMessage", (chatLog, message, chatData) => {
+  if (!message.startsWith("/helpMeChomusuke")) return
+
+  const actorId = chatData.speaker?.actor
+  if (!actorId) {
+    if (game.user.id === chatData.user) ui.notifications.warn("No actor found for your message.")
+    return false
+  }
+
+  const actor = game.actors.get(actorId)
+  if (!actor) return false
+
+  const tokens = actor.getActiveTokens()
+  if (!tokens.length) {
+    if (game.user.id === chatData.user) ui.notifications.warn("No active token to lock.")
+    return false
+  }
+
+  const tokenIds = tokens.map(t => t.id)
+  const currentLocked = game.user.getFlag("konosuba", "lockedTokens") || []
+
+  let newLocked
+  if (tokenIds.every(id => currentLocked.includes(id))) {
+    newLocked = currentLocked.filter(id => !tokenIds.includes(id))
+    if (game.user.id === chatData.user) ui.notifications.info("Your token is not longer protected by the almighty Chomusuke")
+  } else {
+    newLocked = [...new Set([...currentLocked, ...tokenIds])]
+    if (game.user.id === chatData.user) ui.notifications.info("Your token is now protected by the almighty Chomusuke")
+  }
+
+  game.user.setFlag("konosuba", "lockedTokens", newLocked)
+  return false
+})
+
+Hooks.on("preUpdateToken", (doc, change, options, userId) => {
+  if (!("x" in change || "y" in change)) return
+
+  const user = game.users.get(userId)
+  if (!user.isGM) return
+
+  const lockedTokens = game.users.reduce((arr, u) => {
+    const locked = u.getFlag("konosuba", "lockedTokens") || []
+    return arr.concat(locked)
+  }, [])
+
+  if (lockedTokens.includes(doc.id)) {
+    if (game.user.id === userId) ui.notifications.error("The almighty Chomusuke does not deem you worthy of touching this token")
+    return false
+  }
+})

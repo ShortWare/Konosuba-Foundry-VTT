@@ -23,6 +23,10 @@
   background-image: url("/systems/konosuba/assets/actor-sheet/blank-bg.png");
 }
 
+.actor-sheet[data-active-tab="character"] {
+  background-image: url("/systems/konosuba/assets/actor-sheet/blank-bg.png");
+}
+
 .actor-sheet {
     background-color: #baad90;
     background-image: url("/systems/konosuba/assets/actor-sheet/home-bg.png");
@@ -40,6 +44,21 @@
         height: 9%;
         width: 100%;
         margin-top: 1%;
+
+        .item {
+            height: 60px;
+            margin-top: 6px;
+            width: calc(100% / 6);
+            border-right: solid black 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .item:last-of-type {
+            border-right: none;
+        }
     }
 
     .actor-page {
@@ -78,16 +97,16 @@
                         align-items: center;
                     }
 
-                    input:nth-of-type(1) {
+                    label:nth-of-type(1) {
                         width: 30%;
                     }
 
-                    label:nth-of-type(1) {
+                    label:nth-of-type(2) {
                         width: 43%;
                         margin-left: 0.7%;
                     }
 
-                    input:nth-of-type(2) {
+                    input:nth-of-type(1) {
                         width: 10%;
                         margin-left: 0.2%;
                     }
@@ -99,7 +118,7 @@
                         align-items: center;
                     }
 
-                    label:nth-of-type(2) {
+                    label:nth-of-type(3) {
                         width: 10%;
                         margin-left: 0.7%;
                     }
@@ -111,30 +130,36 @@
                     margin-left: 6%;
                     float: left;
 
-                    input, label {
+                    label {
                         height: 64%;
                         margin-top: 1.2%;
                         float: left;
+                        font-size: 2em;
                     }
 
                     
 
-                    input:nth-of-type(1) {
+                    label:nth-of-type(1) {
                         width: 13%;
                         margin-left: 18%;
+                        padding-top: 5px;
+                        padding-left: 5px;
                     }
 
-                    input:nth-of-type(2) {
+                    label:nth-of-type(2) {
                         width: 15%;
                         margin-left: 14%;
+                        padding-top: 5px;
+                        padding-left: 5px;
                     }
 
-                    label {
+                    label:nth-of-type(3) {
                         width: 18%;
                         margin-left: 14%;
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        font-size: 1em;
                     }
                 }
 
@@ -437,6 +462,45 @@
                     float: right;
                     border: none;
                     border-left: solid black 2px;
+                }
+            }
+        }
+
+        &.character {
+            section {
+                width: 43%;
+                float: left;
+                margin-top: 5%;
+
+                &.left {
+                    margin-left: 6%;
+                    font-size: 1.5em;
+                    border: solid black 2px;
+                    padding: 5px;
+                    height: 85%;
+
+                    input {
+                        margin-bottom: 15px;
+                    }
+                }
+
+                &.right {
+                    margin-left: 2%;
+                    height: 95%;
+                    
+                    div {
+                        border: solid black 2px;
+                        padding: 5px;
+                        margin-top: 69px;
+
+                        select {
+                            width: 50%;
+                        }
+                    }
+
+                    div:nth-of-type(1) {
+                        margin-top: 0px;
+                    }
                 }
             }
         }

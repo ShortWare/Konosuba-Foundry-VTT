@@ -11,5 +11,6 @@ export const preloadHandlebarsTemplates = async function () {
     "systems/konosuba/templates/actor/parts/actor-abilities.hbs",
     "systems/konosuba/templates/actor/parts/actor-combat.hbs",
     "systems/konosuba/templates/actor/parts/actor-inventory.hbs",
+    "systems/konosuba/templates/actor/parts/actor-character.hbs",
   ]);
 };
