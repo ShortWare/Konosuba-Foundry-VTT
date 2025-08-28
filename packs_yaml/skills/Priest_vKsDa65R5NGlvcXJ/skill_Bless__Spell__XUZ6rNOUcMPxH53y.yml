@@ -1,0 +1,67 @@
+folder: vKsDa65R5NGlvcXJ
+name: Bless [Spell]
+type: skill
+_id: XUZ6rNOUcMPxH53y
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 1
+  timing: Major action
+  check: magic_check
+  customCheck:
+    title: ''
+    formula: ''
+  target: single
+  range: Close
+  cost: 6
+  requirements: ''
+  effects: >-
+    The target gains 1d6 to the checks they perform. This effect lasts until the
+    end  of the round.
+  critical: >-
+    Costs 0.
+
+    A spell that grants good fortune. Those who receive it will be blessed in
+    all their ventures.
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!XUZ6rNOUcMPxH53y'

@@ -1,0 +1,68 @@
+folder: C31TGKNbvuvSaE9m
+name: Twin Blade Skill
+type: skill
+_id: KGMdV0xQhZeNNiX5
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 1
+  timing: Passive
+  check: none
+  customCheck:
+    title: ''
+    formula: ''
+  target: self
+  range: ''
+  cost: -1
+  requirements: Using a dagger or whip
+  effects: >-
+    This skill comes into effect when equipping two weapons, one in the right
+    hand and one in the left, that meet the usage conditions. Add the two
+    equipped weapons’ Hit Modifiers, attack powers, and action modifiers
+    together, treating them as a single weapon with those stats, both weapon
+    categories, and as a Dual–Equip Slot type. You may use any effects of either
+    weapon, but you may only activate one that needs declaring at any given
+    time.
+  critical: ''
+  customRolls: []
+  active: true
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!KGMdV0xQhZeNNiX5'

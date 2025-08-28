@@ -1,0 +1,59 @@
+folder: FRjrOnDxskDTruV6
+name: Vegetable
+type: item
+_id: EztcJlwiZLgdVafY
+img: systems/konosuba/assets/items/tools/vegetables.png
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  quantity: 1
+  weight: 1
+  type: food
+  subtype: ''
+  classRestrictions: []
+  value: 20
+  level: 1
+  effects: >-
+    Major action: Restore 3 MP to the user. Consumable. A vegeta-ble generally
+    used as an ingredient in cooking.
+  range: ''
+  equipSlot: none
+  customModifiers: []
+  subType: ''
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!EztcJlwiZLgdVafY'

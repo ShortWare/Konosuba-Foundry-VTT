@@ -40,7 +40,9 @@
         <div>
           <label class="text-bold">State</label>
           <div class="flexrow flex-center flex-between">
-            {{#if (ne system.timing "passive")}}
+            {{#if (includes system.timing "passive")}}
+              <p class="text-center">Passive</p>
+            {{else}}
               <input
                 type='checkbox'
                 name='system.active'
@@ -50,8 +52,6 @@
               <p class="text-bold">
                 {{#if system.active}}Active{{else}}Inactive{{/if}}
               </p>
-            {{else}}
-              <p class="text-center">Passive</p>
             {{/if}}
           </div>
         </div>
@@ -149,6 +149,8 @@
           </div>
         </div>
       </div>
+      <label class="text-bold">Requirements</label>
+      <input type="text" name="system.requirements" value="{{system.requirements}}" data-dtype="String" style="margin-bottom: 10px;" />
       <label class="text-bold">Effects</label>
       <textarea name="system.effects" placeholder="Description" data-dtype="String" style="margin-bottom: 10px;">{{system.effects}}</textarea>
       <label class="text-bold">Critical</label>

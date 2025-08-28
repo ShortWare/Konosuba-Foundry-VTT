@@ -1,0 +1,58 @@
+folder: MVhKR0yKbn9SQ1OG
+name: Rune band
+type: item
+_id: 5qAzhFnmHgKb5hjB
+img: systems/konosuba/assets/items/armor/rune%20band.png
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: '3'
+    magicDefense: '1'
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  quantity: 1
+  weight: 5
+  type: armor
+  subtype: ''
+  classRestrictions:
+    - warrior
+  value: 3800
+  level: 10
+  effects: A headband with magic characters woven into it.
+  range: ''
+  equipSlot: head
+  customModifiers: []
+  subType: ''
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!5qAzhFnmHgKb5hjB'

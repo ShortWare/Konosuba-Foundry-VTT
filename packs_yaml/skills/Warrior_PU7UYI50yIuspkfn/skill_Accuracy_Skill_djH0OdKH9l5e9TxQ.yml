@@ -1,0 +1,66 @@
+folder: PU7UYI50yIuspkfn
+name: Accuracy Skill
+type: skill
+_id: djH0OdKH9l5e9TxQ
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 5
+  timing: Passive
+  check: none
+  customCheck:
+    title: ''
+    formula: ''
+  target: self
+  range: ''
+  cost: -1
+  requirements: ''
+  effects: >-
+    Add SL+1 to your total score on all your hit checks using a weapon.
+
+    The skill to handle your weapon perfectly. You know even the most minor of
+    details about your weapon like the back of your hand, because you understand
+    that is one of the jobs of a Warrior.
+  critical: ''
+  customRolls: []
+  active: true
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!djH0OdKH9l5e9TxQ'

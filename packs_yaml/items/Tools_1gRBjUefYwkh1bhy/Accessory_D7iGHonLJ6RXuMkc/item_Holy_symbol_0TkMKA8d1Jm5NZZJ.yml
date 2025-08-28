@@ -1,0 +1,60 @@
+folder: D7iGHonLJ6RXuMkc
+name: Holy symbol
+type: item
+_id: 0TkMKA8d1Jm5NZZJ
+img: systems/konosuba/assets/items/tools/holy%20symbol.png
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  quantity: 1
+  weight: 1
+  type: accessory
+  subtype: ''
+  classRestrictions:
+    - priest
+  value: 150
+  level: 1
+  effects: >-
+    Passive: Add 1d6 to the HP value restored when the owner uses Heal (page
+    142). Priest only. A holy symbol carried by the clergy.
+  range: ''
+  equipSlot: none
+  customModifiers: []
+  subType: ''
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!0TkMKA8d1Jm5NZZJ'

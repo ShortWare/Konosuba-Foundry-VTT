@@ -1,0 +1,66 @@
+folder: gp3nUAZMbbChMcUd
+name: Extended Chant Skill
+type: skill
+_id: 70r5uiyKANX67CH9
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 5
+  timing: Setup Process
+  check: auto_success
+  customCheck:
+    title: ''
+    formula: ''
+  target: self
+  range: ''
+  cost: 8
+  requirements: ''
+  effects: >-
+    Add SL×5 to your magic-attack damage but subtract 10 from your Action
+    Points. This effect lasts until the end of the round or until you perform
+    movement.
+
+    The skill to prolong your chanting to increase your magic’s power.
+  critical: ''
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!70r5uiyKANX67CH9'

@@ -1,0 +1,59 @@
+folder: K7piYaEVBXjvTqLN
+name: Adventurer's set
+type: item
+_id: Dvt0kbJu5qnlLyHH
+img: systems/konosuba/assets/items/tools/adventurer%20set.png
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  quantity: 1
+  weight: 2
+  type: tool
+  subtype: ''
+  classRestrictions: []
+  value: 3
+  level: 1
+  effects: >-
+    A set of gear for camping, including a simple tent and a blanket. This
+    provides enough for one person to camp outdoors.
+  range: ''
+  equipSlot: none
+  customModifiers: []
+  subType: ''
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!Dvt0kbJu5qnlLyHH'

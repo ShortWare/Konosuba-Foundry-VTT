@@ -1,0 +1,66 @@
+folder: C31TGKNbvuvSaE9m
+name: Snakebite
+type: skill
+_id: 7oBP137zIph7Bdf3
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 1
+  timing: Minor action
+  check: auto_success
+  customCheck:
+    title: ''
+    formula: ''
+  target: self
+  range: ''
+  cost: 5
+  requirements: Using a dagger or whip
+  effects: >-
+    Add your Dexterity to all weapon-attack damage. This effect lasts until the
+    end of your Main Process.
+
+    The skill to increase the power of an attack by deftly manipulating your
+    dagger or whip. Your weapon strikes at the enemy’s vital spots like a snake.
+  critical: ''
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!7oBP137zIph7Bdf3'

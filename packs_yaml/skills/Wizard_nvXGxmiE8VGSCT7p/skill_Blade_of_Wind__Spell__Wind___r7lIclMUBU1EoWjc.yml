@@ -1,0 +1,65 @@
+folder: nvXGxmiE8VGSCT7p
+name: Blade of Wind [Spell (Wind)]
+type: skill
+_id: r7lIclMUBU1EoWjc
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 1
+  timing: Major action
+  check: magic_check
+  customCheck:
+    title: ''
+    formula: ''
+  target: single
+  range: 20m
+  cost: 6
+  requirements: ''
+  effects: >-
+    Perform a magic attack against a target. Add 1d6 to the magic check for the
+    attack. That attack does 2d6+5 wind magic damage.
+  critical: |-
+    Add dice.
+    A spell that slices an enemy with a blade of wind.
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!r7lIclMUBU1EoWjc'

@@ -1,0 +1,66 @@
+folder: 87NAMQRBdiJqZPqk
+name: Acrobatic Evade
+type: skill
+_id: jbtaBkpPkQ9wY64n
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 3
+  timing: After check
+  check: auto_success
+  customCheck:
+    title: ''
+    formula: ''
+  target: self
+  range: ''
+  cost: 7
+  requirements: SL times per Scene
+  effects: >-
+    Use right after making a dodge check. Redo that check. The result of this
+    new check cannot be changed.
+
+    The skill to force your body out of the way of attacks that should have hit
+    you.
+  critical: ''
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!jbtaBkpPkQ9wY64n'

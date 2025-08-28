@@ -1,0 +1,68 @@
+folder: d8eo2WlV9I27j7DI
+name: Mass Cover
+type: skill
+_id: EAJ6ZVix9tMSHJOS
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 3
+  timing: Cover
+  check: auto_success
+  customCheck:
+    title: ''
+    formula: ''
+  target: self
+  range: ''
+  cost: 4
+  requirements: SL times per scenario
+  effects: >-
+    Use at the same time as Cover. Perform protection on multiple characters in
+    the same Engagement as you. These protected characters will not receive
+    damage. You only receive a single character’s worth of damage. If you were
+    also a target of the damage roll, you receive your portion of damage in
+    addition to a separate single character’s worth.
+
+    The skill to protect an entire area.
+  critical: ''
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!EAJ6ZVix9tMSHJOS'

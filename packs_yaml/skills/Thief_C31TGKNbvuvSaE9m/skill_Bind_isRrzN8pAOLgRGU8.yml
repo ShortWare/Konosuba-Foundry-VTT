@@ -1,0 +1,67 @@
+folder: C31TGKNbvuvSaE9m
+name: Bind
+type: skill
+_id: isRrzN8pAOLgRGU8
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 5
+  timing: Major action
+  check: hit_check
+  customCheck:
+    title: ''
+    formula: ''
+  target: single
+  range: Weapon
+  cost: 5
+  requirements: Using a whip
+  effects: >-
+    Perform a close-combat attack against a target. Add SL×2 to that attack’s
+    damage. If the target loses at least 1 HP from the damage, neither you nor
+    the target can move. This effect lasts until you use a minor action to
+    declare it’s over, or until the end of the Scene.
+  critical: |-
+    Add dice.
+    The skill to entangle someone in your whip.
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!isRrzN8pAOLgRGU8'

@@ -1,0 +1,57 @@
+folder: URVaD54xzukPqj1H
+name: Flail
+type: item
+_id: E2gVMEUt6ahbLmZj
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: '-1'
+    movement: ''
+    hitCheck: ''
+    attackPower: '+5'
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  quantity: 1
+  weight: 6
+  type: weapon
+  subtype: ''
+  classRestrictions: []
+  value: 150
+  level: 1
+  effects: A club with an iron ball attached to the tip by a chain.
+  range: Close
+  equipSlot: one
+  customModifiers: []
+  subType: Blunt
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!E2gVMEUt6ahbLmZj'

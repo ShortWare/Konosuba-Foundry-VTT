@@ -1,0 +1,67 @@
+folder: vKsDa65R5NGlvcXJ
+name: Haste [Spell]
+type: skill
+_id: hANijTrE3OVFjFXr
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 5
+  timing: Setup process
+  check: magic_check
+  customCheck:
+    title: ''
+    formula: ''
+  target: single
+  range: 20m
+  cost: 3
+  requirements: ''
+  effects: >-
+    The target gains (SL)d6 Action Points. This effect lasts until the end of
+    the round.
+  critical: >-
+    Add dice.
+
+    A spell that quickens the flow of time for the target, allowing them to move
+    faster.
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!hANijTrE3OVFjFXr'

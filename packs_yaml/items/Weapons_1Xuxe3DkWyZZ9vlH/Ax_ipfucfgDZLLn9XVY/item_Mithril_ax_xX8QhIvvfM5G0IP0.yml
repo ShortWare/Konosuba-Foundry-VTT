@@ -1,0 +1,57 @@
+folder: ipfucfgDZLLn9XVY
+name: Mithril ax
+type: item
+_id: xX8QhIvvfM5G0IP0
+img: systems/konosuba/assets/items/weapons/Mithril%20ax.png
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: '-1'
+    movement: ''
+    hitCheck: '-2'
+    attackPower: '+13'
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  quantity: 1
+  weight: 11
+  type: weapon
+  subtype: ''
+  classRestrictions: []
+  value: 1500
+  level: 8
+  effects: A battle ax with a head made of mithril.
+  range: Close
+  equipSlot: one
+  customModifiers: []
+  subType: Ax
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!xX8QhIvvfM5G0IP0'

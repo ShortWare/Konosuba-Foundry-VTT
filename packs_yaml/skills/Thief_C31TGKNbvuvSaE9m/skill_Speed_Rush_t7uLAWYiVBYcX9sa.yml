@@ -1,0 +1,65 @@
+folder: C31TGKNbvuvSaE9m
+name: Speed Rush
+type: skill
+_id: t7uLAWYiVBYcX9sa
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 5
+  timing: Major action
+  check: hit_check
+  customCheck:
+    title: ''
+    formula: ''
+  target: area_choose
+  range: Weapon
+  cost: 4
+  requirements: ''
+  effects: >-
+    Perform a weapon attack against a target. If you target 2 or more for the
+    attack, add SL×2 to the damage.
+  critical: |-
+    Add dice.
+    The skill to attack all enemies in range with swift movements.
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!t7uLAWYiVBYcX9sa'

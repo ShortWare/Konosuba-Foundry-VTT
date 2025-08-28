@@ -1,0 +1,68 @@
+folder: C31TGKNbvuvSaE9m
+name: Technical Skill
+type: skill
+_id: S86bVwU3wypWoZto
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 3
+  timing: Passive
+  check: none
+  customCheck:
+    title: ''
+    formula: ''
+  target: self
+  range: ''
+  cost: -1
+  requirements: Using chosen weapon
+  effects: >-
+    Select one weapon type from any you possess. Write this skill down as
+    Technical Skill: Dagger or the like. When using a weapon of that type, add
+    SL to all hit checks and SL×2 to damage. You cannot apply multiple Technical
+    Skill skills at the same time.
+
+    A skill that expresses your specialization and proficiency in a certain
+    weapon type.
+  critical: ''
+  customRolls: []
+  active: true
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!S86bVwU3wypWoZto'

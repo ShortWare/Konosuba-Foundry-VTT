@@ -1,0 +1,58 @@
+folder: MVhKR0yKbn9SQ1OG
+name: Crystal helm
+type: item
+_id: H5g9BZ0ESTCUUW92
+img: systems/konosuba/assets/items/armor/crystal%20helmet.png
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: '4'
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  quantity: 1
+  weight: 3
+  type: armor
+  subtype: ''
+  classRestrictions:
+    - warrior
+  value: 3200
+  level: 8
+  effects: A helmet made of crystal.
+  range: ''
+  equipSlot: head
+  customModifiers: []
+  subType: ''
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!H5g9BZ0ESTCUUW92'

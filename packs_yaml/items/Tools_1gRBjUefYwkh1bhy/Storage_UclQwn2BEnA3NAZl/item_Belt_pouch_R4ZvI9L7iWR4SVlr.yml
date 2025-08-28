@@ -1,0 +1,59 @@
+folder: UclQwn2BEnA3NAZl
+name: Belt pouch
+type: item
+_id: R4ZvI9L7iWR4SVlr
+img: systems/konosuba/assets/items/tools/belt%20pouch.png
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: '2'
+  quantity: 1
+  weight: 0
+  type: storage
+  subtype: ''
+  classRestrictions: []
+  value: 15
+  level: 1
+  effects: >-
+    Passive: Add 2 to the owner’s carrying capacity. You can only possess one
+    belt pouch. A small pouch worn on the waist.
+  range: ''
+  equipSlot: none
+  customModifiers: []
+  subType: ''
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!R4ZvI9L7iWR4SVlr'

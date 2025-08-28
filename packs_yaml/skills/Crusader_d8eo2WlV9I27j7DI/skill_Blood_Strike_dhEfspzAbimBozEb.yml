@@ -1,0 +1,65 @@
+folder: d8eo2WlV9I27j7DI
+name: Blood Strike
+type: skill
+_id: dhEfspzAbimBozEb
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 5
+  timing: Before damage roll
+  check: auto_success
+  customCheck:
+    title: ''
+    formula: ''
+  target: self
+  range: ''
+  cost: -1
+  requirements: ''
+  effects: >-
+    Use right before rolling for damage on a weapon attack. Expend any amount of
+    HP up to SL×5. For each point of HP given, the attack does 1 more damage.
+
+    The skill to spend your own life to increase the power of your strikes.
+  critical: ''
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!dhEfspzAbimBozEb'

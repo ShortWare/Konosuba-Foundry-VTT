@@ -1,0 +1,19 @@
+name: Archer
+sorting: a
+folder: null
+type: Item
+_id: GE9dcoequ8hNPvlw
+description: ''
+sort: 199610
+color: '#402b40'
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040278
+  modifiedTime: 1756425040278
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+_key: '!folders!GE9dcoequ8hNPvlw'

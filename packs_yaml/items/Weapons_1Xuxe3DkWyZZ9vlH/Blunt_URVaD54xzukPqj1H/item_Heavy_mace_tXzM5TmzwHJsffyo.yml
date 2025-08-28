@@ -1,0 +1,57 @@
+folder: URVaD54xzukPqj1H
+name: Heavy mace
+type: item
+_id: tXzM5TmzwHJsffyo
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: '-1'
+    attackPower: '+6'
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  quantity: 1
+  weight: 5
+  type: weapon
+  subtype: ''
+  classRestrictions: []
+  value: 180
+  level: 2
+  effects: A mace with a metal weight embedded in the head.
+  range: Close
+  equipSlot: one
+  customModifiers: []
+  subType: Blunt
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!tXzM5TmzwHJsffyo'

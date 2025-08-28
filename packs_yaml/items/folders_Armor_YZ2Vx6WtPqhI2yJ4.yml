@@ -1,0 +1,19 @@
+name: Armor
+sorting: a
+folder: null
+type: Item
+_id: YZ2Vx6WtPqhI2yJ4
+description: ''
+sort: 0
+color: '#2f9372'
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075850
+  modifiedTime: 1756425075850
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+_key: '!folders!YZ2Vx6WtPqhI2yJ4'

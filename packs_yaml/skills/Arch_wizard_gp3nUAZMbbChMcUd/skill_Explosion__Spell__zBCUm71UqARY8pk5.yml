@@ -1,0 +1,69 @@
+folder: gp3nUAZMbbChMcUd
+name: Explosion [Spell]
+type: skill
+_id: zBCUm71UqARY8pk5
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 5
+  timing: Major action
+  check: magic_check
+  customCheck:
+    title: ''
+    formula: ''
+  target: scene
+  range: Vision
+  cost: 60
+  requirements: ''
+  effects: >-
+    You can learn this skill only if you have learned at least 5 levels of
+    Extended Chant Skill. Usable only during a fifth-level Extended Chant Skill.
+    Perform a magic attack against the target. That attack deals (SL+1)d6+60
+    void magic damage.
+  critical: >-
+    Add dice.
+
+    Explosion magic boasts incredibly high power. Casting it requires a long
+    incantation and immense magical power.
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!zBCUm71UqARY8pk5'

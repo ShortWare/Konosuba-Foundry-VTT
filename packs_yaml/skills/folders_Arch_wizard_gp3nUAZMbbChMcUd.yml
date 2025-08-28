@@ -1,0 +1,19 @@
+name: Arch-wizard
+sorting: a
+folder: null
+type: Item
+_id: gp3nUAZMbbChMcUd
+description: ''
+sort: 199997
+color: '#4f3b56'
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040278
+  modifiedTime: 1756425040278
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+_key: '!folders!gp3nUAZMbbChMcUd'

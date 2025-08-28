@@ -1,0 +1,61 @@
+folder: cX0hVwFu0shQJlln
+name: Reflect shield
+type: item
+_id: 9pGaWa1RQ4Uo4H1c
+img: systems/konosuba/assets/items/armor/reflect%20shield.png
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: '8'
+    magicDefense: '2'
+    actionPoints: '-4'
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  quantity: 1
+  weight: 4
+  type: armor
+  subtype: ''
+  classRestrictions:
+    - warrior
+    - priest
+  value: 6800
+  level: 10
+  effects: >-
+    A shield with a magical effect applied to it. Has high Physical Defense and
+    Magic Defense.
+  range: ''
+  equipSlot: one
+  customModifiers: []
+  subType: ''
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!9pGaWa1RQ4Uo4H1c'

@@ -1,0 +1,67 @@
+folder: vKsDa65R5NGlvcXJ
+name: Holy Word
+type: skill
+_id: SzIAFhMDNNDUcrhq
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 5
+  timing: Major action
+  check: magic_check
+  customCheck:
+    title: ''
+    formula: ''
+  target: single
+  range: 20m
+  cost: 4
+  requirements: ''
+  effects: >-
+    Any magic attacks performed by the target do SL×3 additional damage. This
+    effect lasts until the end of the Scene.
+  critical: >-
+    Costs 0.
+
+    A spell that uses the blessings of the gods to calm the target’s mind and
+    sharpen their focus, thus increasing their magical capabilities.
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!SzIAFhMDNNDUcrhq'

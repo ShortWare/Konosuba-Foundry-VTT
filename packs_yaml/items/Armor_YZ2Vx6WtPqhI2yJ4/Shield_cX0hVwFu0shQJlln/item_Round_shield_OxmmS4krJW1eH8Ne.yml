@@ -1,0 +1,60 @@
+folder: cX0hVwFu0shQJlln
+name: Round shield
+type: item
+_id: OxmmS4krJW1eH8Ne
+img: systems/konosuba/assets/items/armor/round%20shield.webp
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: '3'
+    magicDefense: ''
+    actionPoints: '-1'
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  quantity: 1
+  weight: 2
+  type: armor
+  subtype: ''
+  classRestrictions:
+    - warrior
+    - priest
+    - thief
+  value: 100
+  level: 1
+  effects: A regular round shield.
+  range: ''
+  equipSlot: one
+  customModifiers: []
+  subType: ''
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!OxmmS4krJW1eH8Ne'

@@ -25,7 +25,7 @@ flags: {}
 _stats:
   compendiumSource: null
   duplicateSource: null
-  coreVersion: "12.331"
+  coreVersion: '12.331'
   systemId: konosuba
   systemVersion: 1.0.0
   createdTime: 1755706337257
@@ -33,4 +33,4 @@ _stats:
   lastModifiedBy: IC84zRJ49nvlkUdQ
 _id: JwwA6p0UKWj8qeE7
 sort: 0
-_key: "!items!JwwA6p0UKWj8qeE7"
+_key: '!items!JwwA6p0UKWj8qeE7'

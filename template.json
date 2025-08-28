@@ -112,7 +112,8 @@
           "disarmTraps": "",
           "senseThreats": "",
           "indentifyEnemy": "",
-          "magicCheck": ""
+          "magicCheck": "",
+          "carryingCapacity": ""
         }
       }
     },
@@ -145,6 +146,7 @@
       "target": "",
       "range": "",
       "cost": 0,
+      "requirements": "",
       "effects": "",
       "critical": "",
       "customRolls": [],

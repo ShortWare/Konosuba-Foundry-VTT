@@ -1,0 +1,68 @@
+folder: wda2UIu9L2oucxpd
+name: Booby Trap
+type: skill
+_id: 7gWQx3rusATcq0d8
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 3
+  timing: Move action
+  check: auto_success
+  customCheck:
+    title: ''
+    formula: ''
+  target: single
+  range: ''
+  cost: 1
+  requirements: SL times per Scene
+  effects: >-
+    When you use this skill, choose one debuff. If you deal at least 1 HP of
+    damage to a target with an attack, apply the chosen debuff to that target.
+    Use 1 for the debuff’s effectiveness level where needed. This effect lasts
+    until the end of your Main Process.
+
+    The skill to catch a target in a trap by predicting the enemy’s movements
+    and setting up a magic circle in advance.
+  critical: ''
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!7gWQx3rusATcq0d8'

@@ -1,0 +1,59 @@
+folder: K7piYaEVBXjvTqLN
+name: Chalk
+type: item
+_id: 0eUv1DsrDv6WBg6h
+img: systems/konosuba/assets/items/tools/chalk.png
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  quantity: 1
+  weight: 1
+  type: tool
+  subtype: ''
+  classRestrictions: []
+  value: 1
+  level: 1
+  effects: >-
+    A white stick made of hardened limestone. Can be used to draw letters,
+    numbers, and pictures on walls and other surfaces.
+  range: ''
+  equipSlot: none
+  customModifiers: []
+  subType: ''
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!0eUv1DsrDv6WBg6h'

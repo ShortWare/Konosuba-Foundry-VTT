@@ -1,0 +1,19 @@
+name: Reincarnated Person
+sorting: a
+folder: null
+type: Item
+_id: 2EoLAjxSmBIhB40b
+description: ''
+sort: 0
+color: '#2b4032'
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040278
+  modifiedTime: 1756425040278
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+_key: '!folders!2EoLAjxSmBIhB40b'

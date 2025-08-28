@@ -1,0 +1,61 @@
+folder: 3L0kGpCQqgH4z1DO
+name: Manatite (XL)
+type: item
+_id: KhHTyL06v91ZVxcH
+img: systems/konosuba/assets/items/tools/manatite%20xl.png
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  quantity: 1
+  weight: 1
+  type: potion
+  subtype: ''
+  classRestrictions: []
+  value: 0
+  level: 1
+  effects: >-
+    Minor or Major action: Restore an amount of MP to the user determined by the
+    GM. The GM determines this item’s price as well. An extremely large manatite
+    stone. Almost none of these are in circulation, meaning those who have them
+    set their own prices. 
+  range: ''
+  equipSlot: none
+  customModifiers: []
+  subType: ''
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!KhHTyL06v91ZVxcH'

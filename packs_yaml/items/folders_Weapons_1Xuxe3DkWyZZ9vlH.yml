@@ -1,0 +1,19 @@
+name: Weapons
+sorting: a
+folder: null
+type: Item
+_id: 1Xuxe3DkWyZZ9vlH
+description: ''
+sort: 0
+color: '#881717'
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075850
+  modifiedTime: 1756425075850
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+_key: '!folders!1Xuxe3DkWyZZ9vlH'

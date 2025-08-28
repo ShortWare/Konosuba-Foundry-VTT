@@ -1,0 +1,19 @@
+name: Wizard
+sorting: a
+folder: null
+type: Item
+_id: nvXGxmiE8VGSCT7p
+description: ''
+sort: 198438
+color: '#402b40'
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040278
+  modifiedTime: 1756425040278
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+_key: '!folders!nvXGxmiE8VGSCT7p'

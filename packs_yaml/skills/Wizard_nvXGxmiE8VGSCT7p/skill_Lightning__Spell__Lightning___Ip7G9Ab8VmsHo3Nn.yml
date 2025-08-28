@@ -1,0 +1,66 @@
+folder: nvXGxmiE8VGSCT7p
+name: Lightning [Spell (Lightning)]
+type: skill
+_id: Ip7G9Ab8VmsHo3Nn
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 1
+  timing: Major action
+  check: magic_check
+  customCheck:
+    title: ''
+    formula: ''
+  target: single
+  range: 20m
+  cost: 6
+  requirements: ''
+  effects: >-
+    Perform a magic attack against a target. That magic attack does 2d6+5
+    lightning magic damage. If the target loses at least 1 HP from this damage,
+    apply stunned to them. When using this, you may decide not to do any damage.
+
+    An intermediate spell that attacks with a lightning bolt.
+  critical: ''
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!Ip7G9Ab8VmsHo3Nn'

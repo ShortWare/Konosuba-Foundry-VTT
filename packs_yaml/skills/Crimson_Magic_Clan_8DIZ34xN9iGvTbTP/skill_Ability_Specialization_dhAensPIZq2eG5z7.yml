@@ -1,0 +1,66 @@
+folder: 8DIZ34xN9iGvTbTP
+name: Ability Specialization
+type: skill
+_id: dhAensPIZq2eG5z7
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 1
+  timing: Passive / On creation
+  check: none
+  customCheck:
+    title: ''
+    formula: ''
+  target: self
+  range: ''
+  cost: -1
+  requirements: ''
+  effects: >-
+    When you choose this skill, select two base ability scores. Give one +4, and
+    the other −1.
+
+    A skill representing your additional power in a certain ability. But because
+    of the abnormality, another ability has weakened.
+  critical: ''
+  customRolls: []
+  active: true
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!dhAensPIZq2eG5z7'

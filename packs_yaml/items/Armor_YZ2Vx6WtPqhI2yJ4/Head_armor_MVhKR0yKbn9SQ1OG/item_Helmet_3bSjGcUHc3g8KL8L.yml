@@ -1,0 +1,58 @@
+folder: MVhKR0yKbn9SQ1OG
+name: Helmet
+type: item
+_id: 3bSjGcUHc3g8KL8L
+img: systems/konosuba/assets/items/armor/helmet.png
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: '2'
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: '-1'
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  quantity: 1
+  weight: 3
+  type: armor
+  subtype: ''
+  classRestrictions:
+    - warrior
+  value: 100
+  level: 1
+  effects: A metal helmet that covers the head.
+  range: ''
+  equipSlot: head
+  customModifiers: []
+  subType: ''
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!3bSjGcUHc3g8KL8L'

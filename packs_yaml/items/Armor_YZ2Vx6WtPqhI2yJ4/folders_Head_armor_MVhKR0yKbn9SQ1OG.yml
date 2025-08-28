@@ -1,0 +1,19 @@
+name: Head armor
+sorting: a
+folder: YZ2Vx6WtPqhI2yJ4
+type: Item
+_id: MVhKR0yKbn9SQ1OG
+description: ''
+sort: 0
+color: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075850
+  modifiedTime: 1756425075850
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+_key: '!folders!MVhKR0yKbn9SQ1OG'

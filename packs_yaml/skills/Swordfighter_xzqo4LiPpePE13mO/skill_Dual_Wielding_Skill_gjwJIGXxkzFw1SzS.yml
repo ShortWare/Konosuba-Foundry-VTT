@@ -1,0 +1,67 @@
+folder: xzqo4LiPpePE13mO
+name: Dual-Wielding Skill
+type: skill
+_id: gjwJIGXxkzFw1SzS
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 3
+  timing: Passive
+  check: none
+  customCheck:
+    title: ''
+    formula: ''
+  target: self
+  range: ''
+  cost: -1
+  requirements: Using a dagger or one-handed sword
+  effects: >-
+    Effective when you have either a dagger or one-handed sword equipped in both
+    your right and left hands. Add SL to all your hit checks and SL×2 to all
+    your damage using those weapons.
+
+    A skill that represents your training in the dual-wielding arts, where you
+    use two swords at the same time.
+  critical: ''
+  customRolls: []
+  active: true
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!gjwJIGXxkzFw1SzS'

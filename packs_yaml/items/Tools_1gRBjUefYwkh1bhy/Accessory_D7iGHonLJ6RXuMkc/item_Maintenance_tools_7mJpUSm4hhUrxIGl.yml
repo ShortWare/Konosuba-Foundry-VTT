@@ -1,0 +1,59 @@
+folder: D7iGHonLJ6RXuMkc
+name: Maintenance tools
+type: item
+_id: 7mJpUSm4hhUrxIGl
+img: systems/konosuba/assets/items/tools/maintenance%20tools.png
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: '1'
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  quantity: 1
+  weight: 1
+  type: accessory
+  subtype: ''
+  classRestrictions: []
+  value: 200
+  level: 1
+  effects: >-
+    Passive: Add 1 to the damage of weapon attacks, excluding barehanded,
+    performed by the owner. A set of tools for maintaining one’s weapons.
+  range: ''
+  equipSlot: none
+  customModifiers: []
+  subType: ''
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!7mJpUSm4hhUrxIGl'

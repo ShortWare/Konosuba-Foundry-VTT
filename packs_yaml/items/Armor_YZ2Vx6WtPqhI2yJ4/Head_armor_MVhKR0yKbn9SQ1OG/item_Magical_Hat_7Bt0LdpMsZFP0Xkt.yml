@@ -1,0 +1,59 @@
+folder: MVhKR0yKbn9SQ1OG
+name: Magical Hat
+type: item
+_id: 7Bt0LdpMsZFP0Xkt
+img: systems/konosuba/assets/items/armor/magical%20hat.png
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: '3'
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  quantity: 1
+  weight: 2
+  type: armor
+  subtype: ''
+  classRestrictions:
+    - wizard
+    - priest
+  value: 1200
+  level: 6
+  effects: A hat made of fabric with magical characters engraved into it.
+  range: ''
+  equipSlot: head
+  customModifiers: []
+  subType: ''
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!7Bt0LdpMsZFP0Xkt'

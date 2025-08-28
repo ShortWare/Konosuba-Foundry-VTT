@@ -1,0 +1,68 @@
+folder: xzqo4LiPpePE13mO
+name: Quick-Draw Technique
+type: skill
+_id: NxhMtdoO5ryfHFVC
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 3
+  timing: Move action
+  check: auto_success
+  customCheck:
+    title: ''
+    formula: ''
+  target: self
+  range: ''
+  cost: 3
+  requirements: Using a dagger, one-handed sword, or two-handed sword; SL times per scene
+  effects: >-
+    Add 3d6 to the damage of your close-combat attacks. This effect lasts until
+    the end of your Main Process. When using this skill, you may automatically
+    equip any dagger, one-handed sword, or two-handed sword, but you cannot
+    exchange equipped weapons in this manner.
+
+    The skill to unsheathe your sword and slice through an enemy in a single
+    stroke.
+  critical: ''
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!NxhMtdoO5ryfHFVC'

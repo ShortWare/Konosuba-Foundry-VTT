@@ -1,0 +1,66 @@
+folder: wda2UIu9L2oucxpd
+name: Defensive Penetration Skill
+type: skill
+_id: GpYVgiMH0G2wl8hS
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 3
+  timing: Before damage roll
+  check: auto_success
+  customCheck:
+    title: ''
+    formula: ''
+  target: single
+  range: 20m
+  cost: 5
+  requirements: Once per Scene
+  effects: >-
+    Use this skill immediately before you make a damage roll. Subtract SL×5 from
+    the target’s Physical Defense and Magic Defense (to a minimum of 0). This
+    effect ends after calculating damage.
+
+    The skill to temporarily disable an enemy’s defenses using a magic circle.
+  critical: ''
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!GpYVgiMH0G2wl8hS'

@@ -1,0 +1,68 @@
+folder: yKVd1LyOOY73kspG
+name: Spirit Defense [Spell]
+type: skill
+_id: dbPlERJDQPPfWq1F
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 3
+  timing: Setup Process
+  check: magic_check
+  customCheck:
+    title: ''
+    formula: ''
+  target: single
+  range: 20m
+  cost: 3
+  requirements: ''
+  effects: >-
+    When you use this skill, choose one element. If your target receives magic
+    damage of the chosen element, add SL×5 to their Magic Defense before
+    calculating the damage. The effect lasts until the end of the round.
+  critical: >-
+    Costs 0.
+
+    The skill to position an elemental close to a target to heighten their
+    defenses against a specific element.
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!dbPlERJDQPPfWq1F'

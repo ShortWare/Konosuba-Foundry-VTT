@@ -1,0 +1,64 @@
+folder: ipfucfgDZLLn9XVY
+name: Pole ax
+type: item
+_id: 0cNG4bYKN8nQTeq7
+img: systems/konosuba/assets/items/weapons/Pole%20ax.png
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: '-2'
+    movement: ''
+    hitCheck: '-2'
+    attackPower: '+13'
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  quantity: 1
+  weight: 11
+  type: weapon
+  subtype: ''
+  classRestrictions: []
+  value: 670
+  level: 3
+  effects: >-
+    A two-handed ax with an ax blade on one side of its tip and a hooked claw on
+    the other.
+  range: Close
+  equipSlot: both
+  customModifiers:
+    '0':
+      name: ''
+      rollIds: ''
+      formula: ''
+      applyWhen: always
+  subType: Ax
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!0cNG4bYKN8nQTeq7'

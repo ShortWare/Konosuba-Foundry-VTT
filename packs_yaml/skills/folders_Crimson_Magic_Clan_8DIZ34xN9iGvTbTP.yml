@@ -1,0 +1,19 @@
+name: Crimson Magic Clan
+sorting: a
+folder: null
+type: Item
+_id: 8DIZ34xN9iGvTbTP
+description: ''
+sort: 150000
+color: '#402b2b'
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040278
+  modifiedTime: 1756425040278
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+_key: '!folders!8DIZ34xN9iGvTbTP'

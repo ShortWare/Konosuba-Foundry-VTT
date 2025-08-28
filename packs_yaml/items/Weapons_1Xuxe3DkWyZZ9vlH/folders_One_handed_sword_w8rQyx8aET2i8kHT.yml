@@ -1,0 +1,19 @@
+name: One-handed sword
+sorting: a
+folder: 1Xuxe3DkWyZZ9vlH
+type: Item
+_id: w8rQyx8aET2i8kHT
+description: ''
+sort: 0
+color: null
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075850
+  modifiedTime: 1756425075850
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+_key: '!folders!w8rQyx8aET2i8kHT'

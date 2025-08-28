@@ -1,0 +1,19 @@
+name: Native Inhabitant
+sorting: a
+folder: null
+type: Item
+_id: 3F0867z71OQLCZq5
+description: ''
+sort: 100000
+color: '#2b3740'
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040278
+  modifiedTime: 1756425040278
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+_key: '!folders!3F0867z71OQLCZq5'

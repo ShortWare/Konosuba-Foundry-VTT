@@ -60,6 +60,10 @@ Handlebars.registerHelper("contains", function (array, item) {
   return Array.isArray(array) && array.includes(item);
 });
 
+Handlebars.registerHelper("includes", function (str, search) {
+  return str.toLowerCase().includes(search.toLowerCase());
+});
+
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */

@@ -1,0 +1,67 @@
+folder: kppNDk2VMHjCPaHZ
+name: Oath Skill
+type: skill
+_id: 5YlT9UrAc3sXP8AX
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 1
+  timing: Major action
+  check: auto_success
+  customCheck:
+    title: ''
+    formula: ''
+  target: single
+  range: 20m
+  cost: 0
+  requirements: Once per scenario
+  effects: >-
+    While your target is in the same Scene, add 1d6 to all your attack damage.
+    This effect lasts until the end of the scenario.
+
+    The skill to swear an oath to fight with everything you have for the sake of
+    one person. If the person you made the oath with is nearby, you feel an
+    endless reserve of fighting spirit welling within your heart.
+  critical: ''
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!5YlT9UrAc3sXP8AX'

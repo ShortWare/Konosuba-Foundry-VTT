@@ -1,0 +1,66 @@
+folder: gp3nUAZMbbChMcUd
+name: Tornado [Spell (Wind)]
+type: skill
+_id: rCmo7GAHm7sQ3a9i
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 1
+  timing: Major action
+  check: magic_check
+  customCheck:
+    title: ''
+    formula: ''
+  target: single
+  range: 20m
+  cost: 12
+  requirements: ''
+  effects: >-
+    You can learn this skill only if you have learned at least 1 level of Blade
+    of Wind. Perform a magic attack against the target. Add 1d6 to the attack’s
+    magic check. That attack deals 2d6+20 wind magic damage.
+  critical: |-
+    Add dice.
+    An advanced spell that attacks with a huge tornado.
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!rCmo7GAHm7sQ3a9i'

@@ -1,0 +1,57 @@
+folder: URVaD54xzukPqj1H
+name: Magic staff
+type: item
+_id: ZcAOifrkhCTl6LVT
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: '-1'
+    movement: ''
+    hitCheck: '-1'
+    attackPower: '+2'
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  quantity: 1
+  weight: 6
+  type: weapon
+  subtype: ''
+  classRestrictions: []
+  value: 250
+  level: 1
+  effects: 'Passive: +1 to magic-attack damage. A staff that supports spell-casting.'
+  range: Close
+  equipSlot: both
+  customModifiers: []
+  subType: Blunt
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!ZcAOifrkhCTl6LVT'

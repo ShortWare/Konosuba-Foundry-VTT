@@ -37,13 +37,24 @@ export class KonosubaItemSheet extends ItemSheet {
         );
       }
     } else if (this.item.type === "item") {
-      const classes = await game.items.filter((item) => item.type === "class");
-      context.availableClasses = classes.map((item) => {
-        return {
-          id: item.id,
-          name: item.name,
-        };
-      });
+      context.availableClasses = [
+        {
+          id: "warrior",
+          name: "Warrior",
+        },
+        {
+          id: "priest",
+          name: "Priest",
+        },
+        {
+          id: "wizard",
+          name: "Wizard",
+        },
+        {
+          id: "thief",
+          name: "Thief",
+        },
+      ];
     }
 
     return context;
@@ -86,7 +97,9 @@ export class KonosubaItemSheet extends ItemSheet {
         )
           .trim()
           .toLowerCase();
-        await this.item.update({ "system.active": timing === "passive" });
+        await this.item.update({
+          "system.active": timing.toLowerCase().includes("passive"),
+        });
       });
     } else if (this.item.type === "item") {
       html.find(".class-restriction").on("change", (ev) => {

@@ -1,0 +1,65 @@
+folder: nvXGxmiE8VGSCT7p
+name: Wind Curtain [Spell (Wind)]
+type: skill
+_id: fcBw9VWWO71LP0L4
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 1
+  timing: Before check
+  check: auto_success
+  customCheck:
+    title: ''
+    formula: ''
+  target: single
+  range: 20m
+  cost: 6
+  requirements: Once per round
+  effects: >-
+    Use before making a dodge check against a target’s ranged attack or spell.
+    Add 5 to the total check score of the dodge check.
+
+    A spell that creates a small tornado to block arrows and magic.
+  critical: ''
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!fcBw9VWWO71LP0L4'

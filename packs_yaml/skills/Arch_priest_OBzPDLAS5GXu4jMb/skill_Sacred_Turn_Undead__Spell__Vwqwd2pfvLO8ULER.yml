@@ -1,0 +1,68 @@
+folder: OBzPDLAS5GXu4jMb
+name: Sacred Turn Undead [Spell]
+type: skill
+_id: Vwqwd2pfvLO8ULER
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 3
+  timing: Major action
+  check: magic_check
+  customCheck:
+    title: ''
+    formula: ''
+  target: single
+  range: 20m
+  cost: 12
+  requirements: ''
+  effects: >-
+    You can learn this skill only if you have learned at least 3 levels of Turn
+    Undead. Only effective against undead targets. If the target is an enemy
+    with a CL (or enemy level) less than or equal to your CL+SL+3, the target
+    either dies or is knocked out (you decide which when you use this skill).
+    Otherwise, the attack deals (SL+1)d6+20 piercing damage to the target.
+  critical: |-
+    Add dice.
+    A spell that destroys the unliving.
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!Vwqwd2pfvLO8ULER'

@@ -1,0 +1,67 @@
+folder: nvXGxmiE8VGSCT7p
+name: Lock [Spell (Wind)]
+type: skill
+_id: IFYt43TWs2zEAOlp
+img: icons/svg/item-bag.svg
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  level:
+    value: 1
+    max: 1
+  timing: Major action
+  check: magic_check
+  customCheck:
+    title: ''
+    formula: ''
+  target: see_effect
+  range: Close
+  cost: 5
+  requirements: ''
+  effects: >-
+    Use a magic check instead of the normal check for disarming a trap.
+    Alternatively, apply a Lock A trap (page 289) to a treasure chest (page 291)
+    or door (page 292) object. The GM may decide that you cannot set Lock A on a
+    certain object.
+
+    A spell for undoing traps using magic or locking things like doors.
+  critical: ''
+  customRolls: []
+  active: false
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425040316
+  modifiedTime: 1756425040316
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!IFYt43TWs2zEAOlp'

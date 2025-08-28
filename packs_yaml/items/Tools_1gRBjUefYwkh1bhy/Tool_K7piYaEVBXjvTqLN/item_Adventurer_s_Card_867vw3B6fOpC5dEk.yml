@@ -1,0 +1,59 @@
+folder: K7piYaEVBXjvTqLN
+name: Adventurer's Card
+type: item
+_id: 867vw3B6fOpC5dEk
+img: systems/konosuba/assets/items/tools/adventurer%20card.png
+system:
+  modifiers:
+    strength: ''
+    dexterity: ''
+    agility: ''
+    intelligence: ''
+    perception: ''
+    mind: ''
+    luck: ''
+    physicalDefense: ''
+    magicDefense: ''
+    actionPoints: ''
+    movement: ''
+    hitCheck: ''
+    attackPower: ''
+    dodgeCheck: ''
+    health: ''
+    mana: ''
+    detectTraps: ''
+    disarmTraps: ''
+    senseThreats: ''
+    indentifyEnemy: ''
+    magicCheck: ''
+    carryingCapacity: ''
+  quantity: 1
+  weight: 0
+  type: tool
+  subtype: ''
+  classRestrictions: []
+  value: 0
+  level: 1
+  effects: >-
+    A card issued by the Adventurers Guild to adventurers. The adventurer’s
+    details are written on it. This includes their level, class, and skills.
+  range: ''
+  equipSlot: none
+  customModifiers: []
+  subType: ''
+effects: []
+flags: {}
+_stats:
+  compendiumSource: null
+  duplicateSource: null
+  coreVersion: '12.331'
+  systemId: konosuba
+  systemVersion: 1.0.0
+  createdTime: 1756425075891
+  modifiedTime: 1756425075891
+  lastModifiedBy: IC84zRJ49nvlkUdQ
+sort: 0
+ownership:
+  default: 0
+  IC84zRJ49nvlkUdQ: 3
+_key: '!items!867vw3B6fOpC5dEk'
