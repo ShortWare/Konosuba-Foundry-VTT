@@ -22,7 +22,7 @@
       "thumbnail": "systems/konosuba/assets/logo.png"
     }
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "compatibility": {
     "minimum": 12,
     "verified": "12.331"
@@ -69,7 +69,7 @@
   "packFolders": [],
   "socket": false,
   "manifest": "https://raw.githubusercontent.com/ShortWare/Konosuba-Foundry-VTT/refs/heads/main/system.json",
-  "download": "https://github.com/ShortWare/Konosuba-Foundry-VTT/releases/latest",
+  "download": "https://github.com/ShortWare/Konosuba-Foundry-VTT/releases/latest/download/Konosuba.Foundry-VTT.zip",
   "background": "systems/konosuba/assets/background.png",
   "gridDistance": 1,
   "gridUnits": "m",
